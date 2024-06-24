@@ -3,11 +3,11 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Project2
+ProjectName            :=OutFirstProgram
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :=/Users/ringokwon/cProject/Workspace2
-ProjectPath            :=/Users/ringokwon/cProject/Workspace2/Project2
+ProjectPath            :=/Users/ringokwon/cProject/Workspace2/OutFirstProgram
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -34,7 +34,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="Project2.txt"
+ObjectsFileList        :="OutFirstProgram.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -95,7 +95,7 @@ PreBuild:
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "/Users/ringokwon/cProject/Workspace2/Project2/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/Users/ringokwon/cProject/Workspace2/OutFirstProgram/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 
