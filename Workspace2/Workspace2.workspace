@@ -2,19 +2,22 @@
 <CodeLite_Workspace Name="Workspace2" Database="" Version="10000">
   <Project Name="Project1" Path="Project1/Project1.project" Active="No"/>
   <Project Name="Project2" Path="Project2/Project2.project" Active="No"/>
-  <Project Name="OutFirstProgram" Path="OutFirstProgram/OutFirstProgram.project" Active="Yes"/>
+  <Project Name="OutFirstProgram" Path="OutFirstProgram/OutFirstProgram.project" Active="No"/>
+  <Project Name="Challenge" Path="Challenge/Challenge.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="Project1" ConfigName="Debug"/>
       <Project Name="Project2" ConfigName="Debug"/>
       <Project Name="OutFirstProgram" ConfigName="Debug"/>
+      <Project Name="Challenge" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
       <Project Name="Project1" ConfigName="Release"/>
       <Project Name="Project2" ConfigName="Release"/>
       <Project Name="OutFirstProgram" ConfigName="Release"/>
+      <Project Name="Challenge" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

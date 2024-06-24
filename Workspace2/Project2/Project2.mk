@@ -2,20 +2,21 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=Project2
-ConfigurationName      :=Debug
-WorkspaceConfiguration :=Debug
+ConfigurationName      :=Release
+WorkspaceConfiguration :=Release
 WorkspacePath          :=/Users/ringokwon/cProject/Workspace2
 ProjectPath            :=/Users/ringokwon/cProject/Workspace2/Project2
-IntermediateDirectory  :=$(ConfigurationName)
-OutDir                 := $(IntermediateDirectory)
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Project2
+OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=ringo kwon
 Date                   :=24/06/2024
 CodeLitePath           :=/Users/ringokwon/.codelite
+MakeDirCommand         :=mkdir -p
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
 ObjectSuffix           :=.o
@@ -28,15 +29,14 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=$(IntermediateDirectory)
-OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
-Preprocessors          :=
+OutputDirectory        :=/Users/ringokwon/cProject/Workspace2/build-$(WorkspaceConfiguration)/bin
+OutputFile             :=../build-$(WorkspaceConfiguration)/bin/$(ProjectName)
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="Project2.txt"
+ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
-MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -gdwarf-2 -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -O0 -gdwarf-2 -std=c99 -Wall $(Preprocessors)
+CXXFLAGS :=  -O2 -Wall $(Preprocessors)
+CFLAGS   :=  -O2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
 
@@ -72,20 +72,20 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile)
+all: MakeIntermediateDirs $(OutputFile)
 
 $(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
-	@$(MakeDirCommand) $(@D)
+	@$(MakeDirCommand) "$(IntermediateDirectory)"
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@test -d $(ConfigurationName) || $(MakeDirCommand) $(ConfigurationName)
-
+	@$(MakeDirCommand) "$(IntermediateDirectory)"
+	@$(MakeDirCommand) "$(OutputDirectory)"
 
 $(IntermediateDirectory)/.d:
-	@test -d $(ConfigurationName) || $(MakeDirCommand) $(ConfigurationName)
+	@$(MakeDirCommand) "$(IntermediateDirectory)"
 
 PreBuild:
 
@@ -93,9 +93,11 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
+$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/Users/ringokwon/cProject/Workspace2/Project2/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.c$(DependSuffix): main.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
+
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 
@@ -105,6 +107,6 @@ $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 ## Clean
 ##
 clean:
-	$(RM) -r $(ConfigurationName)/
+	$(RM) -r $(IntermediateDirectory)
 
 
