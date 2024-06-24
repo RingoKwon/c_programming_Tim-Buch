@@ -1,0 +1,5 @@
+[{
+  "file": "/Users/ringokwon/Project/cProject/Workspace3/test/main.c",
+  "directory": "/Users/ringokwon/Project/cProject/Workspace3/test",
+  "command": "/usr/bin/gcc -c /Users/ringokwon/Project/cProject/Workspace3/test/main.c -o /Users/ringokwon/Project/cProject/Workspace3/test/main.c.o -target x86_64-apple-darwin23.5.0 -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -I. -I.  -O0  -gdwarf-2  -std=c99  -Wall"
+ }]
