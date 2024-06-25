@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Workspace3" Database="" Version="10000">
-  <Project Name="test" Path="test/test.project" Active="Yes"/>
+  <Project Name="test" Path="test/test.project" Active="No"/>
+  <Project Name="test_double" Path="test_double/test_double.project" Active="No"/>
+  <Project Name="Values" Path="Values/Values.project" Active="No"/>
+  <Project Name="enum" Path="enum/enum.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="test" ConfigName="Debug"/>
+      <Project Name="test_double" ConfigName="Debug"/>
+      <Project Name="Values" ConfigName="Debug"/>
+      <Project Name="enum" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
       <Project Name="test" ConfigName="Release"/>
+      <Project Name="test_double" ConfigName="Release"/>
+      <Project Name="Values" ConfigName="Release"/>
+      <Project Name="enum" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
