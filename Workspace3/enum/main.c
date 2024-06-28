@@ -6,7 +6,10 @@ int main()
     enum Company  { // DEFINING 
         GOOGLE, 
         FACEBOOK, 
-        XEROX, YAHOO, EBAY, MICROSOFT
+        XEROX,
+        YAHOO, 
+        EBAY, 
+        MICROSOFT
     };
     
     enum Company xerox = XEROX; 
