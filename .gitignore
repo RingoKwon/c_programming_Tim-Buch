@@ -1,0 +1,36 @@
+# Compiled object files
+*.o
+
+# Compiled dynamic libraries
+*.so
+
+# Compiled static libraries
+*.a
+
+# Executable files
+*.exe
+*.out
+
+# Debug files
+*.dSYM/
+*.log
+
+# Dependency files
+*.d
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Generated documentation
+doc/
+
+# Backup files
+*~
+
+# Editor-specific files
+.vscode/
+.idea/
+
