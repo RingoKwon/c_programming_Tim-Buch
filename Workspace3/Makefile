@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ enum - Debug ]----------"
-	@cd "enum" && "$(MAKE)" -f  "enum.mk"
+	@echo "----------Building project:[ FormatSpecifier - Debug ]----------"
+	@cd "FormatSpecifier" && "$(MAKE)" -f  "FormatSpecifier.mk"
 clean:
-	@echo "----------Cleaning project:[ enum - Debug ]----------"
-	@cd "enum" && "$(MAKE)" -f  "enum.mk" clean
+	@echo "----------Cleaning project:[ FormatSpecifier - Debug ]----------"
+	@cd "FormatSpecifier" && "$(MAKE)" -f  "FormatSpecifier.mk" clean

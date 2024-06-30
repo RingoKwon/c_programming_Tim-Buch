@@ -3,8 +3,8 @@
   <Project Name="test" Path="test/test.project" Active="No"/>
   <Project Name="test_double" Path="test_double/test_double.project" Active="No"/>
   <Project Name="Values" Path="Values/Values.project" Active="No"/>
-  <Project Name="enum" Path="enum/enum.project" Active="Yes"/>
-  <Project Name="FormatSpecifier" Path="FormatSpecifier/FormatSpecifier.project"/>
+  <Project Name="enum" Path="enum/enum.project" Active="No"/>
+  <Project Name="FormatSpecifier" Path="FormatSpecifier/FormatSpecifier.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
