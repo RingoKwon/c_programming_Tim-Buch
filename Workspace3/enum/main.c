@@ -10,7 +10,7 @@ int main()
         YAHOO, 
         EBAY, 
         MICROSOFT
-    };
+    }; // test
     
     enum Company xerox = XEROX; 
     enum Company google = GOOGLE; 
