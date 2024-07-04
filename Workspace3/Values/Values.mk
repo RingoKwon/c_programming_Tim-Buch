@@ -3,11 +3,11 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=test_double
+ProjectName            :=Values
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :=/Users/ringokwon/Project/cProject/Workspace3
-ProjectPath            :=/Users/ringokwon/Project/cProject/Workspace3/test_double
+ProjectPath            :=/Users/ringokwon/Project/cProject/Workspace3/Values
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -34,7 +34,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="test_double.txt"
+ObjectsFileList        :="Values.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -62,7 +62,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/commendLine.c$(ObjectSuffix) 
 
 
 
@@ -93,11 +93,11 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "/Users/ringokwon/Project/cProject/Workspace3/test_double/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
+$(IntermediateDirectory)/commendLine.c$(ObjectSuffix): commendLine.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/commendLine.c$(ObjectSuffix) -MF$(IntermediateDirectory)/commendLine.c$(DependSuffix) -MM commendLine.c
+	$(CC) $(SourceSwitch) "/Users/ringokwon/Project/cProject/Workspace3/Values/commendLine.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/commendLine.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/commendLine.c$(PreprocessSuffix): commendLine.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/commendLine.c$(PreprocessSuffix) commendLine.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

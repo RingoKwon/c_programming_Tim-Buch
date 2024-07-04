@@ -3,7 +3,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="main.c"/>
+    <File Name="main.c" ExcludeProjConfig="Debug;"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
