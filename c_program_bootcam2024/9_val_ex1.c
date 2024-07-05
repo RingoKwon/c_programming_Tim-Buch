@@ -9,7 +9,7 @@ int main ( ){
     printf("current year:"); 
     scanf("%d", &_current); 
 
-    printf("birth year: %d\n33", _current - _age); 
+    printf("birth year: %d\n", _current - _age); 
 
     return 0; 
 }
