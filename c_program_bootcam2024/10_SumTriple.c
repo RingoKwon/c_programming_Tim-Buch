@@ -8,21 +8,16 @@ int main(){
     int num_10, num_1;
 
     printf("num: ");
-    scanf("%d" , &num   ); 
+    scanf("%d", &num); // Fixed: Removed extra spaces
 
-    // fig calc 
-    f3 = num/100;
-    num_10 = num - f3*100;
+    // Figure calculation
+    f3 = num / 100;
+    num_10 = num % 100; // Changed: Use modulo operator for remainder
 
-    f2 = num_10/10;
-    num_1 = num_10 - f2*10;
-    
-    f1 = num_1;
+    f2 = num_10 / 10;
+    f1 = num_10 % 10; // Changed: Simplified calculation of f1
 
-
-    printf("%d \n", f1+f2+f3);
-
-
+    printf("%d\n", f1 + f2 + f3);
 
     return 0;
 }
