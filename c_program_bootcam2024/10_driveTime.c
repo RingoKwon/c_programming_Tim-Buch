@@ -1,19 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// furter steps ; remaining minute , distance to go 
+
 int main(){
 
-    float dist, speed, hour; 
+    int  dist, speed, hour, remainingDist; 
+    float remainingMin;
 
     printf("distance: "); 
-    scanf ( "%f", &dist ); 
-    printf("%f\n", dist); 
+    scanf ( "%d", &dist ); 
+    printf("%d\n", dist); 
 
     printf("speed(km per hour): "); 
-    scanf ( "%f", &speed ); 
+    scanf ( "%d", &speed ); 
 
     hour = dist/speed;
-    printf("hours to get = %.2f\n",  hour);
+    remainingDist  = dist % speed;
+    remainingMin = remainingDist/(float)speed*60.0f;
+
+    
+
+    printf("It will takes %d hour and %.0f min\n",  hour, remainingMin);
 
     return 0; 
 }
