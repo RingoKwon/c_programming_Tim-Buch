@@ -6,7 +6,7 @@ int main()
     // declarartion
     double _width;
     double _height;
-    double _perimeter;
+    double _area;
     
     printf("width: ");
     scanf("%lf", &_width);
@@ -14,9 +14,9 @@ int main()
     printf("height: ");
     scanf("%lf", &_height);
     
-    _perimeter = (_width + _height) * 2;
+    _area = (_width * _height) * 2;
 
-    printf("perimeter: %.2lf\n", _perimeter);
+    printf("area: %.2lf\n", _area);
 
 
     return 0;
