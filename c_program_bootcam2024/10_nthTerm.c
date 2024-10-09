@@ -8,7 +8,7 @@ int main(){
     int n = 9;
     int nThFig;
 
-    nThFig = initial+(diff *(n-1));
+    nThFig = initial + (diff * (n - 1));
     printf("%d\n", nThFig);
 
     return 0;
