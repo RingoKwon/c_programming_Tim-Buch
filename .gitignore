@@ -1,36 +1,63 @@
-# Compiled object files
+# Object files
 *.o
+*.ko
+*.obj
+*.elf
 
-# Compiled dynamic libraries
-*.so
+# Precompiled Headers
+*.gch
+*.pch
 
-# Compiled static libraries
+# Libraries
+*.lib
 *.a
+*.la
+*.lo
 
-# Executable files
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
 *.exe
 *.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
 # Debug files
 *.dSYM/
-*.log
+*.su
+*.idb
+*.pdb
 
-# Dependency files
-*.d
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
 
-# CMake files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-
-# Generated documentation
-doc/
-
-# Backup files
-*~
-
-# Editor-specific files
+# Editor specific files
 .vscode/
 .idea/
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Custom ignore
+# Add any project specific files or directories you want to ignore
 
