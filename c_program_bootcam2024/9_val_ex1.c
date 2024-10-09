@@ -14,4 +14,5 @@ int main() {
     printf("birth year: %d\n", _current - _age);
 
     return 0; // 프로그램을 정상적으로 종료합니다.
+// test git 
 }
