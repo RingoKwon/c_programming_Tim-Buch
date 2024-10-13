@@ -5,7 +5,7 @@ int main()
 {
     float num1, num2, num3;
     // Remove unused variables
-    // float min, max;
+    float min, max;
 
     printf("Enter first  Number: ");
     scanf("%f", &num1);
@@ -17,25 +17,21 @@ int main()
     scanf("%f", &num3);
 
     // Simplify logic and handle all cases
-    if (num1 >= num2 && num1 >= num3) {
-        if (num2 >= num3) {
-            printf("%.2f >= %.2f >= %.2f\n", num1, num2, num3);
-        } else {
-            printf("%.2f >= %.2f >= %.2f\n", num1, num3, num2);
-        }
-    } else if (num2 >= num1 && num2 >= num3) {
-        if (num1 >= num3) {
-            printf("%.2f >= %.2f >= %.2f\n", num2, num1, num3);
-        } else {
-            printf("%.2f >= %.2f >= %.2f\n", num2, num3, num1);
-        }
-    } else {
-        if (num1 >= num2) {
-            printf("%.2f >= %.2f >= %.2f\n", num3, num1, num2);
-        } else {
-            printf("%.2f >= %.2f >= %.2f\n", num3, num2, num1);
-        }
-    }
+    min = num2;
+    max = num1;
 
+    if (num1 < num2)
+    {
+        min = num1;
+        max = num2;
+    }
+    if (max < num3)
+        max = num3;
+
+    if (min > num3)
+        min = num3;
+
+    printf("min %.2f \n", min);
+    printf("Max %.2f \n", max);
     return 0;
 }
