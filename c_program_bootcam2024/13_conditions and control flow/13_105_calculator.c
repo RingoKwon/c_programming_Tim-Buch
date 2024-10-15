@@ -1,87 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-int sum(int a, int b)
-{
-    return a + b;
-}
-
-int minus(int a, int b)
-{
-    return a - b;
-}
-
-int divide(int a, int b)
-{
-    if (b != 0)
-    {
-        return a / b;
-    }
-    else
-    {
-        printf("err \n");
-        return 1;
-    }
-}
-
-int remainder1(int a, int b)
-{
-    if (b != 0)
-    {
-        return a % b;
-    }
-    else
-    {
-        printf("err \n");
-        return 1;
-    }
-}
 
 int main()
 {
-    int a, b;
-    char opt; // 문자열로 변경
 
-    printf("Enter first num: ");
-    scanf("%d", &a);
-    printf("Enter second num: ");
-    scanf("%d", &b);
-    printf("opt type [(s)um, (m)inus, (d)ivide, (r)emainder]: ");
-    scanf(" %c", &opt); // 공백 추가 및 %s로 변경
+    int num1, num2;
+    char mathOpt;
 
-    // printf("Debug - a: %d, b: %d, opt: %c\n", a, b, opt);
-    // int result = sum(a, b);
-    // printf("Debug - sum result: %d\n", result);
+    printf("Enter mathmatical operator (+, -, /, %%, *): ");
+    scanf("%c", &mathOpt);
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
 
-    switch (opt)
+    // deduger
+    // printf("num1: %d, num2: %d, opt: %c \n", num1, num2, mathOpt);
+
+    switch (mathOpt)
     {
-    case 's':
-        printf("Result: %d\n", sum(a, b));
+    case '+':
+        printf("Answer %d %c %d = %d ", num1, mathOpt, num2, num1 + num2);
         break;
-    case 'm':
-        printf("Result: %d\n", minus(a, b));
+    case '-':
+        printf("Answer %d %c %d = %d ", num1, mathOpt, num2, num1 - num2);
         break;
-    case 'd':
-        printf("Result: %d\n", divide(a, b));
+    case '/':
+        if (num2 != 0)
+            printf("Answer %d %c %d = %.2f ", num1, mathOpt, num2, (float)num1 / num2);
+        else
+            printf("Error: Division by zero!");
         break;
-    case 'r':
-        printf("Result: %d\n", remainder1(a, b));
+    case '%':
+        if (num2 != 0)
+            printf("Answer %d %c %d = %d ", num1, mathOpt, num2, num1 % num2);
+        else
+            printf("Error: Modulo by zero!");
+        break;
+    case '*':
+        printf("Answer %d %c %d = %d ", num1, mathOpt, num2, num1 * num2);
         break;
     default:
-        printf("na \n");
+        printf("Error: Invalid operator!");
         break;
     }
-    // if (strcmp(opt, "sum") == 0) {
-    //     printf("Result: %d\n", sum(a, b));
-    // } else if (strcmp(opt, "minus") == 0) {
-    //     printf("Result: %d\n", minus(a, b));
-    // } else if (strcmp(opt, "divide") == 0) {
-    //     printf("Result: %d\n", divide(a, b));
-    // } else if (strcmp(opt, "remainder") == 0) {
-    //     printf("Result: %d\n", remainder(a, b));
-    // } else {
-    //     printf("Invalid operation\n");
-    // }
-    // return 0;
+    return 0;
 }
