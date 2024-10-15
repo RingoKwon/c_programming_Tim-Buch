@@ -9,20 +9,11 @@ int main()
     printf("Enter number: ");
     scanf("%d", &num);
 
-    if (num / 1000 >= 1)
-    {
-        printf("na");
-    }
-    else if (num / 100 >= 1)
-    {
-        printf("3");
-    }
-    else if (num / 10 >= 1)
-    {
-        printf("2");
-    }
-    else
-    {
+    if (num >=  10 && num <= 99 ){
+        printf("2"); 
+    }else if (num >= 100 && num <= 999){
+        printf("3"); 
+    }else {
         printf("na");
     }
 
