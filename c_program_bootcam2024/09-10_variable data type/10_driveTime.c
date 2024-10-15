@@ -18,9 +18,7 @@ int main(){
     hour = dist/speed;
     remainingDist  = dist % speed;
     remainingMin = remainingDist/(float)speed*60.0f;
-
     
-
     printf("It will takes %d hour and %.0f min\n",  hour, remainingMin);
 
     return 0; 
