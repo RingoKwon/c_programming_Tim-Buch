@@ -25,7 +25,7 @@ int divide(int a, int b)
     }
 }
 
-int remainder(int a, int b)
+int remainder1(int a, int b)
 {
     if (b != 0)
     {
@@ -42,27 +42,31 @@ int main()
 {
     int a, b;
     char opt; // 문자열로 변경
-    
+
     printf("Enter first num: ");
-    scanf("%d", &a);    
+    scanf("%d", &a);
     printf("Enter second num: ");
     scanf("%d", &b);
     printf("opt type [(s)um, (m)inus, (d)ivide, (r)emainder]: ");
-    scanf("%c", &opt); // 공백 추가 및 %s로 변경
+    scanf(" %c", &opt); // 공백 추가 및 %s로 변경
+
+    // printf("Debug - a: %d, b: %d, opt: %c\n", a, b, opt);
+    // int result = sum(a, b);
+    // printf("Debug - sum result: %d\n", result);
 
     switch (opt)
     {
     case 's':
-        printf("Result: %d\n", sum(a,b)); 
+        printf("Result: %d\n", sum(a, b));
         break;
     case 'm':
-        printf("Result: %d\n", minus(a,b));
+        printf("Result: %d\n", minus(a, b));
         break;
     case 'd':
-        printf("Result: %d\n", divide(a,b)  );
+        printf("Result: %d\n", divide(a, b));
         break;
     case 'r':
-        printf("Result: %d\n", remainder(a,b));
+        printf("Result: %d\n", remainder1(a, b));
         break;
     default:
         printf("na \n");
