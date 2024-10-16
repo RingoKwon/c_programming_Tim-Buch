@@ -6,36 +6,27 @@ int main()
 
     int y, m, d;
     int y_d_4, y_d_100, y_d_400;
-    int leap;
+    int leap = 0;
     int lastDate;
 
     printf("Enter year, month, date: \n");
     scanf("%d%d%d", &y, &m, &d);
-    printf("you entered %02d:%02d:%02d \n", y, m, d );
+    printf("you entered %02d:%02d:%02d \n", y, m, d);
 
     y_d_4 = y % 4;
     y_d_100 = y % 100;
     y_d_400 = y % 400;
     // leap year
-    if (y_d_4 == 0)
+    if (m == 2)
     {
-        if (y_d_400 == 0)
-        {
-            leap = 1;
-        }
-        else if (y_d_100 == 0)
-        {
-            leap = 0;
-        }
-        else
+        if (y % 4 == 0 && (y % 4 == 0 || y && 100 != 0))
         {
             leap = 1;
         }
     }
-    else
-    {
-        leap = 0;
-    }
+
+    d += 1;
+
     // month
     switch (m)
     {
@@ -46,52 +37,30 @@ int main()
     case 8:
     case 10:
     case 12:
-        lastDate = 31;
-        break;
+        if (d <= 31)
+            break;
     case 4:
     case 6:
     case 9:
     case 11:
-        lastDate = 30;
-        break;
+        if (d <= 30)
+            break;
     case 2:
-        if (leap == 1)
-        {
-            lastDate = 29;
-        }
-        else
-        {
-            lastDate = 28;
-        }
-        break;
+        if (d <= 29 && leap == 1)
+            break;
+        else if (d <= 28)
+            break;
     default:
-        printf("Invalid month\n");
-        return 1;
+        d = 1;
+        m += 1;
+        if (m == 12)
+        {
+            m = 1;
+            y += 1;
+        }
     }
 
-    if (! (d>0 && d <= lastDate))
-    {
-        printf("invalid date \n"); 
-    }
-    
-
-    // increase one day
-    d++;
-    // increase month
-    if (d > lastDate)
-    {
-        m++;
-        d = 1; 
-    }
-
-    //  increase year
-    if (m == 13)
-    {
-        y++;
-        m = 1;
-    }
-
-  printf("The next day = %02d:%02d:%02d \n", y, m, d);
+    printf("The next day = %02d:%02d:%02d \n", y, m, d);
 
     return 0;
 }
