@@ -11,6 +11,7 @@ int main()
 
     printf("Enter year, month, date: \n");
     scanf("%d%d%d", &y, &m, &d);
+    printf("you entered %02d:%02d:%02d \n", y, m, d );
 
     y_d_4 = y % 4;
     y_d_100 = y % 100;
@@ -90,10 +91,7 @@ int main()
         m = 1;
     }
 
-    printf("%d \n", leap);
-    printf("%d \n", d);
-    printf("%d \n", m);
-    printf("%d \n", y);
+  printf("The next day = %02d:%02d:%02d \n", y, m, d);
 
     return 0;
 }
