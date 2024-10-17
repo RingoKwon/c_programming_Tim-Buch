@@ -7,15 +7,15 @@ int main()
     printf("Enter a char: ");
     scanf(" %c", &input);
 
-    if (input >= 48 && input <= 57)
+    if (input >= '0'&& input <= '9')
     {
         printf("decimal");
     }
-    else if (input >= 97 && input <= 122)
+    else if (input >= 'a' && input <= 'z')
     {
         printf("Lower");
     }
-    else if (input >= 65 && input <= 90)
+    else if (input >= 'A' && input <= 'Z')
     {
         printf("upper");
     }
