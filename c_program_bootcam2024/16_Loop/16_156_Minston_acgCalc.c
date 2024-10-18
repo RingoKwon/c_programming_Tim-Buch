@@ -9,14 +9,14 @@ int main()
     printf("Enter Score: \n");
     scanf("%d", &inNum);
 
-    while (inNum != -1)
-    {
+    
+    do {
 
         k++;
         sum += inNum;
         printf("Enter Score: \n");
         scanf("%d", &inNum);
-    }
+    }while (inNum != -1);
 
 
     printf("%.2f \n", (float)sum/k);
