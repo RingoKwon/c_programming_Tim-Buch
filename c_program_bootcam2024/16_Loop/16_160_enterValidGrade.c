@@ -10,7 +10,7 @@ int main() {
     do{
         printf("ENter: ");
         scanf("%d", &grade); 
-    }while (grade<=0 || grade>=100);
+    }while (grade<0 || grade>100);
     printf("good");
     
     return 0; 
