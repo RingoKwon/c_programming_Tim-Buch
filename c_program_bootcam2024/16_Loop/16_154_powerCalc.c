@@ -10,8 +10,8 @@ int main() {
     printf("Enter power: \n"); 
     scanf("%d", &inPow); 
 
-    outNum = inNum * inNum ; 
-    while (inPow>1)
+    outNum = 1 ; 
+    while (inPow>0)
     {
         outNum = outNum*inNum;
         inPow--; 
