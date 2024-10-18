@@ -4,26 +4,22 @@
 int main()
 {
 
-    int inNum = 0, k = 0 , sum = 0 ;
-    float avg;
+    int inNum = 0, k = 0, sum = 0;
 
-    int whileKey = 1;
-    
-    while (whileKey)
+    printf("Enter Score: \n");
+    scanf("%d", &inNum);
+
+    while (inNum != -1)
     {
-        if(inNum != -1){
-        printf("Enter Score: \n");
-        scanf("%d", &inNum);
+
         k++;
         sum += inNum;
-        }else {
-            whileKey = 0 ; 
-        }
+        printf("Enter Score: \n");
+        scanf("%d", &inNum);
     }
 
-    avg = (float)sum/k;
 
-    printf("%.2f \n", avg);
+    printf("%.2f \n", (float)sum/k);
     printf("%d \n", sum);
     printf("%d \n", k);
     return 0;
