@@ -4,7 +4,7 @@
 int main()
 {
 
-    int num, numConvert = 0, i, totalNumConvert = 0, j = 1;
+    int num, numConvert = 0, i, totalNumConvert = 0, j , k;
 
     printf("Enter: ");
     scanf("%d", &num);
@@ -14,6 +14,9 @@ int main()
         numConvert = numConvert + 1;
         totalNumConvert = totalNumConvert + numConvert;
 
+            for (k=num-i; k>=1; k-- ){
+                printf(" ");
+            }
         for (j = totalNumConvert - numConvert +1; j <= totalNumConvert; j++)
         {
 

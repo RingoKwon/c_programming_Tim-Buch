@@ -1,3 +1,3 @@
-
-    // printf("%d \n", totalNumConvert);
-    // printf("%d \n", numConvert);
+for (k = num - 1; k >= 1; k--)
+        {
+            printf(" ");
