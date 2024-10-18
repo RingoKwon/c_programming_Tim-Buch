@@ -13,7 +13,10 @@ int main() {
     {
         printf("*");
         i++;
+        // printf("%d",i);
     }
     
     return 0; 
 }
+
+; 
