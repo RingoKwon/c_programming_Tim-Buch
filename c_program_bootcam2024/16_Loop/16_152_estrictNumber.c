@@ -8,13 +8,15 @@ int main() {
     printf("Enter Num: \n"); 
     scanf("%d", &num); 
     
-    int i = 0; 
-    while (i < num )
+
+    while (num >0 )
     {
         printf("*");
-        i++;
+        num--; 
         // printf("%d",i);
     }
+    
+    printf("\n");
     
     return 0; 
 }
