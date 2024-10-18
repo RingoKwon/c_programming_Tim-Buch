@@ -1,2 +1,3 @@
 
-    scanf("%d", &num);
+    // printf("%d \n", totalNumConvert);
+    // printf("%d \n", numConvert);
