@@ -4,7 +4,7 @@
 int main()
 {
 
-    int num, totalNum;
+    int num, totalNum = 0 ;
     int i;
 
     printf("enter: ");
@@ -13,7 +13,7 @@ int main()
     for (i = 1; i <= num; i++)
         if (i % 3 == 0 && i % 5 == 0)
         {
-            totalNum = +i;
+            totalNum += i;
         }
     printf("%d \n", totalNum);
 
