@@ -16,11 +16,8 @@ int main()
     }
     for (j = 5; j <= num; j += 5)
     {
-        totalNum += j;
-    }
-    for (k = 15; k <= num; k += 15)
-    {
-        totalNum -= k;
+        if(j%3!=0)
+            totalNum += j;
     }
 
     printf("%d \n", totalNum);
