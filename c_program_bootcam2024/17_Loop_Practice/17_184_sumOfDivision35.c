@@ -10,11 +10,9 @@ int main()
     printf("enter: ");
     scanf("%d", &num);
 
-    for (i = 1; i <= num; i++)
-        if (i % 3 == 0 && i % 5 == 0)
-        {
+    for (i = 15; i <= num; i += 15)
+
             totalNum += i;
-        }
     printf("%d \n", totalNum);
 
     return 0;
