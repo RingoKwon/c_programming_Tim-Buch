@@ -4,25 +4,28 @@
 int main()
 {
 
-    int num, numConvert = 0, i, totalNumConvert = 0, j , k;
+    int num, i, j, k;
+    int blackSpace;
+    int currentValue;
 
     printf("Enter: ");
     scanf("%d", &num);
 
+    blackSpace = num - 1;
     for (i = 1; i <= num; i++)
     {
-        numConvert = numConvert + 1;
-        totalNumConvert = totalNumConvert + numConvert;
 
-            for (k=num-i; k>=1; k-- ){
-                printf(" ");
-            }
-        for (j = totalNumConvert - numConvert +1; j <= totalNumConvert; j++)
+        for (k = 1; k <= blackSpace; k++)
         {
-
-            printf("%d ", j);
+            printf(" ");
+        }
+        for (j = 1; j <= i; j++)
+        {
+            printf("%d ", currentValue);
+            currentValue++; 
         }
         printf("\n");
+        blackSpace--;
     }
 
     // printf("%d \n", totalNumConvert);
