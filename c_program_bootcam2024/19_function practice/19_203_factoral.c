@@ -4,6 +4,9 @@
 int factorial(int num)
 {
     int i, facrSum = 1;
+    if (num <0){
+        return 1; 
+    }
     for (i = 1; i <= num; i++)
     {
         facrSum = facrSum * i;
