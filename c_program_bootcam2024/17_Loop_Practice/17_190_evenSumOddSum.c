@@ -5,26 +5,23 @@
 int main() {
 
     int num; 
-    int i; 
+    int currentDigit; 
     int evenSum=0, oddSum=0; 
     printf("Enter: ");
     scanf("%d", &num);
 
     // digit number 
-    for (i=100000000; i>=1; i= i/10 ){
-        
-        printf("%d \n", i);
-        if ( num /i != 0 ){
-            printf("%d ",num/i);
-            if (num/i % 2 == 0 ){
-                evenSum += num/i; 
-            }else { 
-                oddSum += num/i; 
-            }
-            num = num - (num/i)*i; 
-            printf("%dth %d , %d\n", i, num/i, num) ;
+    while (num>0 )
+    {
+        currentDigit = num % 10 ; 
+        if(currentDigit % 2 == 0 ){
+            evenSum += currentDigit; 
+        }else {
+            oddSum += currentDigit; 
         }
+        num = num/10;
     }
-    printf("e:%d, o:%d", evenSum, oddSum);
+    
+        printf("e:%d, o:%d", evenSum, oddSum);
     return  0 ; 
 }
