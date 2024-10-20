@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void divisor_simple(int num)
+int divisor_simple(int num)
 {
-    int i;
+    int i, sum = 0;
 
     if (num <= 0)
     {
@@ -14,15 +14,20 @@ void divisor_simple(int num)
     {
         if (num % (i) == 0)
         {
-            printf("%d, ",i );
+            sum += i;
+            // printf("%d, ", i);
         }
     }
+    // printf("\n %d", sum);
+    return sum ; 
 }
 
 int main()
 {
-    int num = 10;
+    int num = 100;
 
-    divisor_simple(num);
+    int sum =  divisor_simple(num);
+    printf("%d \n", sum);
+
     return 0;
 }
