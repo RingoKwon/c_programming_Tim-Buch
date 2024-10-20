@@ -1,29 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE 7
+
 int main()
 {
-    int size = 7, i;
-    int arr[size];
+    int i;
+    float arr[SIZE];
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < SIZE; i++)
     {
         printf("Enter Temp: ");
-        scanf("%d", &arr[i]);
+        scanf("%f", &arr[i]);
     }
 
-    int j, hotest = arr[0], coldest = arr[0], sum = 0;
+    int j;
+    int hottestDay =0, coldestDay = 0;
+    float sum = 0;
 
-    for (j = 0; j < size; j++)
+    for (j = 0; j < SIZE; j++)
     {
-
         sum += arr[j];
-        if (hotest < arr[j])
-            hotest = arr[j];
-        if (coldest > arr[j])
-            coldest = arr[j];
+        if (arr[hottestDay] < arr[j])
+        {
+            hottestDay = j;
+            continue;
+        }
+        if ( arr[coldestDay] > arr[j])
+        {
+            coldestDay = j; 
+        }
     }
-    printf("%.2f, %d, %d  ", (float)sum / size, hotest, coldest);
-
+    // printf("%.2f, %d(%f), %d(%f)  ", (float)sum / SIZE, hotest, coldest);
+    printf("%.2f, hot: %.2f(%d), cold: %.2f(%d)  ", (float)sum / SIZE, arr[hottestDay], hottestDay+1,
+         arr[coldestDay], coldestDay +1);
     return 0;
 }
