@@ -49,21 +49,23 @@ int divisoer_optimized(int num)
     {
         return 1;
     }
-    for (i = 1; i*i <= num ; i++)
+    for (i = 1; i*i <= num; i++)
     {
         if (num % i == 0)
         {
-            // printf("%d ", i);
             sum += i;
-            sum += num/i; 
+            if (i * i != num) // 완전 제곱수가 아닌 경우에만 num/i를 더함
+            {
+                sum += num / i;
+            }
         }
     }
-    return sum + num;    
+    return sum;    // num을 따로 더하지 않음
 }
 
 int main()
 {
-    int num = 1000;
+    int num = 25;
 
     int sum = divisor_simple(num);
     printf("%d \n", sum);
@@ -72,7 +74,7 @@ int main()
     int sum2 = diviser_simple_2(num);
     printf("%d \n", sum2);
 
-    int sum3 = diviser_simple_2(num);
+    int sum3 = divisoer_optimized(num);
     printf("%d \n", sum3);
     return 0;
 }
