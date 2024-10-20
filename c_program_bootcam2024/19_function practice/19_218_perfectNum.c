@@ -22,7 +22,19 @@ int divisoer_opt(int num)
 
 int main()
 {
-    int num  = 25 ;
-    int sum=  divisoer_opt(num);  
+    int num;
+    
+    printf("Enter number: \n");
+    scanf("%d", &num);
+    
+    int sum = divisoer_opt(num);  // num 값을 입력받은 후에 함수 호출
+
+    if (num == sum - num) {  // 완전수 조건 수정
+        printf("perfect number \n");
+        printf("sum %d, num %d", sum - num, num);
+    } else {
+        printf("not perfect number\n");
+        printf("sum %d, num %d", sum - num, num);
+    }
     return 0;
 }
