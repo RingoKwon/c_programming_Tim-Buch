@@ -12,16 +12,16 @@ void divisor_simple(int num)
     }
     for (i = num; i > 0; i--)
     {
-        if (num % (num - i) == 0)
+        if (num % (i) == 0)
         {
-            printf("%d, ",num-i );
+            printf("%d, ",i );
         }
     }
 }
 
 int main()
 {
-    int num = 30;
+    int num = 10;
 
     divisor_simple(num);
     return 0;
