@@ -11,14 +11,18 @@ int divisoer_opt(int num)
     for (i = 1; i * i <= num; i++)
     {
         if( num % i ==0){
-            printf("%d %d; ", i, num/i);
+            sum += i; 
+            if( i*i != num ){
+                sum += num/i;
+            }
         }
     }
+    return sum;
 }
 
 int main()
 {
     int num  = 25 ;
-    divisoer_opt(num);  
+    int sum=  divisoer_opt(num);  
     return 0;
 }
