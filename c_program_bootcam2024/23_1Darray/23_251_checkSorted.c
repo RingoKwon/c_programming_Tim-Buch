@@ -6,27 +6,33 @@
 int main()
 {
 
-    int arr[SIZE] = {1, 2, 2, 4, 5};
-    int i;
+    int arr[SIZE] = {1, 2, 3, 40, 40};
+    int i, flag = 0;
 
     int perviouVal = arr[0];
     for (i = 1; i < SIZE; i++)
     {
         if (perviouVal >= arr[i])
         {
-            printf("not");
-            break;
+            if (perviouVal == arr[i])
+            {
+                printf("quite");
+                flag = 1;
+                break;
+            }
+            {
+                printf("not");
+                flag = 1;
+                break;
+            }
         }
-        else if (perviouVal == arr[i])
-        {
-            printf("quite");
-            break;
-        }else 
+        else
         {
             perviouVal = arr[i];
         }
     }
-    printf("very");
+    if (flag == 0)
+        printf("very");
 
     return 0;
 }
