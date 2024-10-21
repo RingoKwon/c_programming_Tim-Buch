@@ -6,21 +6,23 @@ int main()
 {
 
     int arr[SIZE] = {1, 2, 3, 4, 5};
-    int arr2[SIZE]= {} ; 
-    int i;
-    int n = 2 ;
+    int i, j;
+    int n = 2;
 
-    int temp = arr[0];
-    for (i = 0; i < SIZE ; i++)
+    for (j = 0; j < n; j++)
     {
 
-            arr2[i] = arr[(n+i)%(SIZE)];        
-            printf("%d ", (n+i)%(SIZE));
-            printf("%d \n", n+i);
+        int temp = arr[0];
+        for (i = 0; i < SIZE - 1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+        arr[SIZE - 1] = temp;
     }
+
     for (i = 0; i < SIZE; i++)
     {
-        printf("%d", arr2[i]);
+        printf("%d", arr[i]);
     }
 
     return 0;

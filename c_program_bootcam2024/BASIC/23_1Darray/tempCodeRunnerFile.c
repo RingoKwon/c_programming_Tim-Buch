@@ -1,4 +1,6 @@
-f (cntUnique > 1)
+temp = arr[0];
+        for (i = 0; i < SIZE - 1; i++)
         {
-            printf("%d not unique\n", arr[i]);
+            arr[i] = arr[i + 1];
         }
+        arr[
