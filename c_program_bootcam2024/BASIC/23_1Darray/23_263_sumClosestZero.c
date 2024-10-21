@@ -5,23 +5,30 @@
 
 int main()
 {
-    int arr[SIZE] = {-4, 3, 6, 3, 4};
+    int arr[SIZE] = {-2, 3, 6, 3, 2};
     int i, j;
+    int idx1 = 0  , idx2 = 1 ; 
 
     // possipe combination ( not considering position )
-    int minAbs = abs(arr[0] * arr[1]);
+    int  currentSum ; 
+    int minAbs = arr[0] + arr[1];
+    
     for (i = 0; i < SIZE; i++)
     {
 
-        for (j = 0; j < SIZE; j++)
+        for (j = i+1; j < SIZE; j++)
         {
-            
-            if (arr[i] != arr[j] && minAbs > abs(arr[i] * arr[j]))
+            currentSum = arr[i] + arr[j] ;              
+            if (abs(minAbs) > abs(currentSum))
             {
-                minAbs = abs(arr[i] * arr[j]); 
+                minAbs = currentSum; 
+                idx1 = i ; 
+                idx2 = j ;
+
             }
         }
     }
-    printf("%d", minAbs);
-    return 0;
+    printf("%d \n", minAbs);
+    printf("i:%d, j:%d",arr[idx1], arr[idx2]); 
+    return  0;
 }
