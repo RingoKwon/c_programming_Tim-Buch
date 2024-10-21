@@ -42,7 +42,7 @@ int main()
             printf("%d not unique\n", arr[i]);
         }
     }
-    // printf("cnt:%d", cnt);
+    // printf("cnt:%d", cnt); 
 
     return 0;
 }
