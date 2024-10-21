@@ -7,7 +7,7 @@ int main()
 
     int arr[SIZE] = {1, 2, 3, 4, 5};
     int i, j;
-    int n = 1;
+    int n = 2;
 
     for (j = 0; j < n; j++)
     {
@@ -15,7 +15,7 @@ int main()
         int temp = arr[SIZE-1];
         for (i = SIZE-1; i > 0 ; i--)
         {
-            arr[i] = arr[i-1] ;
+            arr[i] = arr[i-1   ] ;
         }
         arr[0] = temp;
     }
