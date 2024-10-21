@@ -3,30 +3,33 @@
 
 #define SIZE 5
 
-int main(){
+int main()
+{
 
-    int arr[SIZE] = {21,1,2,2,2};
-    int i, j; 
-    int uniqueFlag ; 
+    int arr[SIZE] = {3, 1, 3, 2, 2};
+    int i, j;
+    int uniqueFlag;
+    int cnt = 0;
 
-    for (i = 0 ; i < SIZE; i++ )
+    for (i = 0; i < SIZE; i++)
     {
-        uniqueFlag = 1; 
-        for(j = i +1; j <SIZE; j++)
+        uniqueFlag = 1;
+        for (j = i + 1; j < SIZE; j++)
         {
-            if ( arr[i] == arr[j])
+            if (arr[i] == arr[j])
             {
-                uniqueFlag = 0 ; 
+                uniqueFlag = 0;
                 break;
             }
             // printf("i%d, j%d \n", i,j);
         }
-        if ( uniqueFlag == 1 )
+        if (uniqueFlag == 1)
+        {
             printf("%d, ", arr[i]);
+            cnt++;
+        }
     }
+    printf("cnt:%d", cnt);
 
-
-    
-    
-    return 0; 
+    return 0;
 }
