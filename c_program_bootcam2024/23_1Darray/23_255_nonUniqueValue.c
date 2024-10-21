@@ -19,32 +19,21 @@ int main()
 
         for (j = 0; j < i; j++)
         {
-            printf("Li%d, j%d \n", i, j);
+            // printf("Li%d, j%d \n", i, j);
             if (arr[i] == arr[j])
             {
                 break;
             }
         }
         for (j = i + 1; j < SIZE; j++)
-            printf("Ri%d, j%d \n", i, j);
-
-        // if (uniqueFlag == 1)
-        // {
-        //     // printf("%d, \n", arr[i]);
-        //     cnt++;
-        //     int k;
-        //     for (k = 0; k < SIZE; k++)
-        //     {
-        //         if (arr[i] == arr[k])
-        //         {
-        //             cntUnique++;
-        //         }
-        //     }
-        // }
-        // if (cntUnique > 1)
-        // {
+            if (arr[i]==arr[j])
+            {
+                cnt++; 
+                printf("%d\n", arr[i] );
+                continue;
+            }
     }
-    // printf("cnt:%d", cnt);
+    printf("cnt:%d", cnt);
 
     return 0;
 }
