@@ -12,6 +12,9 @@ int main()
     printf("%d\n", *arr + 1);
     printf("%d\n", arr);
     printf("%p\n", arr);
+    printf("%p\n", (arr+1));
+    printf("%p\n", (arr+2));
+    printf("%p\n", (arr+3));
     printf("\n");
     // printf("%d\n", *arr+3);
     printf("%d\n", x);
