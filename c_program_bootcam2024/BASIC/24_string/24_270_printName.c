@@ -7,15 +7,18 @@ int main()
     char firsr[] = "Ringo";
     char last[] = "Kwon";
 
-    int i;
-    for (i = 0; i < 5; i++)
+    int i=0;
+    while (firsr[i] != '\0')
     {
         printf("%c", firsr[i]);
+        i++; 
     }
     printf(" ");
-    for (i = 0; i < 5; i++)
+    i=0;
+    while ( last[i] !='\0')
     {
         printf("%c", last[i]);
+        i++;
     }
 
     return 0;
