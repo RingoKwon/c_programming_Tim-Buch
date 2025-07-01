@@ -12,6 +12,14 @@ int main()
     {
         printf("Enter Temp: ");
         scanf("%f", &arr[i]);
+        
+        // 지금까지 입력된 온도들 출력
+        printf("지금까지 입력된 온도: ");
+        for (int k = 0; k <= i; k++)
+        {
+            printf("%.2f ", arr[k]);
+        }
+        printf("\n");
     }
 
     int j;
@@ -32,7 +40,7 @@ int main()
         }
     }
     // printf("%.2f, %d(%f), %d(%f)  ", (float)sum / SIZE, hotest, coldest);
-    printf("%.2f, hot: %.2f(%d), cold: %.2f(%d)  ", (float)sum / SIZE, arr[hottestDay], hottestDay+1,
+    printf("AVG: %.2f, hot: %.2f(%d), cold: %.2f(%d)  ", (float)sum / SIZE, arr[hottestDay], hottestDay+1,
          arr[coldestDay], coldestDay +1);
     return 0;
 }
