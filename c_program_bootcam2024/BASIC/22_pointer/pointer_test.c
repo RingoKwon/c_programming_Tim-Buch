@@ -9,7 +9,7 @@ int main () {
     printf("%p\n", &s)    ; 
     p = &s; 
     printf("%p\n", p);
-    printf("%d\n", p);
+    // printf("%d\n", p);
     printf("%d\n", *p);
 
 
