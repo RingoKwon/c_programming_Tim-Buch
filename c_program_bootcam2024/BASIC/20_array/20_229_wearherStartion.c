@@ -10,16 +10,16 @@ int main()
 
     for (i = 0; i < SIZE; i++)
     {
-        // printf("Enter Temp: ");
+        printf("Enter Temp: ");
         scanf("%f", &arr[i]);
         
         // 지금까지 입력된 온도들 출력
-        // printf("지금까지 입력된 온도: ");
-        // for (int k = 0; k <= i; k++)
-        // {
-        //     printf("%.2f ", arr[k]);
-        // }
-        // printf("\n");
+        printf("지금까지 입력된 온도: ");
+        for (int k = 0; k <= i; k++)
+        {
+            printf("%.2f ", arr[k]);
+        }
+        printf("\n");
     }
 
     int j;
