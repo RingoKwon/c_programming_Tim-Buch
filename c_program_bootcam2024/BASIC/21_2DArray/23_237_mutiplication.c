@@ -4,7 +4,7 @@
 
 int main()
 {
-    int multi2DArray[SIZE][SIZE];
+    int multi2DArray[SIZE][SIZE] ={0};
     int i, j;
 
     for (i = 1; i < SIZE; i++)
@@ -14,9 +14,9 @@ int main()
             multi2DArray[i][j] = i * j;
         }
     }
-    for (i = 0; i < SIZE; i++)
+    for (i = 1; i < SIZE; i++)
     {
-        for (j = 0; j < SIZE; j++)
+        for (j = 1; j < SIZE; j++)
         {
             printf("%5d ", multi2DArray[i][j]);
         }
