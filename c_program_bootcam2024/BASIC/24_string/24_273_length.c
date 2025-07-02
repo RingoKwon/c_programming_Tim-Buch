@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
-int main()
+void func()
 {
     char word[100];
+
     printf("%s", "enter: ");
     scanf("%s", word);
 
@@ -13,7 +12,11 @@ int main()
     {
         i++;
     }
-    printf("%d", i);
+    printf("length: %d", i);
+}
 
+int main()
+{
+    func(); 
     return 0;
 }
