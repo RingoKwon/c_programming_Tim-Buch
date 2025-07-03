@@ -24,6 +24,7 @@ int main()
     char *tempResult;
 
     tempResult = strcpy(newStr, str);
-    printf("%s", tempResult);
+    printf("%s\n", tempResult);
+    printf("%s\n", newStr);
     return 0;
 }
