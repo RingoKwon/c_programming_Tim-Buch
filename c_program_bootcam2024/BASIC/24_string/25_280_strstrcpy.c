@@ -1,16 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 // #include <string.h>
-char *strcpy(char *destniation, char *source)
+char *strcpy(char *destination, char *source)
 {
-    char temppnt = destniation;
+    char *tempPtr;
+    tempPtr = destination;
 
-    return temppnt; 
+    int i = 0; 
+    while (source[i] != '\0')
+    {
+        destination[i] = source[i];
+    }
+    
+    return tempPtr;
 }
 
 int main()
 {
     char *str = "ring";
-    // strcpy();
+    char *newStr ; 
+    char *tempResult;
+
+    tempResult = strcpy(newStr, str);
+    printf("%s", tempResult);
     return 0;
 }
