@@ -25,15 +25,7 @@ char *lower(char *input)
     output[i] = '\0';
     return output;
 }
-// int strLen(char *str)
-// {
-//     int i = 0;
-//     while (str[i] != '\0')
-//     {
-//         i++;
-//     }
-//     return i;
-// }
+ 
 int strcmp(char *cmp1, char *cmp2)
 {
     int i = 0;

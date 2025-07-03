@@ -1,5 +1,14 @@
 # import pandas as pd 
+import os
 # text.txt 파일 열기 및 읽기
+# /Users/ringokwon/Project/cProject/c_program_bootcam2024/Project/text.txt
+# 현재 작업 디렉토리 확인
+print("현재 작업 디렉토리:", os.getcwd())
+# 작업 디렉토리 변경
+os.chdir('/Users/ringokwon/Project/cProject/c_program_bootcam2024/Project')
+
+# 변경 후 확인
+print("변경 후:", os.getcwd())
 
 file = open('text.txt', 'r', encoding='utf-8') 
 content = file.read()
@@ -34,3 +43,5 @@ print(sorted_by_value)
 
 # # 주어진 단어가 dict.keys()에 있는지 확인
 
+# 팩트와 가설구 구분한다
+#
