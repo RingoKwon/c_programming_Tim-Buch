@@ -6,19 +6,21 @@ char *strcpy(char *destination, char *source)
     char *tempPtr;
     tempPtr = destination;
 
-    int i = 0; 
+    int i = 0;
     while (source[i] != '\0')
     {
         destination[i] = source[i];
+        i++;
     }
-    
+    destination[i] = '\0';
+
     return tempPtr;
 }
 
 int main()
 {
     char *str = "ring";
-    char *newStr ; 
+    char newStr[30];
     char *tempResult;
 
     tempResult = strcpy(newStr, str);
