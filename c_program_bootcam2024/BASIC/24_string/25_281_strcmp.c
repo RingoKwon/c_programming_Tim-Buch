@@ -3,7 +3,7 @@
 #include <stdbool.h>
 // #include <string.h>
 
-void lower(char input ) {
+char lower(char input ) {
     if(input >= 65 && input <= 90)
     input = input +32; 
     // upper to lower 
