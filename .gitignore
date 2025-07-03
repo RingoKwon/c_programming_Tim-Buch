@@ -61,3 +61,24 @@ Thumbs.db
 # Custom ignore
 # Add any project specific files or directories you want to ignore
 
+# CodeLite IDE specific files
+*.workspace
+*.project
+*.mk
+*.txt
+compile_commands.json
+
+# Build directories and output files
+build-*/
+Debug/
+Release/
+*.o.d
+
+# Temporary code runner files (VS Code)
+tempCodeRunnerFile
+tempCodeRunnerFile.*
+
+# Python cache files (for mixed projects)
+__pycache__/
+*.pyc
+*.pyo
