@@ -38,41 +38,78 @@ int strcmp(char *cmp1, char *cmp2)
 {
     int len1 = strLen(cmp1);
     int len2 = strLen(cmp2);
-    int lenLong;
-    if (len1 >= len2)
+    int output;
+    int minLen;
+
+    if (len1 > len2)
     {
-        lenLong = len1;
+        minLen = len2;
     }
     else
     {
-        lenLong = len2;
-    }
-// 길이 같고 모두 같으면 같다 
-// 길이 다르고 짧은거 기준 같은경우 짧은게 우선 
-// 나머지는 짧은거 기준 최초 다른거 기준 
-    int i = 0;
-    for (i; lenLong, i++)
-    {
-        
+        minLen = len1;
     }
 
-    return lenLong;
+    int i = 0;
+    if (len1 == len2)
+    {
+        for (i = 0; i < len1; i++)
+        {
+            if (cmp1[i] < cmp2[i])
+            {
+                output = -1;
+                break;
+            }
+            else if (cmp1[i] > cmp2[i])
+            {
+                output = 1;
+                break;
+            }
+            else
+            {
+                output = 0;
+            }
+        }
+    }
+    else
+    {
+        for (i = 0; i < minLen; i++)
+        {
+            if (cmp1[i] < cmp2[i])
+            {
+                output = -1;
+                break;
+            }
+            else if (cmp1[i] > cmp2[i])
+            {
+                output = 1;
+                break;
+            }
+            else
+            {
+                if (len1 > len2)
+                {
+                    output = 1;
+                }
+                else
+                {
+                    output = -1;
+                }
+            }
+        }
+    }
+    // 길이 같고 모두 같으면 같다
+    // 길이 다르고 짧은거 기준 같은경우 짧은게 우선
+    // 나머지는 짧은거 기준 최초 다른거 기준
+
+    return output;
 }
 
 int main()
 {
-    bool a;
-    char *b;
     int c;
 
-    a = 'D' == 69;
-    printf("%d\n", a);
-    b = lower("Sdd");
-    printf("%s\n", b);
-    c = strLen("dd");
-    printf("%d\n", c);
-
-    c = strcmp("d", "d");
+       c = strcmp("bcc", "bcca");
     printf("%d\n", c);
 
     return 0;
