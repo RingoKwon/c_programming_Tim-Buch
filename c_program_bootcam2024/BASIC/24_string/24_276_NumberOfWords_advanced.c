@@ -4,9 +4,9 @@
 
 int main()
 {
-    char dd[100] = "  a b   c   ";
+    char dd[100] = "  dfdf b   c   ";
     int i;
-    int cnt =0; 
+    int cnt = 0;
     // count space right after the character
     for (i = 0; i < strlen(dd); i++)
     {
@@ -14,8 +14,7 @@ int main()
         {
             if (dd[i - 1] != ' ' && dd[i] == ' ')
             {
-                cnt++; 
-
+                cnt++;
             }
         }
     }
