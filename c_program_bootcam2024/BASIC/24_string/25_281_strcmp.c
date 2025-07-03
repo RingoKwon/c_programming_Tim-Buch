@@ -3,20 +3,27 @@
 #include <stdbool.h>
 // #include <string.h>
 
-char lower(char *input)
+char* lower(char *input)
 {
-    int i = 0; 
-    char output[300];
+    int i = 0;
+    static char output[300];
 
     while (input[i] != '\0')
     {
         /* code */
         if (input[i] >= 65 && input[i] <= 90)
+        {
             output[i] = input[i] + 32;
-        i++; 
+        }
+        else
+        {
+            output[i] = input[i];
+        }
+        i++;
         // upper to lower
     }
-    return *output;
+    output[i] = '\0';
+    return output;
 }
 int strcmp(char *cmp1, char *cmp2)
 {
@@ -27,10 +34,10 @@ int strcmp(char *cmp1, char *cmp2)
 int main()
 {
     bool a;
-    char b[300];
+    char *b;
     a = 'D' == 69;
     printf("%d", a);
-    b = lower('Sdd');
+    b = lower("Sdd");
     printf("%s", b);
 
     return 0;
