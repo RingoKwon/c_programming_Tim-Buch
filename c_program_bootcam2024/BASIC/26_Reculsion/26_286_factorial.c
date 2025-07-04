@@ -18,4 +18,4 @@ int main()
     result= facto(num);
     printf("Answer: %d", result);
     return 0;
-}
+} 
