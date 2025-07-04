@@ -5,12 +5,15 @@
 int fibbo(int idx)
 {
     // n =  n-1 + n-2
-    if (idx == 0)
-        return 0;
+    
     if (idx == 1)
+        return 0;
+    if (idx == 2)
         return 1;
-    return idx + fibbo(idx - 1);
-
+    return fibbo(idx-2) + fibbo(idx-1);
+// 1 2 3 4 5 6
+// 0 1 1 2 3 5
+// 
 }
 int main()
 {
