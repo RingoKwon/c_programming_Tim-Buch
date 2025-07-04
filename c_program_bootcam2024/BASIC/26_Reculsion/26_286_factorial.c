@@ -2,8 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
+int facto(int input)
+{
+    if (input == 1)
+        return 1; 
+    return input * ( input -1 );
+}
 int main()
 {
-    
-	return 0;
+    int num;
+    printf("Enter Num: ");
+    scanf("%d", &num);
+    facto(num);
+    printf("Answer: %d", num);
+    return 0;
 }
