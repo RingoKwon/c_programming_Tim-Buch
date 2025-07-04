@@ -10,11 +10,11 @@ int sumDigit(int num ,int  i )
     if (denom >= num) 
         return  num / denom; 
     int remainder = num % denom;
-    printf("remainder: %d, i: %d\n", remainder, i);
+    printf("remainder: %d, i: %d, num : %d add: %d denom: %d\n", remainder, i, num, remainder/(denom/10), denom);
 
     num = num - remainder;
 
-    return remainder + sumDigit(remainder, i+1 );
+    return remainder/denom + sumDigit(num, i+1 );
 }
 
 int main()
