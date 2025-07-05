@@ -29,28 +29,59 @@
 *.hex
 
 # C executable files without extension (compiled from .c files)
-# Pattern: ignore files that have a corresponding .c file but exclude .c files themselves
-**/[0-9]*_*
-!**/*.[ch]
-!**/*.c
-!**/*.h
-!**/*.cpp
-!**/*.hpp
+# Only ignore files that don't have an extension AND match numeric patterns
+# This will ignore: 26_temp, 10_test, etc. but NOT 26_temp.c, 10_test.c
+c_program_bootcam2024/BASIC/*/[0-9]*_*
+!c_program_bootcam2024/BASIC/*/*.c
+!c_program_bootcam2024/BASIC/*/*.h
+c_program_bootcam2024/BASIC/*/*/[0-9]*_*
+!c_program_bootcam2024/BASIC/*/*/*.c
+!c_program_bootcam2024/BASIC/*/*/*.h
 tempCodeRunnerFile
+
+# For files that don't start with numbers, use a more specific pattern
+# This will ignore any file without extension in the BASIC directory structure
+# but keep all source files (.c, .h)
+c_program_bootcam2024/BASIC/*/*/*
+!c_program_bootcam2024/BASIC/*/*/*.*
+c_program_bootcam2024/BASIC/*/*
+!c_program_bootcam2024/BASIC/*/*.*
 
 # Common C executable names (when .c file exists)
 # Only ignore if there's a corresponding .c file
 **/test
-**/main  
+!**/test.c
+!**/test.h
+**/main
+!**/main.c
+!**/main.h
 **/program
+!**/program.c
+!**/program.h
 **/hello
+!**/hello.c
+!**/hello.h
 **/output
+!**/output.c
+!**/output.h
 **/app
+!**/app.c
+!**/app.h
 **/demo
+!**/demo.c
+!**/demo.h
 **/example
+!**/example.c
+!**/example.h
 **/homework
+!**/homework.c
+!**/homework.h
 **/assignment
+!**/assignment.c
+!**/assignment.h
 **/practice
+!**/practice.c
+!**/practice.h
 
 # Debug files
 *.dSYM/
@@ -100,15 +131,6 @@ Release/
 # Temporary code runner files (VS Code)
 tempCodeRunnerFile
 tempCodeRunnerFile.*
-
-# C executable files (same name as .c file but no extension)
-# This ignores compiled executables like: test.c -> test
-**/test
-**/main
-**/program
-**/hello
-**/output
-**/app
 
 # Python cache files (for mixed projects)
 __pycache__/
