@@ -35,6 +35,20 @@
 **/[0-9][0-9][0-9]_*
 tempCodeRunnerFile
 
+# Common C executable names (when .c file exists)
+# Only ignore if there's a corresponding .c file
+**/test
+**/main  
+**/program
+**/hello
+**/output
+**/app
+**/demo
+**/example
+**/homework
+**/assignment
+**/practice
+
 # Debug files
 *.dSYM/
 *.su
@@ -68,12 +82,11 @@ Thumbs.db
 # Custom ignore
 # Add any project specific files or directories you want to ignore
 
-# CodeLite IDE specific files
-*.workspace
-*.project
-*.mk
-*.txt
-compile_commands.json
+# VS Code specific files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/c_cpp_properties.json
 
 # Build directories and output files
 build-*/
@@ -85,27 +98,14 @@ Release/
 tempCodeRunnerFile
 tempCodeRunnerFile.*
 
-# Python cache files (for mixed projects)
-__pycache__/
-*.pyc
-*.pyo
-
-# CodeLite IDE specific files
-*.workspace
-*.project
-*.mk
-*.txt
-compile_commands.json
-
-# Build directories and output files
-build-*/
-Debug/
-Release/
-*.o.d
-
-# Temporary code runner files (VS Code)
-tempCodeRunnerFile
-tempCodeRunnerFile.*
+# C executable files (same name as .c file but no extension)
+# This ignores compiled executables like: test.c -> test
+**/test
+**/main
+**/program
+**/hello
+**/output
+**/app
 
 # Python cache files (for mixed projects)
 __pycache__/
