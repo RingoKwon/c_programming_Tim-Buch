@@ -4,7 +4,7 @@
 
 int digitCnt(int num)
 {
-    if (num < 9)
+    if (num <=  9)
         return 1; 
     return 1 + digitCnt(num/10);
 }

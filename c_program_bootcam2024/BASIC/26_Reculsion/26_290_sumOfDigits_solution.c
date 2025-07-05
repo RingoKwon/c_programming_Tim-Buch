@@ -4,7 +4,7 @@
 
 int sumDigit(int num)
 {
-    if ( num < 9 )
+    if ( num <= 9 )
         return num; 
     return num%10 +sumDigit(num/10);
 }
