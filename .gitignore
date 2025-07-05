@@ -29,10 +29,13 @@
 *.hex
 
 # C executable files without extension (compiled from .c files)
-# Pattern: ignore files that have a corresponding .c file
+# Pattern: ignore files that have a corresponding .c file but exclude .c files themselves
 **/[0-9]*_*
-**/[0-9][0-9]_*
-**/[0-9][0-9][0-9]_*
+!**/*.[ch]
+!**/*.c
+!**/*.h
+!**/*.cpp
+!**/*.hpp
 tempCodeRunnerFile
 
 # Common C executable names (when .c file exists)
