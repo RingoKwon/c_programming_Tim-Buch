@@ -8,7 +8,6 @@
 int numCheckUnder(int previous, int threshold)
 {
 
-
     int input;
     int output = previous;
 
@@ -25,7 +24,7 @@ int numCheckUnder(int previous, int threshold)
     {
         output += 0;
     }
-    return  numCheckUnder(output, threshold);
+    return numCheckUnder(output, threshold);
 }
 int main()
 {
