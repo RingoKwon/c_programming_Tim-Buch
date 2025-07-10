@@ -34,6 +34,14 @@ Rational add(Rational input1, Rational input2)
                        (input1.denominator * input2.numerator);
     return output;
 }
+Rational sub(Rational input1, Rational input2)
+{
+    Rational output;
+    output.denominator = input1.denominator * input2.denominator;
+    output.numerator = (input1.numerator * input2.denominator) -
+                       (input1.denominator * input2.numerator);
+    return output;
+}
 
 //  print
 void print_single(Rational input)
@@ -42,10 +50,7 @@ void print_single(Rational input)
     printf("Output: %.2f(%d/%d)\n", float_num, input.numerator, input.denominator);
 }
 // print double factor 
-void print_double(Rational in1, Rational in2 )
-{
-    printf("in2 %d/%d, in2 %d/%d\n", in1.numerator, in1.denominator, in2.numerator, in2.denominator);
-}
+
 
 int main()
 {
@@ -57,13 +62,25 @@ int main()
     a2.numerator = 7; 
     
 
+    printf("in1: %d/%d, in2: %d/%d\n", a1.numerator, a1.denominator, a2.numerator, a2.denominator);
     
     Rational output_increment = increment(a1);
     Rational output_decrement = decrement(a1);
+    printf("icrement, decrement\n");
     print_single(output_increment);
     print_single(output_decrement);
+    
+    printf("addition, subscription\n");
+    Rational out_add = add(a1, a2); 
+    print_single(out_add);
+    Rational out_sub = sub(a1, a2); 
+    print_single(out_sub);
 
-    Rational
+
+
+
+
+
 
 
 
