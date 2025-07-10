@@ -26,7 +26,7 @@ Rational decrement(Rational input)
 void print_single(Rational input)
 {
     double float_num =1.00* input.numerator/input.denominator;
-    printf("Output: %.2f(%d/%d)", float_num, input.numerator, input.denominator);
+    printf("Output: %.2f(%d/%d)\n", float_num, input.numerator, input.denominator);
 }
 
 int main()
@@ -39,6 +39,6 @@ int main()
     Rational output_decrement = decrement(a1); 
     print_single(output_increment);
     print_single(output_decrement);
-    printf("%f", 1.0 * a1.numerator / a1.denominator);
+
     return 0;
 }
