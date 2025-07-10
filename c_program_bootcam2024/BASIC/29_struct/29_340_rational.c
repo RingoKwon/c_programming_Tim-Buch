@@ -50,6 +50,19 @@ Rational mutiple(Rational input1, Rational input2)
     output.denominator = input1.denominator * input2.denominator;
     return output; 
 }
+
+char* compare(Rational input1, Rational input2)
+{
+    input1.numerator = input1.numerator *input2.denominator;
+    input2.numerator = input2.numerator * input1.denominator;
+    if (input1.numerator ==input2.numerator )
+        return "equal";
+    if (input1.numerator > input2.numerator )
+        return "inpu1 bigger";
+    return "input1 smaller";
+
+}
+
 Rational division(Rational input1, Rational input2)
 {
     Rational output;
@@ -73,7 +86,7 @@ int main()
     a1.numerator = 3;
     Rational a2;
     a2.denominator = 4;
-    a2.numerator = 7;
+    a2.numerator = 2;
 
     printf("in1: %d/%d, in2: %d/%d\n", a1.numerator, a1.denominator, a2.numerator, a2.denominator);
 
@@ -94,5 +107,8 @@ int main()
     print_single(out_mul);
     Rational out_div = division(a1, a2);
     print_single(out_div);
+
+    printf("mutiplication, division\n");
+    printf("%s", compare(a1,a2));
     return 0;
 }
