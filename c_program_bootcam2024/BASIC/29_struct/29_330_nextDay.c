@@ -12,12 +12,23 @@ typedef struct date
 void printDay(Date dt)
 {
     printf("date\nday: %d, month: %d, year: %d\n", dt.day, dt.month, dt.year);
-    printf("date+1\nday: %d, month: %d, year: %d\n", dt.day+1, dt.month, dt.year);
+    if (dt.day + 1 > 31)
+    {
+        dt.month++;
+        dt.day = 0;
+        }
+    if (dt.month > 12)
+    {
+
+        dt.year++;
+        dt.month = 1;
+    }
+    printf("date+1\nday: %d, month: %d, year: %d\n", dt.day + 1, dt.month, dt.year);
 }
 
 Date setDate()
 {
-    Date dt; 
+    Date dt;
     printf("d:");
     scanf("%d", &dt.day);
     printf("m:");
@@ -31,8 +42,8 @@ Date setDate()
 int main()
 {
     Date day;
-    day.day = 1;
-    day.month = 3;
+    day.day = 31;
+    day.month = 12;
     day.year = 2021;
 
     printDay(day);
