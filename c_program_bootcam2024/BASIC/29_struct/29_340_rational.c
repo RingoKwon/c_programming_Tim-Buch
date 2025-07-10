@@ -43,7 +43,7 @@ Rational sub(Rational input1, Rational input2)
     return output;
 }
 
-Rational mutiple(Rational input1, Rational input2)
+Rational multiply(Rational input1, Rational input2)
 {
     Rational output;
     output.numerator = input1.numerator * input2.numerator;
@@ -53,14 +53,12 @@ Rational mutiple(Rational input1, Rational input2)
 
 char* compare(Rational input1, Rational input2)
 {
-    input1.numerator = input1.numerator *input2.denominator;
-    input2.numerator = input2.numerator * input1.denominator;
-    if (input1.numerator ==input2.numerator )
-        return "equal";
-    if (input1.numerator > input2.numerator )
-        return "inpu1 bigger";
+    int cross1 = input1.numerator * input2.denominator;
+    int cross2 = input2.numerator * input1.denominator;
+    
+    if (cross1 == cross2) return "equal";
+    if (cross1 > cross2) return "input1 bigger";
     return "input1 smaller";
-
 }
 
 Rational division(Rational input1, Rational input2)
@@ -92,23 +90,23 @@ int main()
 
     Rational output_increment = increment(a1);
     Rational output_decrement = decrement(a1);
-    printf("icrement, decrement\n");
+    printf("increment, decrement\n");
     print_single(output_increment);
     print_single(output_decrement);
 
-    printf("addition, subscription\n");
+    printf("addition, subtraction\n");
     Rational out_add = add(a1, a2);
     print_single(out_add);
     Rational out_sub = sub(a1, a2);
     print_single(out_sub);
     
-    printf("mutiplication, division\n");
-    Rational out_mul = mutiple(a1, a2);
+    printf("multiplication, division\n");
+    Rational out_mul = multiply(a1, a2);
     print_single(out_mul);
     Rational out_div = division(a1, a2);
     print_single(out_div);
 
-    printf("mutiplication, division\n");
+    printf("comparison\n");
     printf("%s", compare(a1,a2));
     return 0;
 }
