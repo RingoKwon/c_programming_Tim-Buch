@@ -12,6 +12,7 @@ typedef struct date
 void printDay(Date dt)
 {
     printf("date\nday: %d, month: %d, year: %d\n", dt.day, dt.month, dt.year);
+    printf("date+1\nday: %d, month: %d, year: %d\n", dt.day+1, dt.month, dt.year);
 }
 
 Date setDate()
