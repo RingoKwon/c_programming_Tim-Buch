@@ -6,26 +6,26 @@
 int main()
 {
     int sourceArr[SIZE] = {7, 5, 9, 8, 6, 10, 5, 7, 8, 9, 6, 7, 5, 8, 9, 10, 6, 7, 8, 5};
-    int countArr[11] = {0};
+    int countArr[6] = {0};
 
     int i;
     for (i = 0; i < SIZE; i++)
     {
-        countArr[sourceArr[i]]++;
+        countArr[sourceArr[i]-5]++;
     }
 
     // 결과 출력
     printf("Number frequency:\n");
-    for (i = 0; i < 11; i++)
+    for (i = 0; i < 6; i++)
     {
         if (countArr[i] > 0)
         {
-            printf("Number %d appears %d times\n", i, countArr[i]);
+            printf("Number %d appears %d times\n", i + 5, countArr[i]);
         }
     }
 
     int idx = 0;
-    for (i = 0; i < 10; i++)  // 0~9 모든 숫자 확인
+    for (i = 0; i < 6; i++)  // 0~5 모든 인덱스 확인
     {
         if (countArr[i] >= countArr[idx])
         {
@@ -33,7 +33,7 @@ int main()
             idx = i;
         }
     }
-    printf("Most frequent number: %d (%d times)\n", idx, countArr[idx]);
+    printf("Most frequent number: %d (%d times)\n", idx + 5, countArr[idx]);
 
     return 0;
 }
