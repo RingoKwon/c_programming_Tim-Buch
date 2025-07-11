@@ -25,7 +25,7 @@ int main()
     }
 
     int idx = 0;
-    for (i = 0; i < 9; i++)
+    for (i = 0; i < 10; i++)  // 0~9 모든 숫자 확인
     {
         if (countArr[i] >= countArr[idx])
         {
@@ -33,7 +33,7 @@ int main()
             idx = i;
         }
     }
-    printf("Most frequant number: %d(%d times)", idx, countArr[idx]);
+    printf("Most frequent number: %d (%d times)\n", idx, countArr[idx]);
 
     return 0;
 }
