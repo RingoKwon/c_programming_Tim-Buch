@@ -16,7 +16,7 @@ int main()
 
     // 결과 출력
     printf("Number frequency:\n");
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < 11; i++)
     {
         if (countArr[i] > 0)
         {
