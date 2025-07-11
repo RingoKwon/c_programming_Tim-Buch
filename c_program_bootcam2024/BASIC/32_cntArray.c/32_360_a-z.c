@@ -16,17 +16,17 @@ int main()
     }
 
     // 결과 출력
-    printf("Number frequency:\n");
-    for (i = 0; i < 6; i++)
+    printf("Character frequency:\n");
+    for (i = 0; i < 26; i++)
     {
         if (countArr[i] > 0)
         {
-            printf("Number %c appears %d times\n", i + 97, countArr[i]);
+            printf("Character '%c' appears %d times\n", i + 97, countArr[i]);
         }
     }
 
     int idx = 0;
-    for (i = 0; i < 6; i++)  // 0~5 모든 인덱스 확인
+    for (i = 0; i < 26; i++)  // a~z 모든 문자 확인
     {
         if (countArr[i] >= countArr[idx])
         {
@@ -34,7 +34,7 @@ int main()
             idx = i;
         }
     }
-    printf("Most frequent number: %c (%d times)\n", idx + 97, countArr[idx]);
-    printf("%d", 'z');
+    printf("Most frequent character: '%c' (%d times)\n", idx + 97, countArr[idx]);
+    
     return 0;
 }
