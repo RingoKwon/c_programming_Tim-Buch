@@ -4,17 +4,15 @@
 
 int main()
 {
-    FILE *fp; // fp는 "file pointer"의 약자입니다.
+    FILE* fp; // fp는 "file pointer"의 약자입니다.
 
-    fp = fopen("myFirstFile1.txt", "r");
+    fp = fopen("myFirstFile1.txt", "w");
 
     int num;
     if (fp != NULL)
     {
-        fprintf(stdout, "endter: " );
-        fscanf(stdin, "%d", &num);
-        fclose(fp);
+        fputs("ringo", fp);
     }
-    printf("%d", num); 
+    printf("%d", num);
     return 0;
 }
