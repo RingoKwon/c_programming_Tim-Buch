@@ -61,6 +61,16 @@ int main()
             countArr[idxArr[i]]++;
         }
     }
+    // The most appeared char
+    int maxIdxIdx = 0;
+    for (i = 0; i < ARRLEN - 1; i++)
+    {
+        if (countArr[i] > countArr[i + 1])
+            maxIdxIdx = i;
+    }
+
+    int maxIdxChar = charArr[maxIdxIdx];
+
     // checking
     int sum = 0;
     for (i = 0; i < ARRLEN; i++)
@@ -74,6 +84,7 @@ int main()
     printf("------\n");
     printf("total: %d\n", sum);
     printf("------\n");
-    
+    printf("%d -  %c", maxIdxChar, maxIdxChar);
+
     return 0;
 }
