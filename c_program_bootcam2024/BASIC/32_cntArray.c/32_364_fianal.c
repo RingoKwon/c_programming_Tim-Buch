@@ -15,7 +15,7 @@ int main()
     char sourceArr[SIZE] = {'d', 'E', 'm', 'O', ' ', 't', 'e', 'x', 't', 'd'};
     char idxArr[SIZE];
     char charArr[SIZE];
-    #define ARRLEN 53
+#define ARRLEN 53
     int countArr[ARRLEN] = {0}; // 26 lowercase + 26 uppercase + 1 space
     int i;
     int lowerAdj = -97, upperAjd = -39, spaceAdj = +20;
@@ -30,37 +30,33 @@ int main()
         {
             idxArr[i] = sourceArr[i] + lowerAdj;
             countArr[idxArr[i]]++;
-            charArr[i] = i+lowerAdj;
         }
         else if (sourceArr[i] >= 'A' && sourceArr[i] <= 'Z')
         {
             idxArr[i] = sourceArr[i] + upperAjd;
             countArr[idxArr[i]]++;
-            charArr[i] = i+upperAjd; 
         }
         else if (sourceArr[i] == ' ')
         {
             idxArr[i] = sourceArr[i] + spaceAdj;
             countArr[idxArr[i]]++;
-            charArr[i] = +spaceAdj; 
         }
     }
-// checking
-    int sum = 0 ; 
+    // checking
+    int sum = 0;
     for (i = 1; i < ARRLEN; i++)
     {
-        printf("%d\n", countArr[i]);
-        sum += countArr[i]; 
+        // printf("%d\n", countArr[i]);
+        printf("%d\n", charArr[i]);
+        sum += countArr[i];
     }
 
     printf("total: %d\n", sum);
 
-    for( i =0; i < ARRLEN; i++)
+    for (i = 0; i < ARRLEN; i++)
     {
         printf("%c", i);
     }
 
-
-    
     return 0;
 }
