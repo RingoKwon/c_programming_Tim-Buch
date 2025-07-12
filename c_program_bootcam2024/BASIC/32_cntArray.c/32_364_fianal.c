@@ -63,7 +63,7 @@ int main()
     }
     // The most appeared char
     int maxIdx = 0;
-    for (i = 0; i < ARRLEN - 1; i++)
+    for (i = 0; i < ARRLEN; i++)
     {
         if (countArr[maxIdx] < countArr[i])
             maxIdx = i;
@@ -82,7 +82,7 @@ int main()
     printf("------\n");
     printf("total: %d\n", sum);
     printf("------\n");
-    printf("The most frequantly appeared characor: %c(%d times)\n", charArr[maxIdx], countArr[maxIdx]);
+    printf("The most frequently appeared character: %c (%d times)\n", charArr[maxIdx], countArr[maxIdx]);
 
     return 0;
 }
