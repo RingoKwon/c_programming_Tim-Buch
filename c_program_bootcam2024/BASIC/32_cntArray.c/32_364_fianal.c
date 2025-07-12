@@ -13,7 +13,7 @@
 */
 int main()
 {
-    char sourceArr[SIZE] = {'d', 'E', 'm', 'O', ' ', 't', 'e', 'x', 't', 'd'};
+    char sourceArr[SIZE] = {'d', 'E', 'm', 'O', ' ', 't', 'e', 't', 't', 'd'};
     char idxArr[SIZE] = {0};
     char charArr[ARRLEN] = {0};
     int countArr[ARRLEN] = {0}; // 26 lowercase + 26 uppercase + 1 space
@@ -62,29 +62,27 @@ int main()
         }
     }
     // The most appeared char
-    int maxIdxIdx = 0;
+    int maxIdx = 0;
     for (i = 0; i < ARRLEN - 1; i++)
     {
-        if (countArr[i] > countArr[i + 1])
-            maxIdxIdx = i;
+        if (countArr[maxIdx] < countArr[i])
+            maxIdx = i;
     }
 
-    int maxIdxChar = charArr[maxIdxIdx];
+    // int maxIdxChar = charArr[maxIdxIdx];
 
     // checking
     int sum = 0;
     for (i = 0; i < ARRLEN; i++)
     {
         // printf("%d\n", countArr[i]);
-        printf("%c - ", charArr[i]);
-        printf("%d\n", countArr[i]);
         sum += countArr[i];
     }
 
     printf("------\n");
     printf("total: %d\n", sum);
     printf("------\n");
-    printf("%d -  %c", maxIdxChar, maxIdxChar);
+    printf("The most frequantly appeared characor: %c(%d times)\n", charArr[maxIdx], countArr[maxIdx]);
 
     return 0;
 }
