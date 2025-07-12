@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define SIZE 10
+#define ARRLEN 53
 /*
 [Problem]
 // Create an array to count occurrences of 'a'-'z', 'A'-'Z', and ' ' (space)
@@ -13,9 +14,8 @@
 int main()
 {
     char sourceArr[SIZE] = {'d', 'E', 'm', 'O', ' ', 't', 'e', 'x', 't', 'd'};
-    char idxArr[SIZE];
-    char charArr[SIZE];
-#define ARRLEN 53
+    char idxArr[SIZE] = {0};
+    char charArr[ARRLEN] = {0};
     int countArr[ARRLEN] = {0}; // 26 lowercase + 26 uppercase + 1 space
     int i;
     int lowerAdj = -97, upperAjd = -39, spaceAdj = +20;
@@ -24,6 +24,25 @@ int main()
     // - |A-Z|: x-39  = 26~51
     // - ' '  : 32+20 = 52
 
+    //  create charArr
+    for (i = 0; i < ARRLEN; i++)
+    {
+        if (i>=0 && i <= 25)
+        {
+            charArr[i] = i - lowerAdj;
+        }
+        else if (i >= 26 && i <= 51 )
+        {
+
+            charArr[i] = i - upperAjd;
+        }
+        else if (i == 52)
+        {
+            charArr[i] = i - spaceAdj;
+        }
+    }
+
+    // idx trasfer & counting
     for (i = 0; i < SIZE; i++)
     {
         if (sourceArr[i] >= 'a' && sourceArr[i] <= 'z')
@@ -44,7 +63,7 @@ int main()
     }
     // checking
     int sum = 0;
-    for (i = 1; i < ARRLEN; i++)
+    for (i = 0; i < ARRLEN; i++)
     {
         // printf("%d\n", countArr[i]);
         printf("%d\n", charArr[i]);
