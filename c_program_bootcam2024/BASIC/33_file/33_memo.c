@@ -10,11 +10,14 @@ int main()
 
     if( fp != NULL )
     {
-        printf("not null"); 
-        printf("%p", fp);
+        fputc('H', fp);
+        fputc('e', fp);
+        fputc('y', fp);
+
+
         fclose(fp);
     }
-
+    putchar('a');
     
 	return 0;
 }
