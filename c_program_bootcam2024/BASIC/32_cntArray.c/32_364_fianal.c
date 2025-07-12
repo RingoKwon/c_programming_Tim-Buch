@@ -27,11 +27,11 @@ int main()
     //  create charArr
     for (i = 0; i < ARRLEN; i++)
     {
-        if (i>=0 && i <= 25)
+        if (i >= 0 && i <= 25)
         {
             charArr[i] = i - lowerAdj;
         }
-        else if (i >= 26 && i <= 51 )
+        else if (i >= 26 && i <= 51)
         {
 
             charArr[i] = i - upperAjd;
@@ -66,16 +66,14 @@ int main()
     for (i = 0; i < ARRLEN; i++)
     {
         // printf("%d\n", countArr[i]);
-        printf("%d\n", charArr[i]);
+        printf("%c - ", charArr[i]);
+        printf("%d\n", countArr[i]);
         sum += countArr[i];
     }
 
+    printf("------\n");
     printf("total: %d\n", sum);
-
-    for (i = 0; i < ARRLEN; i++)
-    {
-        printf("%c", i);
-    }
-
+    printf("------\n");
+    
     return 0;
 }
