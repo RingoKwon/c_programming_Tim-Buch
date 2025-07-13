@@ -4,16 +4,18 @@
 
 int main()
 {
-    FILE* fp; // fp는 "file pointer"의 약자입니다.
+    FILE *fp; // fp는 "file pointer"의 약자입니다.
 
-    fp = fopen("myFirstFile1.txt", "w");
-
-    int num;
+    int count = 0;
+    char myString[10]; 
+    fp = fopen("myFirstFile1.txt", "r");
     if (fp != NULL)
     {
-        fputs("ringo\n", fp);
-        fputs("ringo", fp);
+        while (fgets(myString, 10, fp))
+        {
+            printf("cnt: %d; str: %s\n", ++count, myString);
+        }
+        
     }
-    printf("%d", num);
     return 0;
 }
