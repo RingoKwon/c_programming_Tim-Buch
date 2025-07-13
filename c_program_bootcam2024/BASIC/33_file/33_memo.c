@@ -11,6 +11,7 @@ int main()
     int num;
     if (fp != NULL)
     {
+        fputs("ringo\n", fp);
         fputs("ringo", fp);
     }
     printf("%d", num);

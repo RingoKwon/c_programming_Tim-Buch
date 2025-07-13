@@ -1,1 +1,4 @@
 ringo
+ringo
+Do you love the course so far? 
+This is a sample string that is exactly one hundred and fifty characters long. It is being used to demonstrate how to write a string of a specific length in a text file for testing purposes.
