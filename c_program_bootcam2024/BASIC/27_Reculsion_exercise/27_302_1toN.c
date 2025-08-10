@@ -36,8 +36,9 @@ int main(void)
 {
     int nb;
     
-    printf("enterN: ");
-    scanf("%d", &nb);
+    // printf("enterN: ");
+    // scanf("%d", &nb);
+    nb = 3;
     n2one(nb);
     one2n(nb);
     printf("\n---------------\n");
