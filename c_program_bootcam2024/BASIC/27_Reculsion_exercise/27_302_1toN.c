@@ -18,6 +18,20 @@ void n2one(int nb)
     }
 }
 
+void n2one2n(int nb)
+{
+    if (nb == 1)
+    {
+        printf("%d ", 1);
+    }
+    else
+    {
+        printf("%d ", nb);
+        n2one2n(nb - 1);
+        printf("%d ", nb);
+    }
+}
+
 int main(void)
 {
     int nb;
@@ -26,5 +40,8 @@ int main(void)
     scanf("%d", &nb);
     n2one(nb);
     one2n(nb);
+    printf("\n---------------\n");
+    n2one2n(nb);
+    printf("\n");
     return 0;
 }
