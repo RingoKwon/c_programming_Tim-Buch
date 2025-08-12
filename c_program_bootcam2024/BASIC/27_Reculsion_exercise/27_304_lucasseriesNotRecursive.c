@@ -3,24 +3,26 @@
 void    lucanotrecurs(int nb)
 {
     int i;
-    int out;
+    int new;
+    int prev;
+    int curr;
 
-    i = 0;
-    out = 0;
+    new = 0;
+    prev = 2;
+    curr = 1;
+    i = 1;
     while (i < nb)
     {
-        if (i <= 0)
-            out += 2;
-        else if (i <= 1)
-            out += 1;
-        else 
-            out += out;
+        new = prev + curr;
+        prev = curr;
+        curr =new;
         i++;
     }
-    printf("%d", out);
+    printf("%d", curr);
 }
+
 
 int main(void)
 {
-    lucanotrecurs(3);
+    lucanotrecurs(5);
 }
