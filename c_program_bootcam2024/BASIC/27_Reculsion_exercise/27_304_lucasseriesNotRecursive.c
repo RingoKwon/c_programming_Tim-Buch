@@ -11,6 +11,18 @@ void    lucanotrecurs(int nb)
     prev = 2;
     curr = 1;
     i = 1;
+    if (nb == 1)
+    {
+        printf("%d", curr);
+        return ;
+    }
+    else if (nb == 0)
+    {
+        printf("%d", prev);
+        return ;
+    }
+    else if ( nb < 0 )
+        return ;
     while (i < nb)
     {
         new = prev + curr;
@@ -24,5 +36,5 @@ void    lucanotrecurs(int nb)
 
 int main(void)
 {
-    lucanotrecurs(5);
+    lucanotrecurs(11);
 }
