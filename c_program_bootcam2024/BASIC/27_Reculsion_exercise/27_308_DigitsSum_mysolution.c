@@ -5,15 +5,34 @@
 
 int digitSum(int num)
 {
-    return 0;
+    int sum;
+
+    sum = 0;
+    if(num < 10)
+        return num;
+    sum += digitSum(num / 10);
+    sum += num % 10;
+    return sum;
 }
 
 int isEven(int num)
 {
+    if(num % 2 == 0)
+        return 1;
     return 0;
 }
 
 int main(void)
 {
-    printf("test");
+    int num;
+    int numsum;
+    int output;
+
+    printf("Enter Number: ");
+    scanf("%d", &num);
+    if(num < 0)
+        num *= -1;
+    numsum = digitSum(num);
+    output = isEven(numsum);
+    printf("Output is %d", output);
 }
