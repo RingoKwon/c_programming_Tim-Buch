@@ -4,6 +4,7 @@ int pellNum(int n)
 {
     int prev;
     int curr;
+    int temp;
     int i;
 
     prev = 0;
@@ -13,17 +14,22 @@ int pellNum(int n)
         return prev;
     if(n == 1)
         return curr;
-    while(i++ < n)
+    while(i++ < n - 1)
     {
-        printf("test\n");
+        temp = ( 2 * curr ) + prev;
+        prev = curr;
+        curr = temp;
     }
-    return 0;
+    return curr;
 }
 
 int main(void)
 {
     int output;
+    int num;
     
-    output = pellNum(3);
+    printf("Enter number: ");
+    scanf("%d", &num);
+    output = pellNum(num);
     printf("Output is %d", output);
 }
