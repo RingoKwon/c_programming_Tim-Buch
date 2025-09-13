@@ -23,4 +23,4 @@ int main(void)
 
     maxNum = findNum(3);
     printf("Maximum number is %d", maxNum);
-}
+    }
