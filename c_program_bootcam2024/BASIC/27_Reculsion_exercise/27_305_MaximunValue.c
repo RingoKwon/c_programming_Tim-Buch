@@ -21,6 +21,9 @@ int maxValue(int maxnum)
 }
 int main()
 {
-    maxValue(0);
+    int fstnum;
+    printf("Enter number: ");
+    scanf("%d", &fstnum);
+    maxValue(fstnum);
     return 0;
 }
