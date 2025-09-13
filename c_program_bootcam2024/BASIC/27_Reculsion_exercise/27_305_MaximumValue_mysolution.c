@@ -9,7 +9,7 @@ int maxValue(int maxnum)
     scanf("%d", &num);
     if (num == -1)
     {
-        printf("Maximun number is %d", maxnum);
+        printf("Maximum number is %d", maxnum);
         return 0;
     }
     if (maxnum < num)
