@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-int findMax(int num, int maxNum)
+int findNum(int num)
 {
+    int userInput;
     int maxNum;
-    int inputNum;
 
-    if(num >= 1)
+    printf("Enter Number: ");
+    scanf("%d", &userInput);
+    if(num > 1)
     {
-        maxNum = findMax(num - 1);
-        printf("Enter number: ");
-        scanf("%d", &inputNum);
-        if(inputNum > maxNum)
-            return inputNum;
+        maxNum = findNum(num - 1);
+        if(userInput > maxNum)
+            return userInput;
         return maxNum;
     }
-    printf("Maximum Number Is: %d", maxNum);
-    return 0;
+    return userInput;
 }
 
 int main(void)
 {
-    findMax(4);
+    int maxNum;
+
+    maxNum = findNum(3);
+    printf("Maximum number is %d", maxNum);
 }
