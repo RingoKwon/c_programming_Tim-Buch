@@ -19,16 +19,16 @@ int isEven(int num)
     if ( (num % 10) % 2 == 0 )
     {
         if(result == 1)
-            return result = 1;
+            return 1;
         else
-            return result = 0;
+            return 0;
     }
     else
     {
         if(result == 0)
-            return result = 1;
+            return 1;
         else
-            return result = 0;
+            return 0;
     }
     
     return -1;
