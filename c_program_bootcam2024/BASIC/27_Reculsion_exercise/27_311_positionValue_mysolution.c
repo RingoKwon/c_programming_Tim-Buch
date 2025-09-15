@@ -10,6 +10,7 @@ int conditionFlag(int position, int digit)
         return 0; 
     return 1;
 }
+
 int digitValue(int num, int position)
 {
     int digit;
@@ -17,14 +18,14 @@ int digitValue(int num, int position)
 
     digit = num % 10;
     position++;
-    sumerr = 0;
 
-    sumerr +=  conditionFlag(position, digit);
     if(num < 10)
-{ 
-    return sumerr;
-}
-    sumerr += digitValue(num / 10, position);
+    {
+        sumerr +=  conditionFlag(position, digit);
+        return sumerr;
+    }
+    digitValue(num / 10, position);
+    sumerr +=  conditionFlag(position, digit); 
     return sumerr;
 }
 
@@ -32,6 +33,6 @@ int main(void)
 {
     int output;
     printf("Enter Number: \n");
-    output += digitValue(432111, -1);
+    output = digitValue(12345, -1);
     printf("Output is %d", output);
 }
