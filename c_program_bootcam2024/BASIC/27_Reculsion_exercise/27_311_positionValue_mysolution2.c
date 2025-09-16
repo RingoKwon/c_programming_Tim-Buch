@@ -8,20 +8,22 @@ int positionValue(int num, int position)
 {
     int digit;
 
-    position++;
-    if(digit < 10)
-        return digit;
-    positionValue(num / 10, position);
+    digit = 0;
+
     digit = num % 10;
-    position--;
-    printf("p: %d\n", position);
-    printf("d: %d\n", digit);
-    printf("--------------\n");
-    return digit;
+    position++;
+    if(num < 10)
+    {
+        printf("position: %d; digit: %d\n", position, digit);
+        return 1;
+    }
+    positionValue(num / 10, position);
+    printf("position: %d; digit: %d\n", position, digit);
+    return 1;
 }
 
 int main(void)
 {
-    positionalue(2233, -1);
+    positionValue(2233, -1);
     return 0;
 }
