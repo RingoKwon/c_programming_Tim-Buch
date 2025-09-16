@@ -4,6 +4,12 @@
 // ex num = 1234 -> return = 1 
 // ex num = 1235 -> return = 0
 
+int isSame(int position, int digit)
+{
+    if(position % 2 == digit % 2)
+        return 1;
+    return 0;
+}
 int positionValue(int num, int position)
 {
     int digit;
@@ -19,6 +25,8 @@ int positionValue(int num, int position)
     }
     positionValue(num / 10, position);
     printf("position: %d; digit: %d\n", position, digit);
+    if(isSame(position, digit) == 0)
+        return 0;
     return 1;
 }
 
