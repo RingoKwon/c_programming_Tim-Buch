@@ -24,7 +24,7 @@ int isValid(int num)
             return 0;
     }
     if(!isEven(num / 10) && isEven(num % 10))
-        return 1 && isValid(num / 100);
+        return isValid(num / 100);
     return 0;
 }
 
