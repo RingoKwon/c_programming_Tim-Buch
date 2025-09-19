@@ -23,6 +23,8 @@ int isValid(int num)
         else
             return 0;
     }
+    if(!isEven(num / 10) && isEven(num % 10))
+        return 1 && isValid(num / 100);
     return 0;
 }
 
@@ -34,9 +36,6 @@ int main(void)
     printf("Enter number: ");
     scanf("%d", &input);
     output = isValid(input);
-    printf("left: %d\n", !isEven(input / 10));
-    printf("right: %d\n", isEven(input % 10));
-    printf("bool %d\n", !0 && 1 );
     printf("Output is %d", output);
     return 0;
 }
