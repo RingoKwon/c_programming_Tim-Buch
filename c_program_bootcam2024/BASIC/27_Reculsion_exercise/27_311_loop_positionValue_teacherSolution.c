@@ -12,6 +12,7 @@ int isValid(int num)
     if(num < 10)
         if(isEven(num))
             return 1;
+        printf("x\n");
         return 0;
     if(num < 100)
         if(!isEven(num / 10) && isEven(num % 10))
