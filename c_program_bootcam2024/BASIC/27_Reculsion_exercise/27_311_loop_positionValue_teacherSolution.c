@@ -9,15 +9,21 @@ int isEven(int num)
 
 int isValid(int num)
 {
-    if(num < 10)
-        if(isEven(num))
+    if (num < 10)
+    {
+        if (isEven(num))
             return 1;
-        printf("x\n");
-        return 0;
-    if(num < 100)
-        if(!isEven(num / 10) && isEven(num % 10))
+        else
+            return 0;
+    }
+    if (num < 100)
+    {
+        if (!isEven(num / 10) && isEven(num % 10))
             return 1;
-        return 0;
+        else
+            return 0;
+    }
+    return 0;
 }
 
 int main(void)
