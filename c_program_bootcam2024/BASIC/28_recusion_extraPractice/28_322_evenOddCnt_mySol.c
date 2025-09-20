@@ -31,4 +31,4 @@ int main(void)
     printf("Answer is ");
     printf("%d\n", output);
     return 0;
-}
+} 
