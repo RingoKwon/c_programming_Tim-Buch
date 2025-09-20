@@ -7,7 +7,7 @@ int verifySort(int num)
 {
     if (num < 100)
     {
-        return 0;
+        return ( num / 10 % 10 > num % 10 );
     }
     return ( num / 10 % 10 > num % 10 ) ^ verifySort(num / 10);
 }
