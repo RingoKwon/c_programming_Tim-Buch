@@ -8,23 +8,18 @@
 //  num = 12342, difit = 2 --> 1
 int digitEvenAppearance(int num, int digit)
 {
-    int resultSoFar;
-
     if (num < 10)
-    {
         return num == digit ? 0 : 1;
-    }
-    resultSoFar = digitEvenAppearance(num / 10, digit);
-    if (resultSoFar == 1) 
-        return num % 10 == digit ? 0 : 1;
+    if (num % 10 != digit)
+        return digitEvenAppearance(num / 10, digit);
     else 
-        return num % 10 == digit ? 1 : 0;
+        return !digitEvenAppearance(num / 10, digit);
 }
 
 int main(void)
 {
     int output;
-    output = digitEvenAppearance(1112233, 3);
+    output = digitEvenAppearance(111223333, 3);
     printf("out: %d", output);
     return 0;
 }
