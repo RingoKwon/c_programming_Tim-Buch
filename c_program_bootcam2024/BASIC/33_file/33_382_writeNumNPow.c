@@ -8,16 +8,16 @@ Ex)
     3   9
     and so on ...
 */
-int itoa(int input)
+int fitoa(int input, FILE *fp)
 {
     int dg;
     if (input < 10)
     {
-        printf("%c", input + '0');
+        fputc(input + '0', fp);
         return 0;
     }
-    itoa(input / 10);
-    printf("%c", input % 10 + '0');
+    fitoa(input / 10, fp);
+    fputc(input % 10 + '0', fp);
 
     return 0;
 }
@@ -36,17 +36,11 @@ int main(void)
     {
         while (++base <= 10)
         {
-            if (base != 10)
-            {
-                fputc(c + base, fp);
-                fputc('\n', fp);
-            }
+            fputc(c + base, fp);
+            fputc('\n', fp);
             pow = base * base;
         }
-        fputc('1', fp);
-        fputc('0', fp);
-
+        fitoa(1234, fp);
         fclose(fp);
     }
-    itoa(8234);
 }
