@@ -10,7 +10,6 @@ int main(void)
     fp = fopen("myFirst3.txt", "r");
     if (fp != NULL)
     {
-        
         while(fgets(str, 10, fp ))
             printf("sting #%d: %s\n", cnt++, str);
     }
