@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
+# 1 
 Write Number from 1 to 10 w/ Power
 Ex)
     1   1
@@ -33,7 +34,7 @@ int main(void)
     pow = 0;
     if (fp != NULL)
     {
-        while (++base <= 10)
+        while (++base <= 100)
         {
             fitoa(base, fp);
             fputc(':', fp);
