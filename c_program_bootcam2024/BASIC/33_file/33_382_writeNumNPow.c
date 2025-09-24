@@ -8,6 +8,19 @@ Ex)
     3   9
     and so on ...
 */
+int itoa(int input)
+{
+    int dg;
+    if (input < 10)
+    {
+        printf("%c", input + '0');
+        return 0;
+    }
+    itoa(input / 10);
+    printf("%c", input % 10 + '0');
+
+    return 0;
+}
 int main(void)
 {
     FILE *fp;
@@ -35,4 +48,5 @@ int main(void)
 
         fclose(fp);
     }
+    itoa(8234);
 }
