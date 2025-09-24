@@ -10,7 +10,6 @@ Ex)
 */
 int fitoa(int input, FILE *fp)
 {
-    int dg;
     if (input < 10)
     {
         fputc(input + '0', fp);
@@ -21,6 +20,7 @@ int fitoa(int input, FILE *fp)
 
     return 0;
 }
+
 int main(void)
 {
     FILE *fp;
@@ -29,18 +29,18 @@ int main(void)
     int pow;
 
     fp = fopen("exerciseFile2.txt", "w");
-    c = '0';
     base = 0;
     pow = 0;
     if (fp != NULL)
     {
         while (++base <= 10)
         {
-            fputc(c + base, fp);
+            fitoa(base, fp);
+            fputc(':', fp);
+            fputc(' ', fp);
+            fitoa(base * base, fp);
             fputc('\n', fp);
-            pow = base * base;
         }
-        fitoa(1234, fp);
         fclose(fp);
     }
 }
