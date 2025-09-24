@@ -20,13 +20,14 @@ int main(void)
         lCnt = 1;
         while ((c = fgetc(fp)) != EOF)
         {
-            printf("# %d: %c",++cnt, c);
+            printf("# %d: '%c'; ",++cnt, c);
             printf("lCnt = %d\n", c == '\n');
             if (c == '\n')
                 ++lCnt;
         }
         fclose(fp);
     }
+    printf("---------------------------------------------\n");
     printf("lines: %d", lCnt);
     return 0;
 }
