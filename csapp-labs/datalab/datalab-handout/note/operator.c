@@ -18,17 +18,22 @@ void print_binary(unsigned int n) {
 
 int main(void)
 {
-    int n = 0xFF11FFFF;
+    int n = 0xff11;
+    int a = 123;
+    int b = 20;
 
-    printf("%lu\n", sizeof(int));
-    printf("%d\n", n);
+    printf("  n: ");
     print_binary(n);
-    // print_binary(~n);
-    // print_binary(~n + 1);
-    print_binary(n << 8 * 1);
-    print_binary(n >> 8 * 1);
-    // print_binary(n << 8 * 6);
-    printf("%#x\n", n >> 4 * 2);
-    printf("%#x\n", n << 4 * 2);
+    printf(" !n: ");
+    print_binary(!n);
+    printf(" ~n: ");
+    print_binary(~n);
+    printf("n<<: ");
+    print_binary( n << 8);
+    printf("n>>: ");
+    print_binary(n>>8);
+
+    printf("------------------------------------------------------------\n");
+
     return 0;
 }
