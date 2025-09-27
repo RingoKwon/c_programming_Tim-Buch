@@ -18,15 +18,18 @@ void print_binary(unsigned int n) {
 
 int main(void)
 {
-    int n = 0xFF11FFFF;
+    int n = 0x12345678;
+    int n1 = 0xFF;
 
     printf("%lu\n", sizeof(int));
     printf("%d\n", n);
     print_binary(n);
+    print_binary(n1);
     // print_binary(~n);
     // print_binary(~n + 1);
     print_binary(n << 8 * 1);
-    print_binary(n >> 8 * 1);
+    print_binary((n >> 8 * 2) + 0x100);
+    printf("as: %#x\n", (n >> 8 * 0)  & n1);
     // print_binary(n << 8 * 6);
     printf("%#x\n", n >> 4 * 2);
     printf("%#x\n", n << 4 * 2);
