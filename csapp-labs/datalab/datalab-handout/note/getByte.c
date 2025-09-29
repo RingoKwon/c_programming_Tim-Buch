@@ -16,23 +16,29 @@ void print_binary(unsigned int n) {
     printf("\n");
 }
 
+int logicalShift1(int x, int n) {
+    int result = (x >> n) &  0xFFFFFFFF >> n;
+    return result;
+}
+
 int main(void)
 {
     int n = 0x87654321;
     int n1 = 0x80000000;
+    int result;
 
-   print_binary(n);
-   print_binary((((n1>>31) + 0x80000000 )>>2 )<<1);
-   print_binary(n>>4);
-   print_binary((n>>4) + (0x80000000 >> 3) );
-   print_binary((n>>0) + (0x80000000 >> 0) );
-   print_binary(!n);
-   print_binary(!!n);
-   print_binary(~n);
-    // printf("as: %#x\n", (n >> 8 * (3)  & n1));
-    // print_binary(n << 8 * 6);
-    printf("%#x\n", (n >> 28 ));
-    // printf("%#x\n", n << 8 * 1);
-    // printf("%#x\n", 0x10000000 << 8 * 1);
+    print_binary(n );
+    print_binary(
+        ((((0xFFFFFFFF>>1)))) 
+    );
+    print_binary(
+    (0x1 <<  31) 
+    );
+
+    printf("--------------\n");
+    result = logicalShift1(n, 8);
+    print_binary(result);
+    printf("%#x\n", result);
+    printf("%#x", n);
     return 0;
 }
