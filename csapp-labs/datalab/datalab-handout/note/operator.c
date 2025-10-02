@@ -32,6 +32,7 @@ int main(void)
     print_binary( n << 8);
     printf("n>>: ");
     print_binary(n>>8);
+    printf("%d\n", !00);
 
     printf("------------------------------------------------------------\n");
 
