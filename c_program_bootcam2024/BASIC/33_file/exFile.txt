@@ -1,4 +1,2 @@
-abcd ringo 
-ringo
-ohoh ringo 
-good
+Hi, this is ringo
+My name is ringo
