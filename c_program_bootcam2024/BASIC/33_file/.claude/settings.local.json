@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/ringokwon/Project/cProject/c_program_bootcam2024/BASIC/**)",
+      "Bash(for:*)",
+      "Bash(find:*)",
+      "Bash(done)",
+      "Bash(do echo \"=== $dir ===\")",
+      "Bash(awk:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
