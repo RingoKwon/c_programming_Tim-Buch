@@ -13,7 +13,8 @@ int main(void)
     int     arr;
     printf("Enter Designated Chatacter: ");
     scanf("%c", &c);
-    printf("Enter Filename: ")("%s", filename);
+    printf("Enter Filename: ");
+    scanf("%s", filename);
 
     return 0;
 }
