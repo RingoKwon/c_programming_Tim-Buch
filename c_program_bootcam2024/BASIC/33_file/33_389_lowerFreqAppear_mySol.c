@@ -30,13 +30,8 @@ int main(void)
     {
         while ((ch = fgetc(fp)) != EOF)
         {
-            i = 0;
-            while (i < SIZE)
-            {
-                if (ch == 'a' + i)
-                    arr[i] = arr[i]  +  1;
-                i++;
-            }
+            if (ch >= 'a' && ch <= 'z')
+                arr[ch - 'a']++;
         }
         fclose(fp);
     }
