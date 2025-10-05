@@ -1,36 +1,31 @@
 #include <stdio.h>
+// input : Designated Character, Filename
+// How manny character file has.
 
 int main(void)
 {
-    int     i;
-    int     cnt;
-    char    c;
-    char    str[1000];
+    char c;
+    char    filename[100] = {0};
     FILE    *fp;
+    int cnt;
 
-    printf("Enter Designated Char: \n");
+    printf("Enter Designated Character: ");
     scanf("%c", &c);
-    printf("Your file is like down below\n");
-    fp = fopen("exFile.txt", "r");
+    
+    printf("Enter Filename: ");
+    scanf("%s", filename);
+    fp = fopen(filename, "r");
     if (fp != NULL)
     {
         cnt = 0;
-        while (fgets(str, 1000, fp))
+        while (!feof(fp))
         {
-            // printf("%s", str);
-            i = 0;
-            while( str[i] != '\0')
-            {
-                if (c == str[i])
-                    cnt++;
-                printf("%c", str[i++]);
-            }
-            i++;
+            if (fgetc(fp) == c)
+                cnt++;
         }
-        printf("\n");
-        printf("Count of Same Charator is %d", cnt);
+        
         fclose(fp);
     }
-
-
+    printf("Apearance count: %d", cnt);
+    return 0;
 }
