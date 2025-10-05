@@ -9,11 +9,9 @@ print the number of times each lowercase letter appears in file.
 
 int main(void)
 {
-    char    c;
     char    ch;
     char    filename[100] = {0};
     int     arr[SIZE] = {0};
-    int     cnt;
     int     i;
     FILE    *fp;
 
@@ -28,18 +26,12 @@ int main(void)
     }
     else
     {
-        i = 0;
-        while (i < SIZE)
-        { 
-            cnt = 0;
-            c = i + 'a';
-            while ((ch = fgetc(fp)) != EOF)
+        while ((ch = fgetc(fp)) != EOF)
+        {
+            if (ch >= 'a' && ch <= 'z')
             {
-                if (c == ch)
-                    cnt++;
-            } 
-            arr[i] = cnt;
-            i++;
+                arr[ch - 'a']++;
+            }
         }
         fclose(fp);
     }
