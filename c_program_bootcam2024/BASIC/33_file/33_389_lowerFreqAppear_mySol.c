@@ -16,6 +16,8 @@ int main(void)
     int     cnt;
     int     i;
     FILE    *fp;
+    int     max;
+    int     idx;
 
     printf("Enter Filename: ");
     scanf("%s", filename);
@@ -36,10 +38,17 @@ int main(void)
         fclose(fp);
     }
     i = 0;
+    idx = 0;
+    max = arr[i];
     while (i < SIZE)
     {
-        printf("'%c' : %d\n",i + 'a' ,arr[i]);
+        if (max < arr[i])
+        {
+            max = arr[i];
+            idx = i;
+        }
         i++;
     }
+    printf("The most frequent alphbet = %c(%d times)", idx + 'a', max);
     return 0;
 }
