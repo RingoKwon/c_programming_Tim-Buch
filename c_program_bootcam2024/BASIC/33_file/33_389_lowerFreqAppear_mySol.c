@@ -1,5 +1,5 @@
 /*
-Write a prgram that reads a filename frem the user.
+Write a program that reads a filename from the user.
 The program should create a "frequencyAppearances" array 
 for lowercase letters ('a' - 'z') and 
 print the number of times each lowercase letter appears in file.
@@ -9,11 +9,9 @@ print the number of times each lowercase letter appears in file.
 
 int main(void)
 {
-    char    c;
     char    ch;
     char    filename[100] = {0};
     int     arr[SIZE] = {0};
-    int     cnt;
     int     i;
     FILE    *fp;
     int     max;
