@@ -10,19 +10,43 @@ print the number of times each lowercase letter appears in file.
 int main(void)
 {
     char    c;
+    char    ch;
     char    filename[100] = {0};
-    int     arr[SIZE] = {9,9};
+    int     arr[SIZE] = {0};
+    int     cnt;
     int     i;
+    FILE    *fp;
 
-    printf("Enter Designated Chatacter: ");
-    scanf("%c", &c);
     printf("Enter Filename: ");
     scanf("%s", filename);
 
-    i = 0;
-    while (i < SIZE )
+    fp = fopen(filename, "r");
+
+    if (fp == NULL)
     {
-        printf("%c", 'a' + i);
+        return -1;
+    }
+    else
+    {
+        i = 0;
+        while (i < SIZE)
+        { 
+            cnt = 0;
+            c = i + 'a';
+            while ((ch = fgetc(fp)) != EOF)
+            {
+                if (c == ch)
+                    cnt++;
+            } 
+            arr[i] = cnt;
+            i++;
+        }
+        fclose(fp);
+    }
+    i = 0;
+    while (i < SIZE)
+    {
+        printf("'%c' : %d\n",i + 'a' ,arr[i]);
         i++;
     }
     return 0;
