@@ -18,9 +18,10 @@ int main(void)
     if (fp != NULL)
     {
         cnt = 0;
-        while (!feof(fp))
+        int ch;
+        while ((ch = fgetc(fp)) != EOF)
         {
-            if (fgetc(fp) == c)
+            if (ch == c)
                 cnt++;
         }
         
