@@ -5,6 +5,9 @@ int maxArr(int* arr, int size)
 {
     int i;
     int max;
+
+    if (size < 0)
+        return -1;
     
     i = 0;
     max = arr[0];
