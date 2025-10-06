@@ -9,6 +9,6 @@ int main(void)
     ptr2 = &ptr1;        // ptr2 still points to ptr1 (redundant)
     *ptr2 = ptr1;        // ptr1 = ptr1 (redundant)
     **ptr2 = *ptr1;      // a = a (redundant)
-    
+
     return 0;
 }
