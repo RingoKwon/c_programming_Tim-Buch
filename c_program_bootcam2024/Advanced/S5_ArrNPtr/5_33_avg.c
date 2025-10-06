@@ -13,11 +13,19 @@ int sumArr(int* arr, int size)
     return sum;
 }
 
+double avgArr(int* arr, int size)
+{
+    double avg;
+
+    avg = (double)sumArr(arr, size)/size;
+    return avg;
+}
+
 int main(void)
 {
     int arr[SIZE] = {1,2,5,3};
     double result;
 
-    result = (double)sumArr(arr, SIZE)/SIZE;
+    result = avgArr(arr, SIZE);
     printf("sum: %lf", result);
 }
