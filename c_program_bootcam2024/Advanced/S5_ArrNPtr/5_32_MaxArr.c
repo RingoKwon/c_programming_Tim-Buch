@@ -8,7 +8,6 @@ int maxArr(int* arr, int size)
 
     if (size < 0)
         return -1;
-    
     i = 0;
     max = arr[0];
     while( i < size)
