@@ -13,15 +13,14 @@ int sortIterative(int* arr, int size ,int* pass)
 
     i = 0;
     *pass = 1;
-    while (i < SIZE - 1)
+    while (i < size - 1)
     {
+        if(arr[i] >= arr[i + 1])
+            *pass = 0;
         if(arr[i] > arr[i + 1])
         {
-            *pass = 0;
             return 0;
         }
-        if(arr[i] == arr[i + 1])
-            *pass = 0;
         i++;
     }
     return 1;
@@ -35,7 +34,7 @@ int main(void)
     int passIterative;
     int resultIterative;
 
-    resultIterative = sortIterative(arr3, SIZE, &passIterative);
+    resultIterative = sortIterative(arr1, SIZE, &passIterative);
     printf("Iterative return = %d, pass = %d", resultIterative, passIterative);
     return 0;
 }
