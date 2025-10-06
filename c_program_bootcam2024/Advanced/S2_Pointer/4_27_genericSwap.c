@@ -9,6 +9,7 @@ void GenericSwapMemcpy(void* a, void* b, int size)
     memcpy(tmp, a, size);
     memcpy(a, b, size);
     memcpy(b, tmp, size);
+    free(tmp);
 }
 void    GenericSwap(void* a, void* b) // notworking 
 {
