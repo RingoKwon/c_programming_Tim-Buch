@@ -30,13 +30,10 @@ int sortRecursive(int* arr, int size, int* pass)
     int i;
 
     i = SIZE - size;
-    *pass = 1;
-    printf("pass %d\n", *pass);
     if (i > SIZE - 2)
-            return 1;
+    return 1;
     if (arr[i] >= arr[i + 1])
     {
-        printf("!@#\n");
         *pass = 0;
     }
     if (arr[i] > arr[i + 1])
@@ -55,10 +52,11 @@ int main(void)
     int passRecursive;
     int resultRecursive;
 
-    resultIterative = sortIterative(arr1, SIZE, &passIterative);
+    passRecursive = 1;
+    resultIterative = sortIterative(arr3, SIZE, &passIterative);
     printf("Iterative return = %d, pass = %d\n", resultIterative, passIterative);
     printf("--------------------------\n");
-    resultRecursive = sortRecursive(arr2, SIZE, &passRecursive);
+    resultRecursive = sortRecursive(arr3, SIZE, &passRecursive);
     printf("Recursive return = %d, pass = %d\n", resultRecursive, passRecursive);
     return 0;
 }
