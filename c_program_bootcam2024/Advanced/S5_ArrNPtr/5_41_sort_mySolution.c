@@ -43,7 +43,7 @@ int sortRecursiveSolution(int* arr, int size, int* pass)
 {
     int result;
 
-    if (size < 3)
+    if (size== 1)
     {
         *pass = 1;
         return 1; 
@@ -93,7 +93,7 @@ int main(void)
     resultRecursive = sortRecursive(arr2, SIZE, 0, &passRecursive);
     printf("Recursive return = %d, pass = %d\n", resultRecursive, passRecursive);
     printf("--------------------------\n");
-    resultRecursiveSol = sortRecursiveSolution(arr3, SIZE, &passRecursiveSol);
+    resultRecursiveSol = sortRecursiveSolution(arr1, SIZE, &passRecursiveSol);
     printf("Solution  return = %d, pass = %d\n", resultRecursiveSol, passRecursiveSol);
     return 0;
 }
