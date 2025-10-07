@@ -1,36 +1,44 @@
 // void reverse recursive 
 #include <stdio.h>
+#define SIZE 5
 
+void    reverse(char *str, int size)
+{
+    char tmp[SIZE];
+    int i;
+
+    i = 0;
+    while (i < size)
+    {
+        tmp[size - i - 1] = str[i];
+        i++;
+    }
+    i = 0;
+    while (i < size)
+    {
+        str[i] = tmp[i];
+        i++;
+    }
+}
+
+void    prt(char *str, int size)
+{
+    int i;
+
+    i = 0;
+    while (i < size)
+    {
+        printf("%c", str[i]);
+        i++;
+    }
+    printf("\n");
+}
 
 int main(void)
 {
-    char* str;
-    char strArr[4] = "dddd";
-    char strArr2[3] = {'a', 'a', 'a'}; // 
-
-    str = "ringo";
-
-    int  i;
-    i = 0;
-    while (str[i])
-    {
-        printf("%c\n", str[i]);
-        i++;
-    }
-    printf("-----------------\n");
-    i = 0;
-    while (strArr[i])
-    {
-        printf("%c\n", strArr[i]);
-        i++;
-    }
-    printf("-----------------\n");
-    i = 0;
-    while (strArr2[i])
-    {
-        printf("%c\n", strArr2[i]);
-        i++;
-    }
-
+    char str[SIZE] = {'a', 'b', 'c', 'd', 'e'};
+    prt(str, SIZE);
+    reverse(str, SIZE);
+    prt(str, SIZE);
     return (0);
 }
