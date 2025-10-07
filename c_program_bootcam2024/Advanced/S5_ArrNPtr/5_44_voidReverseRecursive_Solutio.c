@@ -4,10 +4,10 @@
 
 void swap(char *arr1, char *arr2)
 {
-    char* tmp;
-    *tmp = *arr1;
+    char tmp;     // ✅ FIX: Use char variable, not pointer
+    tmp = *arr1;
     *arr1 = *arr2;
-    *arr2 = *tmp;
+    *arr2 = tmp;
 }
 
 void    prt(char *str, int size)
@@ -40,6 +40,10 @@ void    iterativeReverse(char* str, int size)
 int main(void)
 {
     char str[SIZE] = {'a', 'b', 'c', 'd', 'e'};
+    printf("Before: ");
+    prt(str, SIZE);
     iterativeReverse(str, SIZE);
+    printf("After:  ");
+    prt(str, SIZE);
     return (0);
 }
