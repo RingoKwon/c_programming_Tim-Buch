@@ -39,21 +39,61 @@ int sortRecursive(int* arr, int size, int idx,  int* pass)
     return sortRecursive(arr, size, idx + 1, pass);   
 }
 
+int sortRecursiveSolution(int* arr, int size, int* pass)
+{
+    int result;
+
+    if (size < 3)
+    {
+        *pass = 1;
+        return 1; 
+    }
+    result = sortRecursiveSolution(arr, size - 1, pass);
+    if (result == 0)
+    {
+        *pass = 0;
+        return 0;
+    }
+    else // result = 1 
+    {
+        if (arr[size - 2] <= arr[size - 1])
+        {
+            if (arr[size - 2] == arr[size - 1])
+                *pass = 0;
+            return 1;
+        }
+        else
+        {
+            *pass = 0;
+            return 0;
+        }
+        
+    }
+
+    return (0);
+}
+
 int main(void)
 {
     int arr1[SIZE] = {1,2,3,4,5}; // Really Sorted
-    int arr2[SIZE] = {1,2,2,4,5}; // Sorted
+    int arr2[SIZE] = {1,1,2,5,5}; // Sorted
     int arr3[SIZE] = {1,2,3,5,4}; // Not Sorted
     int passIterative;
     int resultIterative;
     int passRecursive;
     int resultRecursive;
+    int passRecursiveSol;
+    int resultRecursiveSol;
 
     passRecursive = 1;
+    passRecursiveSol = 1;
     resultIterative = sortIterative(arr3, SIZE, &passIterative);
     printf("Iterative return = %d, pass = %d\n", resultIterative, passIterative);
     printf("--------------------------\n");
     resultRecursive = sortRecursive(arr2, SIZE, 0, &passRecursive);
     printf("Recursive return = %d, pass = %d\n", resultRecursive, passRecursive);
+    printf("--------------------------\n");
+    resultRecursiveSol = sortRecursiveSolution(arr3, SIZE, &passRecursiveSol);
+    printf("Solution  return = %d, pass = %d\n", resultRecursiveSol, passRecursiveSol);
     return 0;
 }
