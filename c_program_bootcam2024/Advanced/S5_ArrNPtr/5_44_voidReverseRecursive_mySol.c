@@ -4,7 +4,7 @@
 
 void    reverse(char *str, int size)
 {
-    char tmp[SIZE];
+    char tmp[size];
     int i;
 
     i = 0;
