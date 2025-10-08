@@ -11,6 +11,7 @@ void prtFreqElement(int* arr, int size)
     i = 0;
     while (i < size)
     {
+        cnt = 0;
         j = 0;
         is_unique = 1;
         //LEFT START
@@ -21,17 +22,24 @@ void prtFreqElement(int* arr, int size)
                 is_unique = 0;
                 break;
             }
-            printf("i: %d(%d), j: %d(%d)\n", i, arr[i],j, arr[j]);
+            // printf("i: %d(%d), j: %d(%d)\n", i, arr[i],j, arr[j]);
             j++;
         }
-        printf("-------------------------------------------\n");
+        // printf("-------------------------------------------\n");
         if (is_unique == 0)
         {
             i++;
             continue;
         }
-        printf("work RIGHT %dth with %d\n", i, arr[i]);
-        printf("===========================================\n");
+        // printf("work RIGHT %dth with %d\n", i, arr[i]);
+        // printf("===========================================\n");
+        while ( j < size)
+        {
+            if (arr[i] == arr[j])
+                cnt++;
+            j++;
+        }
+        printf("Element %d apeare %d times\n", i, cnt);
         i++;
     }
 }
