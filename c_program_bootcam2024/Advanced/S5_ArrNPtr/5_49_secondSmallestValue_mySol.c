@@ -23,9 +23,9 @@ int findSecondSmall(int* arr, int size)
     int min;
     int min2nd;
 
-    min = smallest(arr, SIZE);
+    min = smallest(arr, size);
     i = 0;
-    while (i < SIZE)
+    while (i < size)
     {
         if (arr[i] != min)
             {
@@ -34,8 +34,16 @@ int findSecondSmall(int* arr, int size)
             }
         i++;
     }
+    
+    // Handle case where all elements are the same
+    if (i == size)
+    {
+        printf("Error: All elements are the same. No second smallest exists.\n");
+        return min; // or return -1 to indicate error
+    }
+    
     i = 0;
-    while (i < SIZE)
+    while (i < size)
     {
         if ( arr[i] > min && arr[i] < min2nd)
         {
@@ -49,7 +57,6 @@ int findSecondSmall(int* arr, int size)
 int main(void)
 {
     int arr[SIZE] = {1,2,3,4,5};
-    findSecondSmall(arr, SIZE);
     printf("min %d\n", smallest(arr, SIZE));
     printf("2nd min %d\n", findSecondSmall(arr, SIZE));
     return (0);
