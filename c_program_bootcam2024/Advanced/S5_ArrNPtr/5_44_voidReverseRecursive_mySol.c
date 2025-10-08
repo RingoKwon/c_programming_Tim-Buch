@@ -21,6 +21,26 @@ void    reverse(char *str, int size)
     }
 }
 
+void swap(char  *arr1, char *arr2)
+{
+    char    tmp;
+    
+    tmp = *arr1;
+    *arr1 = *arr2;
+    *arr2 = tmp;
+}
+
+void reverseRecursive(char* str, int size)
+{
+    if (size  == SIZE /2 + 1)
+    {
+        printf("base %d\n", size );
+        return ;
+    }
+    printf("size %d\n", size);
+    reverseRecursive(str, size - 1);    
+}
+
 void    prt(char *str, int size)
 {
     int i;
@@ -40,5 +60,7 @@ int main(void)
     prt(str, SIZE);
     reverse(str, SIZE);
     prt(str, SIZE);
+    reverseRecursive(str, SIZE);
+
     return (0);
 }
