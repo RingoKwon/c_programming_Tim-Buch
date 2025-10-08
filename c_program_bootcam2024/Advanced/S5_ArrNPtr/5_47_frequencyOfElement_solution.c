@@ -11,7 +11,7 @@ void prtFreqElement(int* arr, int size)
     i = 0;
     while (i < size)
     {
-        cnt = 0;
+        cnt = 1;
         j = 0;
         is_unique = 1;
         //LEFT START
@@ -33,6 +33,7 @@ void prtFreqElement(int* arr, int size)
         }
         // printf("work RIGHT %dth with %d\n", i, arr[i]);
         // printf("===========================================\n");
+        j = j + 1;
         while ( j < size)
         {
             if (arr[i] == arr[j])
