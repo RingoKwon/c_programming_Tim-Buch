@@ -25,7 +25,16 @@ int findSecondSmall(int* arr, int size)
 
     min = smallest(arr, SIZE);
     i = 0;
-    min2nd = 10000;
+    while (i < SIZE)
+    {
+        if (arr[i] != min)
+            {
+                min2nd = arr[i];
+                break;
+            }
+        i++;
+    }
+    i = 0;
     while (i < SIZE)
     {
         if ( arr[i] > min && arr[i] < min2nd)
