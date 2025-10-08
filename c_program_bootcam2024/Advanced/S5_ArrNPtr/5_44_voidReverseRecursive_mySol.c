@@ -1,6 +1,6 @@
 // void reverse recursive 
 #include <stdio.h>
-#define SIZE 5
+#define SIZE 8
 
 void    reverse(char *str, int size)
 {
@@ -32,12 +32,11 @@ void swap(char  *arr1, char *arr2)
 
 void reverseRecursive(char* str, int size)
 {
-    if (size  == SIZE /2 + 1)
+    if (size <= SIZE / 2)
     {
-        printf("base %d\n", size );
         return ;
     }
-    printf("size %d\n", size);
+    swap(&str[SIZE - size], &str[size - 1]);
     reverseRecursive(str, size - 1);    
 }
 
@@ -61,6 +60,6 @@ int main(void)
     reverse(str, SIZE);
     prt(str, SIZE);
     reverseRecursive(str, SIZE);
-
+    prt(str, SIZE);
     return (0);
 }
