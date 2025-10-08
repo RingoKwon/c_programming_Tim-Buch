@@ -63,7 +63,7 @@ int small2ndVlad(int* arr, int size)
     i = 0;
     min1 = arr[0];
     min2 = arr[0];
-    while (i < SIZE)
+    while (i < size)
     {
         if (arr[i] < min1)
         {
@@ -81,9 +81,29 @@ int small2ndVlad(int* arr, int size)
 
 int main(void)
 {
-    int arr[SIZE] = {1,2,3,4,5};
-    printf("min %d\n", smallest(arr, SIZE));
-    printf("2nd min %d\n", findSecondSmall(arr, SIZE));
-    printf("2nd min(Vlad) %d\n", small2ndVlad(arr, SIZE));
+    // Test case 1: Normal case
+    int arr1[SIZE] = {1,2,3,4,5};
+    printf("Test 1 - Array: {1,2,3,4,5}\n");
+    printf("min %d\n", smallest(arr1, SIZE));
+    printf("2nd min %d\n", findSecondSmall(arr1, SIZE));
+    printf("2nd min(Vlad) %d\n", small2ndVlad(arr1, SIZE));
+    printf("\n");
+    
+    // Test case 2: Unordered array
+    int arr2[SIZE] = {5,1,4,2,3};
+    printf("Test 2 - Array: {5,1,4,2,3}\n");
+    printf("min %d\n", smallest(arr2, SIZE));
+    printf("2nd min %d\n", findSecondSmall(arr2, SIZE));
+    printf("2nd min(Vlad) %d\n", small2ndVlad(arr2, SIZE));
+    printf("\n");
+    
+    // Test case 3: All elements same
+    int arr3[SIZE] = {3,3,3,3,3};
+    printf("Test 3 - Array: {3,3,3,3,3}\n");
+    printf("min %d\n", smallest(arr3, SIZE));
+    printf("2nd min %d\n", findSecondSmall(arr3, SIZE));
+    printf("2nd min(Vlad) %d\n", small2ndVlad(arr3, SIZE));
+    printf("\n");
+    
     return (0);
 }
