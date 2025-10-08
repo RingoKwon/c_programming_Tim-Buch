@@ -1,6 +1,6 @@
 // void reverse recursive 
 #include <stdio.h>
-#define SIZE 8
+#define SIZE 5
 
 void    reverse(char *str, int size)
 {
