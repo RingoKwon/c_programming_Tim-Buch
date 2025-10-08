@@ -2,11 +2,6 @@
 #define SIZE 5
 #define LIST_SIZE 100
 
-int* dist(int* arr, int size)
-{
-    int* distArr = {0};
-    return (0);
-}
 void    freqEle(int* arr)
 {
     int arrlist[LIST_SIZE];
@@ -28,7 +23,7 @@ void    freqEle(int* arr)
     while (i < LIST_SIZE)
     {
         if (arrlist[i] != 0)
-            printf("Number: %d apeare %d times\n", i, arrlist[i]);
+            printf("Number: %d appeare %d times\n", i, arrlist[i]);
         i++;
     }
 }
