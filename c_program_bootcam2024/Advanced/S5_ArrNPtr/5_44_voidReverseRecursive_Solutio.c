@@ -35,6 +35,13 @@ void    iterativeReverse(char* str, int size)
     }
 }
 
+void    recursiveReverse(char* str, int size)
+{
+    if (size < 1)
+        return ;
+    swap(&str[0], &str[size - 1]);
+    recursiveReverse(str + 1, size -2);
+}
 
 
 int main(void)
@@ -43,6 +50,9 @@ int main(void)
     printf("Before: ");
     prt(str, SIZE);
     iterativeReverse(str, SIZE);
+    printf("After:  ");
+    prt(str, SIZE);
+    recursiveReverse(str, SIZE);
     printf("After:  ");
     prt(str, SIZE);
     return (0);
