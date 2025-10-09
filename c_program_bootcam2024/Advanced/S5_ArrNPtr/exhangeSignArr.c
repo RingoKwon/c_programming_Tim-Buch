@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define SIZE 5
+
+int signCheck(int a, int b)
+{
+    if ((a * b) < 0)
+        return (1);
+    return (0);
+}
+
+int arrCheckMy(int* arr, int size)
+{
+    if (size == 1)
+        return (1);
+    if (!signCheck(arr[size - 1], arr[size - 2]))
+        return (0);
+    else
+        return arrCheckMy(arr, size - 1);
+}
+
+int main(void)
+{
+    int arr[SIZE] = {-1,2,3,4,-5};
+    printf("%d", arrCheckMy(arr, SIZE));
+    return (0);
+}
