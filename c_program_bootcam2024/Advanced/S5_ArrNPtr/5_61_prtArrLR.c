@@ -14,9 +14,26 @@ void prtR(int* arr, int size)
 {
     if (size == 0)
         return;
-    printf("%d", arr[size - 1]);
-    prtL(arr, size - 1);
+    prtR(arr + 1, size - 1);
+    printf("%d", arr[0]);
     return;
+}
+void prtLVlad(int* arr, int size)
+{
+    if (size > 0)
+    {
+        printf("%d", arr[0]);
+        prtLVlad(arr + 1, size -1);
+    }
+}
+
+void prtRVlad(int* arr, int size)
+{
+    if (size > 0)
+    {
+        prtRVlad(arr + 1, size -1);
+        printf("%d", arr[0]);
+    }
 }
 
 int main(void)
@@ -25,5 +42,9 @@ int main(void)
     prtL(arr, SIZE);
     printf("\n------------------------\n");
     prtR(arr, SIZE);
+    printf("\n------------------------\n");
+    prtLVlad(arr, SIZE);
+    printf("\n------------------------\n");
+    prtRVlad(arr, SIZE);
     return (0);
 }
