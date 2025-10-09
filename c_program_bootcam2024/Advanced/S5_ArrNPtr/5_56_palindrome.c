@@ -9,9 +9,9 @@ int palindromeMy(int* arr, int size)
         return (1);
     if (arr[0] != arr[size - 1])
     {
-        return 0 * palindromeMy(arr + 1, size - 2);
+        return 0; 
     }
-    return 1 * palindromeMy(arr + 1, size - 2);
+    return palindromeMy(arr + 1, size - 2);
 }
 
 int main(void)
