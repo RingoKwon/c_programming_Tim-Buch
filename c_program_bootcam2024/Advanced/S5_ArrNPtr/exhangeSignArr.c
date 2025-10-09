@@ -18,9 +18,20 @@ int arrCheckMy(int* arr, int size)
         return arrCheckMy(arr, size - 1);
 }
 
+int arrCheckMy2(int* arr, int size)
+{
+    if (size == 1)
+        return (1);
+    if (!signCheck(arr[0], arr[1]))
+        return (0);
+    else
+        return arrCheckMy(arr + 1, size - 1);
+}
+
 int main(void)
 {
     int arr[SIZE] = {-1,2,3,4,-5};
-    printf("%d", arrCheckMy(arr, SIZE));
+    printf("%d\n", arrCheckMy(arr, SIZE));
+    printf("%d\n", arrCheckMy2(arr, SIZE));
     return (0);
 }
