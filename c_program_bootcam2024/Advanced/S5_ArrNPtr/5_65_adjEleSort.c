@@ -19,13 +19,25 @@ int sortMy(float* arr, int size)
         return 0; 
     return sortMy(arr + 1, size - 1);
 }
+int sortMemry(float* arr, int size)
+{
+    if (size ==1)
+        return 1;
+    if (arr[0] < arr[1] && ((arr[0] - (int)arr[0]) > (arr[1] - (int)arr[1])))
+        return sortMemry(arr + 1, size - 1);
+    else
+        return 0;
+}
 
 int main(void)
 {
     float arr[SIZE] = {1.23, 2.22, 3.20};
     int res;
+    int res2;
 
     res = sortMy(arr, SIZE);
-    printf("%d", res);
+    res2 = sortMemry(arr, SIZE);
+    printf("%d\n", res);
+    printf("%d\n", res2);
     return (0);
 }
