@@ -25,32 +25,37 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
     return tmp;
 }
 
-float getEle(int size)
+float* getEle(float* arr, int size)
 {
     int i;
     float   ele;
 
     i = 0;
-    printf("Enter %d Ele{int)", SIZE);
+    printf("Enter %d Ele{int)\n", SIZE);
     while (i < SIZE)
     {
-        printf("%dth Element : ", i);
+        printf("%dth Element : ", i + 1);
         scanf("%f", &ele);
+        arr[i] = ele;
+        i++;
     }
+    return (arr);
 }
 
 int main(void)
 {
-    int* arr;
+    float* arr;
     unsigned newsize;
     
     newsize = SIZE + 2;
-    arr = (int*)malloc(sizeof(int) * SIZE);
+    arr = (float*)malloc(sizeof(float) * SIZE);
     if (arr == NULL)
     {
         printf("Malloc Failed\n");
         return (0);
     }
+    getEle(arr, SIZE);
+    
 
 
     myRealloc(arr, SIZE * sizeof(int), newsize);
