@@ -6,6 +6,11 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
 {
     char* tmp;
     unsigned int i;  // Fixed: use unsigned int instead of char
+    int smallSize;
+
+    if (newsize < oldsize)
+        smallSize = newsize;
+    smallSize = oldsize;
 
     tmp = (void*)malloc(newsize);
     if (tmp == NULL)
@@ -15,7 +20,7 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
     }
 
     i = 0;
-    while (i < oldsize) 
+    while (i < smallSize) 
     {
         tmp[i] = ((char*)srcblock)[i];
         i++;
