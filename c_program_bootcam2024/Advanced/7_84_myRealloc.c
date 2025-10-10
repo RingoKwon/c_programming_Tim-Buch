@@ -5,7 +5,7 @@
 void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
 {
     char* tmp;
-    char i;
+    unsigned int i;  // Fixed: use unsigned int instead of char
 
     tmp = (void*)malloc(newsize);
     if (tmp == NULL)
@@ -20,8 +20,8 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
         tmp[i] = ((char*)srcblock)[i];
         i++;
     }
-    printf("The realloc Sucessed\n");
-    free (srcblock);
+    printf("The realloc Succeeded\n");  // Fixed typo
+    free(srcblock);
     return tmp;
 }
 
@@ -31,7 +31,7 @@ float* getEle(float* arr, int size)
     float   ele;
 
     i = 0;
-    printf("Enter %d Ele{int)\n", SIZE);
+    printf("Enter %d Elements:\n", SIZE);
     while (i < SIZE)
     {
         printf("%dth Element : ", i + 1);
@@ -64,15 +64,18 @@ int main(void)
         i++;
     }
     printf("\n");
-    arr = myRealloc(arr, SIZE * sizeof(int), newsize);
-    arr[SIZE] = 999;
-    arr[SIZE + 1] = 1000;
-    i = 0;
-    while (i < newsize)
-    {
-        printf("%f, ", arr[i]);
-        i++;
+    arr = myRealloc(arr, SIZE * sizeof(float), newsize * sizeof(float));
+    if (arr != NULL) {
+        arr[SIZE] = 999;
+        arr[SIZE + 1] = 1000;
+        i = 0;
+        while (i < newsize)
+        {
+            printf("%f, ", arr[i]);
+            i++;
+        }
+        printf("\n");
+        free(arr);  // Don't forget to free!
     }
-    printf("\n");
     return (0);
 }
