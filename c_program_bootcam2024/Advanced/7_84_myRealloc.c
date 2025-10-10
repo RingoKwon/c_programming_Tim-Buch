@@ -17,7 +17,7 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
     i = 0;
     while (i < oldsize) 
     {
-        tmp[i] = (char)srcblock[i];
+        tmp[i] = ((char*)srcblock)[i];
         i++;
     }
     printf("The realloc Sucessed\n");
