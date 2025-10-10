@@ -11,7 +11,7 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
     if (tmp == NULL)
     {
         printf("Realloc Failed");
-        return (0);
+        return NULL;
     }
 
     i = 0;
@@ -21,7 +21,22 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
         i++;
     }
     printf("The realloc Sucessed\n");
+    free (srcblock);
     return tmp;
+}
+
+float getEle(int size)
+{
+    int i;
+    float   ele;
+
+    i = 0;
+    printf("Enter %d Ele{int)", SIZE);
+    while (i < SIZE)
+    {
+        printf("%dth Element : ", i);
+        scanf("%f", &ele);
+    }
 }
 
 int main(void)
