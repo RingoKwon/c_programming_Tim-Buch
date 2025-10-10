@@ -46,6 +46,7 @@ int main(void)
 {
     float* arr;
     unsigned newsize;
+    int i;
     
     newsize = SIZE + 2;
     arr = (float*)malloc(sizeof(float) * SIZE);
@@ -55,9 +56,23 @@ int main(void)
         return (0);
     }
     getEle(arr, SIZE);
-    
-
-
-    myRealloc(arr, SIZE * sizeof(int), newsize);
+    // arr[SIZE +1] = 3;
+    i = 0;
+    while (i < SIZE)
+    {
+        printf("%f, ", arr[i]);
+        i++;
+    }
+    printf("\n");
+    arr = myRealloc(arr, SIZE * sizeof(int), newsize);
+    arr[SIZE] = 999;
+    arr[SIZE + 1] = 1000;
+    i = 0;
+    while (i < newsize)
+    {
+        printf("%f, ", arr[i]);
+        i++;
+    }
+    printf("\n");
     return (0);
 }
