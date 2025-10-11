@@ -6,7 +6,29 @@ to avoid this situation, prepare a guardrail.
 */
 void*   myRealloc(void* srcBlock, unsigned oldSize, unsigned newSize)
 {
-    return 0;
+    char* newArr;
+    unsigned smallSize;
+    unsigned i;  // Changed from char to unsigned to handle large arrays
+    
+    // Handle special cases
+    if (srcBlock == NULL)
+        return malloc(newSize);  // Act like malloc if srcBlock is NULL
+    
+    if (newSize < oldSize)
+        smallSize = newSize;
+    else
+        smallSize = oldSize;
+    newArr = (void*)malloc(newSize);
+    if (!newArr)
+        return NULL;
+    i = 0;
+    while (i < smallSize)
+    {
+        newArr[i] = ((char*)srcBlock)[i];
+        i++;
+    }
+    free(srcBlock);
+    return (newArr);
 }
 int main(void)
 {
