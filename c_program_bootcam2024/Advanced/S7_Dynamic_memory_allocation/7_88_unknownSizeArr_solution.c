@@ -4,15 +4,19 @@
 
 void    printArr(int* arr, int size);
 int*    unkwonSizeArre(int* arrsize);
+int*    unkwonSizeArreOptimized(int* arrsize);
 
 int main(void)
 {
     int size; 
     int* arr;
 
+    printf("Normal\n");
     arr = unkwonSizeArre(&size);
     printf("Size: %d\n", size);
     printArr(arr, size);
+    printf("------------------\n");
+    printf("Optimized\n");
     free(arr);
     return (0);
 }
@@ -31,6 +35,34 @@ void printArr(int* arr, int size)
 }
 
 int*    unkwonSizeArre(int* arrsize)
+{
+    int* arr;
+    int* tmp;
+    int ele;
+
+    *arrsize = 0;
+    arr = NULL;
+    tmp = NULL;
+    printf("Enter element: ");
+    scanf("%d", &ele);
+    while (ele != -1)
+    {
+        (*arrsize)++;  // Increment FIRST
+        tmp = (int*)realloc(arr, sizeof(int) * (*arrsize));
+        if (!tmp) {
+            free(arr);  // Free existing memory before returning NULL
+            return NULL;
+        }
+        arr = tmp;
+        arr[(*arrsize) - 1] = ele;  // Use correct index
+        printf("Enter element: ");
+        scanf("%d", &ele);
+    }
+    // free(tmp);
+    return arr;
+}
+
+int*    unkwonSizeArreOptimized(int* arrsize)
 {
     int* arr;
     int* tmp;
