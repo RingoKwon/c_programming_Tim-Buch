@@ -30,8 +30,39 @@ void*   myRealloc(void* srcBlock, unsigned oldSize, unsigned newSize)
     free(srcBlock);
     return (newArr);
 }
+
+int unknownSizeArr(int* arr)
+{
+    int cnt;
+    int ele;
+
+    cnt = 0;
+    ele = 0;
+    arr = (int*)malloc(1);
+    while (ele != -1)
+    {
+        cnt++;
+        printf("Enter Element(%d): ", cnt);
+        arr = (int*)myRealloc(arr, cnt, cnt + 1);
+        scanf("%d", &ele);
+    }
+    return cnt - 1;
+}
+
 int main(void)
 {
     int* arr;
+    int cnt;
+    int i;
+    
+    cnt = unknownSizeArr(arr); 
+    printf("cnt = %d", cnt);
+    i = 0;
+    while (i < cnt)
+    {
+        printf("%d ", arr[i]);
+        i++;
+    }
+
     return (0);
 }
