@@ -38,18 +38,22 @@ int unknownSizeArr(int** arr)
 
     cnt = 0;
     ele = 0;
-    *arr = (int*)malloc(sizeof(int)*0);
+    *arr = NULL;
     while (ele != -1)
     {
         printf("Enter Element(%d): ", cnt);
         *arr = (int*)myRealloc(*arr, sizeof(int) * cnt, sizeof(int)*(cnt + 1));
         if (!*arr)
             return 0;
-        scanf("%d", &ele);
+        if (scanf("%d", &ele) != 1) {  // Check if scanf succeeded
+            return cnt;  // EOF or invalid input - exit
+        }
+        if (ele == -1)
+            return cnt;
         (*arr)[cnt] = ele; // becarfull *arr[i] -> (*arr)[i]
         cnt++;
     }
-    return cnt - 1;
+    // Dead code removed: return cnt - 1; (unreachable)
 }
 
 int main(void)
@@ -66,7 +70,7 @@ int main(void)
         printf("%d ", arr[i]);
         i++;
     }
-    // free(arr);
+    free(arr);
 
     return (0);
 }
