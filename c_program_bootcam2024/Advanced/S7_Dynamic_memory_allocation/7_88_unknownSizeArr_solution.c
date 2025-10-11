@@ -17,6 +17,8 @@ int main(void)
     printArr(arr, size);
     printf("------------------\n");
     printf("Optimized\n");
+    arr = unkwonSizeArreOptimized(&size);
+    printArr(arr,size);
     free(arr);
     return (0);
 }
@@ -58,7 +60,7 @@ int*    unkwonSizeArre(int* arrsize)
         printf("Enter element: ");
         scanf("%d", &ele);
     }
-    // free(tmp);
+    // free(tmp);// NAVER DO THAT!
     return arr;
 }
 
@@ -67,25 +69,44 @@ int*    unkwonSizeArreOptimized(int* arrsize)
     int* arr;
     int* tmp;
     int ele;
+    int lastIdx;
 
-    *arrsize = 0;
+    *arrsize = 1;
+    lastIdx = 0;
     arr = NULL;
     tmp = NULL;
     printf("Enter element: ");
     scanf("%d", &ele);
+
+    arr = (int*)malloc(sizeof(int) * 1);
     while (ele != -1)
     {
-        (*arrsize)++;  // Increment FIRST
-        tmp = (int*)realloc(arr, sizeof(int) * (*arrsize));
-        if (!tmp) {
-            free(arr);  // Free existing memory before returning NULL
-            return NULL;
+        if (*arrsize == lastIdx)
+        {
+            (*arrsize) *= 2;
+            tmp = (int*)realloc(arr, sizeof(int) * (*arrsize));
+            if (!tmp)
+                {
+                    free(arr);
+                    return NULL;
+                }
+            arr = tmp;
         }
-        arr = tmp;
-        arr[(*arrsize) - 1] = ele;  // Use correct index
+        // (*arrsize)++;  // Increment FIRST
+        lastIdx++;
+
+        arr[(lastIdx) - 1] = ele;  // Use correct index
         printf("Enter element: ");
         scanf("%d", &ele);
     }
-    // free(tmp);
+    // free(tmp);// NAVER DO THAT! it remove arr too, pointing same memory block
+    *arrsize = lastIdx;  // ✅ Return actual count, not capacity!
+    tmp = (int*)realloc(arr, sizeof(int) * lastIdx);
+    if (!tmp)
+    {
+        free(arr);
+        return NULL;
+    }
+    arr = tmp;
     return arr;
 }
