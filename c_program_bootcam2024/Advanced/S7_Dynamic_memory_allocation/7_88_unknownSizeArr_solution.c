@@ -8,7 +8,12 @@ int*    unkwonSizeArre(int* arrsize);
 int main(void)
 {
     int size; 
-    unkwonSizeArre(&size);
+    int* arr;
+
+    arr = unkwonSizeArre(&size);
+    printf("Size: %d\n", size);
+    printArr(arr, size);
+    free(arr);
     return (0);
 }
 
@@ -31,22 +36,24 @@ int*    unkwonSizeArre(int* arrsize)
     int* tmp;
     int ele;
 
-    arrsize = 0;
+    *arrsize = 0;
     arr = NULL;
     tmp = NULL;
     printf("Enter element: ");
     scanf("%d", &ele);
     while (ele != -1)
     {
-        (*arrsize)++;
+        (*arrsize)++;  // Increment FIRST
         tmp = (int*)realloc(arr, sizeof(int) * (*arrsize));
-        if (!tmp)
+        if (!tmp) {
+            free(arr);  // Free existing memory before returning NULL
             return NULL;
+        }
         arr = tmp;
-        arr[*arrsize] = ele;
+        arr[(*arrsize) - 1] = ele;  // Use correct index
         printf("Enter element: ");
         scanf("%d", &ele);
     }
-    free(tmp);
+    // free(tmp);
     return arr;
 }
