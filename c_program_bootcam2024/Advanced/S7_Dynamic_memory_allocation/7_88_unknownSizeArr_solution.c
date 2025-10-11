@@ -81,6 +81,8 @@ int*    unkwonSizeArreOptimized(int* arrsize)
     scanf("%d", &ele);
 
     arr = (int*)malloc(sizeof(int) * 1);
+    if (!arr)
+        return NULL;
     while (ele != -1)
     {
         if (*arrsize == lastIdx)
