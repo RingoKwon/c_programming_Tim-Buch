@@ -1,31 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-void*   myRealloc(void* srcArr, unsigned oldsize, unsigned newsize)
+/*
+when I realloc, if allocation fails I will lose src.
+to avoid this situation, prepare a guardrail.
+*/
+void*   myRealloc(void* srcBlock, unsigned oldSize, unsigned newSize)
 {
-    return (0);
+    return 0;
 }
-
-int testI(void)
-{
-    int* arr = malloc(1000);
-    int cnt;
-    int ele;
-
-    cnt = 0;
-    while (ele != -1)
-    {
-        printf("Enter: ");
-        scanf("%d", &ele);
-        cnt++;
-    }
-    printf("cnt = %d", cnt - 1);
-    return(0);
-}
-
 int main(void)
 {
     int* arr;
-    testI();
     return (0);
 }
