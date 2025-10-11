@@ -15,9 +15,11 @@ int main(void)
     arr = unkwonSizeArre(&size);
     printf("Size: %d\n", size);
     printArr(arr, size);
+    free(arr);  // ✅ Free first array
     printf("------------------\n");
     printf("Optimized\n");
     arr = unkwonSizeArreOptimized(&size);
+    printf("Size: %d\n", size);  // ✅ Print size
     printArr(arr,size);
     free(arr);
     return (0);
@@ -100,13 +102,11 @@ int*    unkwonSizeArreOptimized(int* arrsize)
         scanf("%d", &ele);
     }
     // free(tmp);// NAVER DO THAT! it remove arr too, pointing same memory block
-    *arrsize = lastIdx;  // ✅ Return actual count, not capacity!
+    *arrsize = lastIdx;  // ✅ CRITICAL: Return actual element count!
     tmp = (int*)realloc(arr, sizeof(int) * lastIdx);
-    if (!tmp)
-    {
-        free(arr);
-        return NULL;
+    if (!tmp) {
+        // Realloc failed, but arr is still valid - just return it with extra capacity
+        return arr;
     }
-    arr = tmp;
-    return arr;
+    return tmp;
 }
