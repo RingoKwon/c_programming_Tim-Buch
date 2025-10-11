@@ -53,7 +53,7 @@ int unknownSizeArr(int** arr)
         (*arr)[cnt] = ele; // becarfull *arr[i] -> (*arr)[i]
         cnt++;
     }
-    // Dead code removed: return cnt - 1; (unreachable)
+    return cnt;  // This should never be reached, but needed for compiler
 }
 
 int main(void)
