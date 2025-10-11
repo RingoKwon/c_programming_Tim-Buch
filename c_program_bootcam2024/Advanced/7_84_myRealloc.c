@@ -10,7 +10,8 @@ void* myRealloc(void* srcblock, unsigned oldsize, unsigned newsize)
 
     if (newsize < oldsize)
         smallSize = newsize;
-    smallSize = oldsize;
+    else
+        smallSize = oldsize;
 
     tmp = (void*)malloc(newsize);
     if (tmp == NULL)
