@@ -13,13 +13,16 @@ int*    createNoDuplexArr(int* arr, int* size)
     j = 0;
     while (i < *size - 1)
     {
-        if (arr[i] == arr[i + 1])
+        if (arr[i] != arr[i + 1])
             cnt++;
         i++;
     }
     newArr = (int*)malloc(sizeof(int) * cnt);
     if (!newArr)
+    {
+        printf("Memory allocation failed");
         return NULL;
+    }
     i = 0;  
     while (i < *size - 1)
     {
@@ -61,5 +64,5 @@ int main(void)
     prtArr(arr, size);
     newArr = createNoDuplexArr(arr, &size);
     prtArr(newArr, size);
-
+    free (newArr);
 }
