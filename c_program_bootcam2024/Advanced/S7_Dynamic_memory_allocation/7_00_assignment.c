@@ -6,22 +6,22 @@ int* createArray(int size)
     int* arr;
 
     arr = (int*)malloc(sizeof(int) * size);
+    if (arr == NULL)
+    {
+        printf("Memory allocation faild");
+        return NULL;
+    }
     return (arr);
 }
-void    initArray(int** arr, int size)
+void    initArray(int* arr, int size)
 {
     int i;
 
-    *arr = (int*)malloc(sizeof(int) * size);
-    if (arr)
+    i = 0;
+    while (i < size)
     {
-        i = 0;
-        while (i < size)
-        {
-            printf("Enter: ");
-            scanf("%d", &(*arr)[i]);
-            i++;
-        }
+        arr[i] = i;
+        i++;
     }
 }
 
@@ -46,7 +46,10 @@ int doubleArraySize(int** arr, int size)
     size *= 2;
     tmp = (int*)realloc(*arr, sizeof(int) * size);
     if (!tmp)
+    {
+        printf("Memory reallocation faild");
         return -1;
+    }
     i = 0;
     while (i < size)
     {
@@ -69,10 +72,17 @@ int main(void)
     int size;
 
     size = 2;
-    createArray(size);
-    initArray(&arr, size);
+    arr = createArray(size);
+    if (!arr)
+        return (1);
+    initArray(arr, size);
     displayArray(arr, size);
     size = doubleArraySize(&arr, size);
+    if (size == -1)
+    {
+        free(arr);
+        return 1;
+    }
     displayArray(arr, size);
     freeMemory(&arr);
     return (0);
