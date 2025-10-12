@@ -23,14 +23,24 @@ void    displayArray(int* arr, int size)
         printf("%d", arr[i]);
         i++;
     }
+    printf("\n");
 }
 
-int* doubleArraySize(int** arr, int size)
+int doubleArraySize(int** arr, int size)
 {
     int* tmp;
 
-    tmp = (int*)realloc(arr, sizeof(int) * size * 2);
+    size *= 2;
+    tmp = (int*)realloc(*arr, sizeof(int) * size);
+    if (!tmp)
+        return -1;
+    *arr = tmp;
+    return size;
+}
 
+void    freeMemory(int** arr)
+{
+    free(*arr);
 }
 
 int main(void)
@@ -42,6 +52,8 @@ int main(void)
     createArray(size);
     initArray(&arr, size);
     displayArray(arr, size);
-
+    size = doubleArraySize(&arr, size);
+    displayArray(arr, size);
+    freeMemory(&arr);
     return (0);
 }
