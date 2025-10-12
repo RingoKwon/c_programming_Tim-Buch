@@ -10,7 +10,19 @@ int* createArray(int size)
 }
 void    initArray(int** arr, int size)
 {
+    int i;
+
     *arr = (int*)malloc(sizeof(int) * size);
+    if (arr)
+    {
+        i = 0;
+        while (i < size)
+        {
+            printf("Enter: ");
+            scanf("%d", &(*arr)[i]);
+            i++;
+        }
+    }
 }
 
 void    displayArray(int* arr, int size)
@@ -20,7 +32,7 @@ void    displayArray(int* arr, int size)
     i = 0;
     while (i < size)
     {
-        printf("%d", arr[i]);
+        printf(" %d", arr[i]);
         i++;
     }
     printf("\n");
@@ -29,12 +41,20 @@ void    displayArray(int* arr, int size)
 int doubleArraySize(int** arr, int size)
 {
     int* tmp;
+    int i;
 
     size *= 2;
     tmp = (int*)realloc(*arr, sizeof(int) * size);
     if (!tmp)
         return -1;
+    i = 0;
+    while (i < size)
+    {
+        (*arr)[i] = 0;
+        i++;
+    }
     *arr = tmp;
+    // free(tmp);
     return size;
 }
 
