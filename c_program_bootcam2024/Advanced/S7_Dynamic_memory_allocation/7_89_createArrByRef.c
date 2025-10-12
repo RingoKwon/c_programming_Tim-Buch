@@ -8,8 +8,6 @@ void    createArrInt(int size, int** ptr)
     int ele;
 
     arr = (int*)malloc(sizeof(int) * size);
-    if (!arr)
-        arr = NULL;
     i = 0;
     while (i < size)
     {
@@ -26,8 +24,6 @@ void    createArrInt2(int size, int** ptr)
     int i;
 
     *ptr = (int*)malloc(sizeof(int) * size);
-    if (!*ptr)
-        *ptr = NULL;
     i = 0;
     while (i < size)
     {
@@ -57,8 +53,11 @@ int main(void)
     scanf("%d", &size);
     createArrInt(size, &arr);
     prtArr(arr, size);
+    free(arr);
+
     createArrInt2(size, &arr);
     prtArr(arr, size);
+    free(arr);
 
     return (0);
 }
