@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int*    createNoDuplexArr(int* arr, int* size)
+int*    createNoDuplicateArr(int* arr, int* size)
 {
     int i;
     int j;
     int cnt;
     int* newArr;
+
+    if (!arr || *size <= 0)
+        return NULL;
 
     cnt = 1;
     i = 0;
@@ -20,7 +23,7 @@ int*    createNoDuplexArr(int* arr, int* size)
     newArr = (int*)malloc(sizeof(int) * cnt);
     if (!newArr)
     {
-        printf("Memory allocation failed");
+        printf("Memory allocation failed\n");
         return NULL;
     }
     i = 0;  
@@ -57,12 +60,16 @@ int main(void)
     int arr[] = {1,1,2,3,3,3,4,5,6,6};
     int *newArr;
     int size;
-    int i;
 
     size = 10;
-    i = 0;
     prtArr(arr, size);
-    newArr = createNoDuplexArr(arr, &size);
+    newArr = createNoDuplicateArr(arr, &size);
+    if (!newArr)
+    {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
     prtArr(newArr, size);
     free (newArr);
+    return (0);
 }
