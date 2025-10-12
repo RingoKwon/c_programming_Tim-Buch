@@ -10,19 +10,24 @@ int*    createNoDuplexArr(int* arr, int* size)
 
     cnt = 1;
     i = 0;
+    j = 0;
     while (i < *size - 1)
     {
         if (arr[i] == arr[i + 1])
             cnt++;
+        i++;
     }
     newArr = (int*)malloc(sizeof(int) * cnt);
     if (!newArr)
         return NULL;
+    i = 0;  
     while (i < *size - 1)
     {
-        if (newArr[i] != arr[i + 1])
-            j++;
+        if (arr[i] != arr[i + 1])
+        {
             newArr[j] = arr[i];
+            j++;
+        }
         i++;
     }
     newArr[j] = arr[i];
@@ -56,5 +61,5 @@ int main(void)
     prtArr(arr, size);
     newArr = createNoDuplexArr(arr, &size);
     prtArr(newArr, size);
-    
+
 }
