@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int cntEven(int* arr, int size)  
 {
@@ -18,9 +19,32 @@ int cntEven(int* arr, int size)
 
 void createEvenOddRef(int* arr, int** evenArr, int* evenSize, int** oddArr, int* oddSize, int size)
 {
+    int i;
+    int j;
+    int k;
+    if (size <= 0)
+        printf("Invalid Size");
     *evenSize = cntEven(arr, size);
     *oddSize = size - *evenSize;
-
+    *evenArr = (int*)malloc(sizeof(int) * *evenSize);
+    *oddArr = (int*)malloc(sizeof(int) * *oddSize);
+    i = 0;
+    j = 0;
+    k = 0;
+    while (i < size)
+    {
+        if (arr[i] % 2 == 0)
+        { 
+            (*evenArr)[j] = arr[i];
+            j++;
+        }
+        else 
+        {
+            (*oddArr)[k] = arr[i];
+            k++;
+        }
+        i++;
+    }
 }
 
 void prtArr(int* arr, int size)
@@ -50,5 +74,7 @@ int main(void)
     createEvenOddRef(arr, &evenArr, &evenSize, &oddArr, &oddSize, size);
     printf("EvenSize: %d\n", evenSize);
     printf("OddSize: %d\n", oddSize);
+    prtArr(evenArr, evenSize);
+    prtArr(oddArr, oddSize);
     return (0);
 }
