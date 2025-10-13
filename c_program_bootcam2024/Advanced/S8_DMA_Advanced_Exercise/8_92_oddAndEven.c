@@ -16,10 +16,11 @@ int cntEven(int* arr, int size)
     return (cnt);
 }
 
-void createEvenOddRef(int* arr, int** evenArr, int* evenSize, int* oddSize, int* oddArr, int size)
+void createEvenOddRef(int* arr, int** evenArr, int* evenSize, int** oddArr, int* oddSize, int size)
 {
     *evenSize = cntEven(arr, size);
     *oddSize = size - *evenSize;
+
 }
 
 void prtArr(int* arr, int size)
@@ -41,11 +42,12 @@ int main(void)
     int size;
     int evenSize;
     int oddSize;
+    int *evenArr;
+    int *oddArr;
 
     size = 8;
     prtArr(arr, size);
-    evenSize = cntEven(arr, size);
-    oddSize = size - evenSize; 
+    createEvenOddRef(arr, &evenArr, &evenSize, &oddArr, &oddSize, size);
     printf("EvenSize: %d\n", evenSize);
     printf("OddSize: %d\n", oddSize);
     return (0);
