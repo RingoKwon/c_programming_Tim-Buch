@@ -16,11 +16,10 @@ int cntEven(int* arr, int size)
     return (cnt);
 }
 
-int* createEvenOdd(int* arr, int** evenArr, int* oddArr, int* size)
+void createEvenOddRef(int* arr, int** evenArr, int* evenSize, int* oddSize, int* oddArr, int size)
 {
-
-
-    return (arr);
+    *evenSize = cntEven(arr, size);
+    *oddSize = size - *evenSize;
 }
 
 void prtArr(int* arr, int size)
