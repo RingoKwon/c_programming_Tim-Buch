@@ -22,12 +22,23 @@ void createEvenOddRef(int* arr, int** evenArr, int* evenSize, int** oddArr, int*
     int i;
     int j;
     int k;
+
     if (size <= 0)
         printf("Invalid Size");
     *evenSize = cntEven(arr, size);
     *oddSize = size - *evenSize;
     *evenArr = (int*)malloc(sizeof(int) * *evenSize);
+    if (!evenArr)
+    {
+        printf("Memory Allocation Failed");
+        evenArr = NULL;
+    }
     *oddArr = (int*)malloc(sizeof(int) * *oddSize);
+    if (!oddArr)
+    {
+        printf("Memory Allocation Failed");
+        oddArr = NULL;
+    }
     i = 0;
     j = 0;
     k = 0;
@@ -75,6 +86,8 @@ int main(void)
     printf("EvenSize: %d\n", evenSize);
     printf("OddSize: %d\n", oddSize);
     prtArr(evenArr, evenSize);
+    free(evenArr);
     prtArr(oddArr, oddSize);
+    free(oddArr);
     return (0);
 }
