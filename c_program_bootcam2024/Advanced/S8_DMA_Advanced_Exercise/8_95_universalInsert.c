@@ -4,8 +4,23 @@
 void*   universalInsert(void* arr, size_t *arrSize, 
                         void* ptr, size_t idx, size_t typeSize)
 {
-    printf("%lu", sizeof(*ptr));
-    return (arr);
+    int* newArr = (void*)malloc(*arrSize + typeSize);
+    char i;
+
+    if (!newArr)
+    {
+        printf("Memory Allocation Failed");
+        free(newArr);
+    }
+    i = 0;
+    while (i < (*arrSize + typeSize))
+    {
+        if (i < idx * typeSize|| i >= (idx + 1) * typeSize )
+        {}
+        i++;
+    }
+
+    return (newArr);
 }
 int main(void)
 {
