@@ -18,7 +18,16 @@ int main(void)
 {
     double arr[] = {1.1, 2.2, 3.3};  // Changed from double* to double[]
     size_t size;
+    double *arr2;
+    
+    arr2 = (double*)malloc(sizeof(double) * 3);
+    if (!arr2)
+    {
+        fprintf(stderr, "Memory allocation Failed\n");
+        return 1;  // Return error code (non-zero)
+    }
 
+    
     size = 3;
     prtArr(arr, size);
     return (0);
