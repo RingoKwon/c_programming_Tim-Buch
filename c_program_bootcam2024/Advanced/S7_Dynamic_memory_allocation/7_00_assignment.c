@@ -57,7 +57,7 @@ int doubleArraySize(int** arr, int size)
         i++;
     }
     *arr = tmp;
-    // free(tmp);
+    // free(tmp); if free here it free(arr) too.
     return size;
 }
 
