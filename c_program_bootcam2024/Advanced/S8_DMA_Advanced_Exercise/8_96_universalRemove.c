@@ -8,9 +8,14 @@ void* universalRemove(void* arr, size_t* size,
     void* newArr;
 
     *size -= typeSize;
-    newArr = malloc(*size - typeSize);
+    newArr = (void*)malloc(*size);
+    if (!newArr)
+        {
+            printf("Memory Allocation Failed");
+            return NULL;
+        }
     memcpy(newArr, arr, idx);
-    memcpy(newArr + idx, arr + idx + typeSize, typeSize);
+    memcpy(newArr + idx, arr + idx + typeSize, *size - idx);
     return (newArr);
 }
 
@@ -34,7 +39,7 @@ int main(void)
     void* newArr;
     size_t idx;
 
-    idx = 2 * sizeof(float);
+    idx = 1 * sizeof(float);
     size = 4 * sizeof(float);
     prtArr(arr, size/sizeof(float));
     printf("after univeralRemove\n");
