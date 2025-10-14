@@ -9,7 +9,8 @@ void* universalRemove(void* arr, size_t* size,
 
     *size -= typeSize;
     newArr = malloc(*size - typeSize);
-    memcpy(newArr, arr, *size);
+    memcpy(newArr, arr, idx);
+    memcpy(newArr + idx, arr + idx + typeSize, typeSize);
     return (newArr);
 }
 
@@ -28,13 +29,13 @@ void    prtArr(float* arr, size_t size)
 
 int main(void)
 {
-    float arr[] = {1.1, 2.2, 3.3};
+    float arr[] = {1.1, 2.2, 3.3, 4.4};
     size_t size;
     void* newArr;
     size_t idx;
 
     idx = 2 * sizeof(float);
-    size = 3 * sizeof(float);
+    size = 4 * sizeof(float);
     prtArr(arr, size/sizeof(float));
     printf("after univeralRemove\n");
     newArr = universalRemove(arr, &size, idx, sizeof(float));
