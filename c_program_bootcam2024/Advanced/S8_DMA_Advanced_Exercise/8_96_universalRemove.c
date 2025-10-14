@@ -42,7 +42,7 @@ int main(void)
     idx = 1 * sizeof(float);
     size = 4 * sizeof(float);
     prtArr(arr, size/sizeof(float));
-    printf("after univeralRemove\n");
+    printf("after universalRemove\n");
     newArr = universalRemove(arr, &size, idx, sizeof(float));
     if (!newArr)
     {
