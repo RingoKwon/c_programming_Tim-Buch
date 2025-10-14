@@ -21,6 +21,17 @@ void cpyArr(int** des,int* src , size_t size)
 
 }
 
+void cpyArrOpt(int** des,int* src , size_t size)
+{
+    *des = (int*)malloc(size * sizeof(int));
+    if (!*des)
+    {
+        printf("Memory Allocation Failed");
+        return;
+    }
+    *des = src;
+}
+
 void prtArr(int* arr, size_t size)
 {
     int i;
@@ -42,8 +53,13 @@ int main(void)
 
     size = 4;
     cpyArr(&des, src, size);
-    
+    printf("cpyArr()\n");
     prtArr(des, size);
+    free(des);
+    printf("cpyArrOpt()\n");
+    cpyArrOpt(&des, src, size);
+    prtArr(des, size);
+
 
     return (0);
 }
