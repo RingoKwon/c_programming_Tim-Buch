@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void    prtArr(double* arr, size_t size)
 {
@@ -30,5 +31,9 @@ int main(void)
     
     size = 3;
     prtArr(arr, size);
+    // memcpy;
+    memcpy(arr2 + 1, arr, sizeof(double) * 1);
+    printf("memcpy\n");
+    prtArr(arr2, size);
     return (0);
 }
