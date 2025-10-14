@@ -58,6 +58,11 @@ int main(void)
     //     free(newArr);
     // }
     newArr = universalInsert(arr, &size, &ptr, 3, sizeof(float) );
+    if (!newArr)
+    {
+        printf("Memory Allocation Failed");
+        return (1);
+    }
     i = 0;
     while(i < size)
     {
