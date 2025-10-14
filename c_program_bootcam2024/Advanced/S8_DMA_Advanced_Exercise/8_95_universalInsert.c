@@ -24,14 +24,14 @@ void*   universalInsert(void* arr, size_t *arrSize,
             ((char*)newArr)[i] = ((char*)ptr)[k]; 
             i++;
             k++;
-            printf("i: %zu, k: %zu\n", i, k);
+            // printf("i: %zu, k: %zu\n", i, k);
         }
         else
         {
             ((char*)newArr)[i] = ((char*)arr)[j];
             i++;
             j++;
-            printf("i: %zu, j: %zu\n", i, j);
+            // printf("i: %zu, j: %zu\n", i, j);
         }
     }
     *arrSize = *arrSize + 1;
@@ -51,19 +51,20 @@ int main(void)
     size = 3;
     ptr = 1.1;
 
-    newArr = (float*)malloc(sizeof(float) * (size + 1));
-    if (!newArr)
-    {
-        printf("Memory Allocation Failed");
-        free(newArr);
-    }
-    newArr = universalInsert(arr, &size, &ptr, 4, sizeof(float) );
+    // newArr = (float*)malloc(sizeof(float) * (size + 1));
+    // if (!newArr)
+    // {
+    //     printf("Memory Allocation Failed");
+    //     free(newArr);
+    // }
+    newArr = universalInsert(arr, &size, &ptr, 3, sizeof(float) );
     i = 0;
     while(i < size)
     {
         printf("%f ", newArr[i]);
         i++;
     }
+    free(newArr);
     return (0);
 
 }
