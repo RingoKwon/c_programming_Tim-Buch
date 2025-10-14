@@ -5,7 +5,8 @@ void*   universalInsert(void* arr, size_t *arrSize,
                         void* ptr, size_t idx, size_t typeSize)
 {
     void* newArr = (void*)malloc((typeSize *  (*arrSize + 1)));
-    char i;
+    size_t i;
+    size_t j;
 
     if (!newArr)
     {
@@ -13,12 +14,13 @@ void*   universalInsert(void* arr, size_t *arrSize,
         return NULL;
     }
     i = 0;
+    j = 0;
     while (i < (typeSize *  (*arrSize + 1)))
     {
-        if (i < idx * typeSize || i >= (idx + 1) * typeSize )
-        {}
-        printf(" %d", i);
+        ((char*)newArr)[i] = ((char*)arr)[j];
+        printf(" %zu", i);
         i++;
+        j++;
     }
 
     return (newArr);
