@@ -14,7 +14,7 @@ int main(void)
 
         if(i == 0)
             r_size = 1;
-        else if ( i == 2 || i == 3)
+        else if ( i == 1 || i == 2)
             r_size = 2;
         else
             r_size = 3;
