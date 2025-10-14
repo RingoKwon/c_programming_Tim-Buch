@@ -5,10 +5,10 @@
 void* universalRemove(void* arr, size_t* size, 
                     size_t idx, size_t typeSize)
 {
-    void* newArr;
+    char* newArr;
 
     *size -= typeSize;
-    newArr = (void*)malloc(*size);
+    newArr = (char*)malloc(*size);
     if (!newArr)
         {
             printf("Memory Allocation Failed");
@@ -44,6 +44,11 @@ int main(void)
     prtArr(arr, size/sizeof(float));
     printf("after univeralRemove\n");
     newArr = universalRemove(arr, &size, idx, sizeof(float));
+    if (!newArr)
+    {
+        printf("Memory Allocation Failed");
+        return (1);
+    }
     prtArr((float*)newArr, size/sizeof(float));  // Fixed: use prtArr, cast to float*
     free(newArr);  // Don't forget to free!
     return (0);
