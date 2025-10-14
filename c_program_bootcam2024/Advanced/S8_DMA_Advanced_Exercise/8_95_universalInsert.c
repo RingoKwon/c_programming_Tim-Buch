@@ -39,7 +39,6 @@ void*   universalInsert(void* arr, size_t *arrSize,
     return (newArr);
 }
 
-
 int main(void)
 {
     float arr[] = {1, 2, 3};
@@ -70,6 +69,7 @@ int main(void)
         i++;
     }
     free(newArr);
+
     return (0);
 
 }
