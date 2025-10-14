@@ -21,7 +21,7 @@ void cpyArr(int** des,int* src , size_t size)
 
 }
 
-void cpyArrOpt(int** des,int* src , size_t size)
+void cpyArrOpt(int** des,int* src, size_t size)
 {
     *des = (int*)malloc(size * sizeof(int));
     if (!*des)
@@ -59,7 +59,6 @@ int main(void)
     printf("cpyArrOpt()\n");
     cpyArrOpt(&des, src, size);
     prtArr(des, size);
-
-
+    free(des);
     return (0);
 }
