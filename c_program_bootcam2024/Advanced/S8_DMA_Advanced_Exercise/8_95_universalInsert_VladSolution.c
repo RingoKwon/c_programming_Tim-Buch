@@ -22,7 +22,8 @@ void*   universalInsertVlad(void* arr, size_t* size,
 
     newArr = (char*)malloc(*size + ptrSize);
     memcpy(newArr, arr, idx);
-    memcpy(newArr, arr, idx);
+    memcpy(newArr + idx, ptr, ptrSize);
+    memcpy(newArr + (idx + ptrSize), arr + idx, *size);
 
     *size += ptrSize;
     return (newArr);
@@ -53,5 +54,6 @@ int main(void)
     printf("universalInsert\n");
     newArr = universalInsertVlad(arr, &size, &src, sizeof(double) * 1, sizeof(double));
     prtArr(newArr, size / sizeof(double));
+    free(newArr);
     return (0);
 }
