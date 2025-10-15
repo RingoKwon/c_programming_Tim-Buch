@@ -41,14 +41,14 @@ int** dynamic2dAlloc(void)
         i++;
     }
     
-    // Free all allocated memory
-    freeMatrix(arr, rows);
     
     return (arr);
 }
 
 int main()
 {
-    dynamic2dAlloc();
+    int** arr;
+    arr = dynamic2dAlloc();
+    // freeMatrix later 
     return (0);
 }
