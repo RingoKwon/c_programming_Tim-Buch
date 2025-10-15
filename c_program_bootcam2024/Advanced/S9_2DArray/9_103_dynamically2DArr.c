@@ -12,7 +12,7 @@ void    freeMatrix(int** arr, size_t size)
     free(arr);
 }
 
-int main(void)
+int** dynamic2dAlloc(void)
 {
     int** arr;
     size_t rows;
@@ -25,7 +25,7 @@ int main(void)
     if (!arr)
     {
         printf("Memory Allocation Failed");
-        return (1);
+        return (NULL);
     }
     i = 0;
     while (i < rows)
@@ -36,7 +36,7 @@ int main(void)
         if (!arr[i])
         {
             freeMatrix(arr, i);
-            return (1);
+            return (NULL);
         }
         i++;
     }
@@ -44,5 +44,11 @@ int main(void)
     // Free all allocated memory
     freeMatrix(arr, rows);
     
+    return (arr);
+}
+
+int main()
+{
+    dynamic2dAlloc();
     return (0);
 }
