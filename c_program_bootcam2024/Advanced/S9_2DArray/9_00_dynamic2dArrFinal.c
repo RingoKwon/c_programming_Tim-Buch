@@ -28,8 +28,6 @@ int** create2dArr(int rows, int cols)
     while (i < cols)
     {
         *arr = (int*)calloc(cols, sizeof(int));
-        if (i == 2)//test
-            *arr = NULL;
         if (!*arr)
             freeMatrix(arr, i);
         i++;
