@@ -59,7 +59,7 @@ int** create2dArr(size_t rows, size_t cols)
     arr = (int**)calloc(rows, sizeof(int*));
     if (!arr)
     {
-        printf("Memory Allocation Failed");
+        printf("Memory Allocation Failed\n");
         return (NULL);
     }
     i = 0;
@@ -85,25 +85,26 @@ void    swapRows(int** arr, size_t r1, size_t r2)
     arr[r2] = temp;
 }
 
-void    swapCols(int**arr,size_t rows, size_t c1, size_t c2)
+void    swapCols(int** arr,size_t rows, size_t c1, size_t c2)
 {
     size_t  i;
-    int* tempArr;
+    int temp;
 
-    tempArr = (int*)calloc(rows, sizeof(int));
-    if (!tempArr)
-    {
-        printf("Memory Allocation Failed\n");
-        return;
-    }
+    // temp = (int*)calloc(rows, sizeof(int));
+    // if (!temp)
+    // {
+        // printf("Memory Allocation Failed\n");
+        // return;
+    // }
     i = 0;
     while (i < rows)
     {
-        tempArr[i] = arr[i][c1];
+        temp = arr[i][c1];
         arr[i][c1] = arr[i][c2];
-        arr[i][c2] = tempArr[i];
+        arr[i][c2] = temp;
         i++;
     }
+    // free(temp);
 }
 
 int main(void)
