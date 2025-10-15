@@ -25,7 +25,10 @@ void    prt2dArr(int** arr, size_t rows, size_t cols)
         while (j < cols)
         {
             printf("%d ", arr[i][j]);
+            j++;
         }
+        printf("\n");
+        i++;
     }
     printf("\n");
 }
@@ -51,7 +54,7 @@ int** create2dArr(size_t rows, size_t cols)
         }
         i++;
     }
-    return (NULL);
+    return (arr);
 }
 
 int main(void)
