@@ -4,13 +4,12 @@
 
 void    freeMatrix(int** arr, size_t size)
 {
-    int i;
-
     while (size > 0)
     {
-        free(arr[size]);
+        free(arr[size - 1]);
         size--;
     }
+    free(arr);
 }
 
 int main(void)
@@ -41,6 +40,9 @@ int main(void)
         }
         i++;
     }
+    
+    // Free all allocated memory
+    freeMatrix(arr, rows);
     
     return (0);
 }
