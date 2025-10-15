@@ -66,6 +66,9 @@ int main(void)
     rows = 4;
     cols = 4;
     arr = create2dArr(rows, cols);
+    if (!arr)
+        return (0);
     prt2dArr(arr, rows, cols);
+    freeMatrix(arr, rows);
     return (0);
 }
