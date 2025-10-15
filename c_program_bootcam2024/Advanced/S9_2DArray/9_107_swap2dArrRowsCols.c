@@ -54,7 +54,7 @@ void    prt2dArr(int** arr, size_t rows, size_t cols)
 int** create2dArr(size_t rows, size_t cols)
 {
     int** arr;
-    int i;
+    size_t i;
 
     arr = (int**)calloc(rows, sizeof(int*));
     if (!arr)
@@ -88,7 +88,7 @@ int main(void)
     cols = 3;
     arr = create2dArr(rows, cols);
     if (!arr)
-        return (0);
+        return (1);
     allocEle(arr, rows, cols);
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
