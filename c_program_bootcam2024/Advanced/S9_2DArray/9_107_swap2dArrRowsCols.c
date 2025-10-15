@@ -86,9 +86,9 @@ int main(void)
     rows = 4;
     cols = 3;
     arr = create2dArr(rows, cols);
-    allocEle(arr, rows, cols);
     if (!arr)
         return (0);
+    allocEle(arr, rows, cols);
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
     return (0);
