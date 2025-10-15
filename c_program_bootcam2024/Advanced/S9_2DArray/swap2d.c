@@ -6,7 +6,7 @@ a. swap rows in: r1, r2; O(1);
 b. swap cols in: c1, c2; O(n);
 */
 
-void prt2dArr(int** arr, size_t cols, size_t rows)
+void prt2dArr(int arr[3][2], size_t cols, size_t rows)
 {
     size_t i;
     size_t j;
@@ -15,7 +15,7 @@ void prt2dArr(int** arr, size_t cols, size_t rows)
     while (i < rows)
     {
         j = 0;
-        while (j > cols)
+        while (j < cols)
         {
             printf("%d ", arr[i][j]);
             j++;
