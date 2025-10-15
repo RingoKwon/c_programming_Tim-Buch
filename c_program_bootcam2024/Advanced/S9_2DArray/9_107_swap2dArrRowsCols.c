@@ -76,7 +76,35 @@ int** create2dArr(size_t rows, size_t cols)
     return (arr);
 }
 
+void    swapRows(int** arr, size_t r1, size_t r2)
+{
+    int* temp;
 
+    temp = arr[r1];
+    arr[r1] = arr[r2];
+    arr[r2] = temp;
+}
+
+void    swapCols(int**arr,size_t rows, size_t c1, size_t c2)
+{
+    size_t  i;
+    int* tempArr;
+
+    tempArr = (int*)calloc(rows, sizeof(int));
+    if (!tempArr)
+    {
+        printf("Memory Allocation Failed\n");
+        return;
+    }
+    i = 0;
+    while (i < rows)
+    {
+        tempArr[i] = arr[i][c1];
+        arr[i][c1] = arr[i][c2];
+        arr[i][c2] = tempArr[i];
+        i++;
+    }
+}
 
 int main(void)
 {
@@ -90,6 +118,13 @@ int main(void)
     if (!arr)
         return (1);
     allocEle(arr, rows, cols);
+    printf("Original\n");
+    prt2dArr(arr, rows, cols);
+    printf("Row Swap\n");
+    swapRows(arr, 1,2);
+    prt2dArr(arr, rows, cols);
+    printf("Col Swap\n");
+    swapCols(arr, rows, 0, 1);
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
     return (0);
