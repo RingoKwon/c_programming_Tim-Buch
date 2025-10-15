@@ -27,7 +27,7 @@ void    freeMatrix(int** arr, size_t rows)
         free(arr[rows - 1]);
         rows--;
     }
-    printf("Memory Allocation Failed");
+    printf("Memory freed");
     free(arr);
 }
 
@@ -46,7 +46,7 @@ int** create2dArr(int rows, int cols)
     while (i < rows)
     {
         arr[i] = (int*)calloc(cols, sizeof(int));
-        if (!(*arr[i]))
+        if (!arr[i])
         {
             freeMatrix(arr, i);
             return (NULL);
@@ -67,6 +67,11 @@ int main(void)
     rows = 3;
     cols = 4;
     arr = create2dArr(rows, cols);
+    if (!arr)
+    {
+        fprintf(stderr, "create2dArr failed\n");
+        return 1;
+    }
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
     return (0);
