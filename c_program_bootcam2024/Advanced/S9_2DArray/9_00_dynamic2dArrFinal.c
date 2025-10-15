@@ -67,11 +67,6 @@ int main(void)
     rows = 3;
     cols = 4;
     arr = create2dArr(rows, cols);
-    if (!arr)
-    {
-        fprintf(stderr, "create2dArr failed\n");
-        return 1;
-    }
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
     return (0);
