@@ -6,7 +6,7 @@ void freeMatrix(int** arr, size_t rows)
 {
     while (rows > 0)
     {
-        free((arr)[rows - 1]);
+        free(arr[rows - 1]);
         rows--;
     }
     free(arr);
@@ -27,6 +27,11 @@ int** creat2dArr(size_t rows, size_t cols)
     while (i < rows)
     {
         *arr = (int*)calloc(rows, sizeof(int));
+        if (!*arr)
+        {
+            freeMatrix(arr, rows);
+            return (NULL);
+        }
         i++;
     }
     return (NULL);
