@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
+void    prt2dArr(int** arr, size_t rows, size_t cols)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < cols)
+    {
+        j = 0;
+        while (j < rows)
+        {
+            printf("%d ", arr[i][j]);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+}
 void    freeMatrix(int** arr, size_t rows)
 {
     while (rows > 0)
@@ -39,6 +57,13 @@ int** create2dArr(int rows, int cols)
 
 int main(void)
 {
-    create2dArr(3,4);
+    size_t rows;
+    size_t cols;
+    int** arr;
+
+    rows = 3;
+    cols = 4;
+    arr = create2dArr(rows,cols);
+    prt2dArr(arr, rows, cols);
     return (0);
 }
