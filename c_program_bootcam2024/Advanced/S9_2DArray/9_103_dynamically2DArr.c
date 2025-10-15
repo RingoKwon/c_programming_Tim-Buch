@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+void    freeMatrix(int** arr, size_t size)
+{
+    int i;
+
+    while (size > 0)
+    {
+        free(arr[size]);
+        size--;
+    }
+}
+
 int main(void)
 {
     int** arr;
@@ -24,7 +35,10 @@ int main(void)
         scanf("%zu", &cols);
         arr[i] = (int*)calloc(cols, sizeof(int));
         if (!arr[i])
+        {
+            freeMatrix(arr, i);
             return (1);
+        }
         i++;
     }
     
