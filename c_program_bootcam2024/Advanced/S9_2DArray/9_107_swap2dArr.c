@@ -13,6 +13,23 @@ void freeMatrix(int** arr, size_t rows)
     printf("Memory Freed\n");
 }
 
+void    prt2dArr(int** arr, size_t rows, size_t cols)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < rows)
+    {
+        j = 0;
+        while (j < cols)
+        {
+            printf("%d ", arr[i][j]);
+        }
+    }
+    printf("\n");
+}
+
 int** create2dArr(size_t rows, size_t cols)
 {
     int** arr;
@@ -26,7 +43,7 @@ int** create2dArr(size_t rows, size_t cols)
     i = 0;
     while (i < rows)
     {
-        *arr = (int*)calloc(rows, sizeof(int));
+        *arr = (int*)calloc(cols, sizeof(int));
         if (!*arr)
         {
             freeMatrix(arr, i);
@@ -46,5 +63,6 @@ int main(void)
     rows = 4;
     cols = 4;
     arr = create2dArr(rows, cols);
+    prt2dArr(arr, rows, cols);
     return (0);
 }
