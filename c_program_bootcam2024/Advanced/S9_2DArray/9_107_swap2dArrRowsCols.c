@@ -34,8 +34,8 @@ void    allocEle(int** arr, size_t rows, size_t cols)
 
 void    prt2dArr(int** arr, size_t rows, size_t cols)
 {
-    int i;
-    int j;
+    size_t i;
+    size_t j;
 
     i = 0;
     while (i < rows)
@@ -60,6 +60,7 @@ int** create2dArr(size_t rows, size_t cols)
     if (!arr)
     {
         printf("Memory Allocation Failed");
+        return (NULL);
     }
     i = 0;
     while (i < rows)
