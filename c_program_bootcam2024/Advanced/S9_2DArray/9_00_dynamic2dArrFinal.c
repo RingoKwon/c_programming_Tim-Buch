@@ -8,10 +8,10 @@ void    prt2dArr(int** arr, size_t rows, size_t cols)
     int j;
 
     i = 0;
-    while (i < cols)
+    while (i < rows)
     {
         j = 0;
-        while (j < rows)
+        while (j < cols)
         {
             printf("%d ", arr[i][j]);
             j++;
@@ -43,7 +43,7 @@ int** create2dArr(int rows, int cols)
         return (NULL);
     }
     i = 0;
-    while (i < cols)
+    while (i < rows)
     {
         *arr = (int*)calloc(cols, sizeof(int));
         if (!*arr)
@@ -63,7 +63,7 @@ int main(void)
 
     rows = 3;
     cols = 4;
-    arr = create2dArr(rows,cols);
+    arr = create2dArr(rows, cols);
     prt2dArr(arr, rows, cols);
     return (0);
 }
