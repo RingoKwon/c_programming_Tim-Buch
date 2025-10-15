@@ -46,7 +46,7 @@ int** create2dArr(size_t rows, size_t cols)
     i = 0;
     while (i < rows)
     {
-        *arr = (int*)calloc(cols, sizeof(int));
+        (arr)[i] = (int*)calloc(cols, sizeof(int));
         if (!*arr)
         {
             freeMatrix(arr, i);
