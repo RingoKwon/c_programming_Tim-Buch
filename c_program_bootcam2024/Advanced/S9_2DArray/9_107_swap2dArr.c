@@ -7,7 +7,6 @@ void freeMatrix(int** arr, size_t rows)
     while (rows > 0)
     {
         free(arr[rows - 1]);
-        printf("rows: %zu\n", rows - 1);// test
         rows--;
     }
     free(arr);
@@ -28,8 +27,6 @@ int** create2dArr(size_t rows, size_t cols)
     while (i < rows)
     {
         *arr = (int*)calloc(rows, sizeof(int));
-        if(i == 2)// test   
-            *arr = NULL;
         if (!*arr)
         {
             freeMatrix(arr, i);
