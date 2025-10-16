@@ -85,6 +85,16 @@ void    swapRows(int** arr, size_t r1, size_t r2)
     arr[r2] = temp;
 }
 
+void    swapRowsUniversal(void** arr, size_t r1, size_t r2)
+{
+    void* temp;
+    // arr = calloc(rows,sizeof(void*) );
+
+    temp = arr[r1];
+    arr[r1] = arr[r2];
+    arr[r2] = temp;
+}
+
 void    swapCols(int** arr, size_t rows, size_t c1, size_t c2)
 {
     size_t  i;
@@ -127,6 +137,10 @@ int main(void)
     printf("Col Swap\n");
     swapCols(arr, rows, 0, 1);
     prt2dArr(arr, rows, cols);
+    printf("Universal Raw Swap\n");
+    swapRowsUniversal(arr, 1, 2);
+    prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
+
     return (0);
 }
