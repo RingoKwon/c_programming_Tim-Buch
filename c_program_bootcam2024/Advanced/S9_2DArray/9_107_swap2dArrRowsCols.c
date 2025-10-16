@@ -138,7 +138,7 @@ int main(void)
     swapCols(arr, rows, 0, 1);
     prt2dArr(arr, rows, cols);
     printf("Universal Raw Swap\n");
-    swapRowsUniversal(arr, 1, 2);
+    swapRowsUniversal((void**)arr, 1, 2);
     prt2dArr(arr, rows, cols);
     freeMatrix(arr, rows);
 
