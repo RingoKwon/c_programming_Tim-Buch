@@ -85,7 +85,7 @@ void    swapRows(int** arr, size_t r1, size_t r2)
     arr[r2] = temp;
 }
 
-void    swapCols(int** arr,size_t rows, size_t c1, size_t c2)
+void    swapCols(int** arr, size_t rows, size_t c1, size_t c2)
 {
     size_t  i;
     int temp;
