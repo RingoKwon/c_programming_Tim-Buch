@@ -1,16 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/ringokwon/Project/cProject/c_program_bootcam2024/**)",
-      "Bash(git log:*)",
-      "Bash(awk:*)",
-      "Bash(cloc:*)",
-      "Bash(find:*)",
-      "Bash(for month in \"2024-06\" \"2024-07\" \"2024-10\" \"2025-07\" \"2025-08\" \"2025-09\" \"2025-10\")",
-      "Bash(do echo \"=== $month ===\")",
-      "Bash(done)",
-      "Bash(sort:*)",
-      "Bash(bc)"
+      "Read(//private/tmp/**)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
