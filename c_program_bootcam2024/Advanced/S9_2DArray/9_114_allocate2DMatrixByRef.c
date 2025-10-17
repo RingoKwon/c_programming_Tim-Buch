@@ -10,17 +10,17 @@ void    free2DArr(int** arr, size_t rows)
         rows--;
     }
     free(arr);
-    printf("Memory Freed");
+    printf("Memory Freed\n");
 }
 
 void   allocate2DMatrixByRef(int*** arr, size_t rows, size_t cols)
 {
     size_t i;
 
-    *arr = (int**)calloc(3, sizeof(int*));
+    *arr = (int**)calloc(rows, sizeof(int*));
     if (!*arr)
     {
-        printf("Memory Allocation Failed");
+        printf("Memory Allocation Failed\n");
         return ;
     }
     i = 0;
@@ -28,8 +28,10 @@ void   allocate2DMatrixByRef(int*** arr, size_t rows, size_t cols)
     {
         (*arr)[i] = (int*)calloc(cols, sizeof(int));
         if (!(*arr)[i])
+        {
             free2DArr(*arr, i);
             return ;
+        }
         i++;
     }
 }
