@@ -12,15 +12,15 @@ char* strConcat(char* str)
     while (str[i])
         i++;
     len = i;
+    newStr = (char*)malloc(sizeof(char) * len * 2 + 1);
+    if (!newStr)
+    {
+        printf("Memory Allocation Failed\n");
+        return (NULL);
+    }
     i = 0;
     while (i < len)
     {
-        newStr = (char*)malloc(sizeof(char) * len * 2 + 1);
-        if (!newStr)
-        {
-            printf("Memory Allocation Failed\n");
-            return (NULL);
-        }
         newStr[i] = str[i];
         newStr[i + len] = str[i];
         i++;
