@@ -49,6 +49,11 @@ void    prtLowerTriangle(int** arr, size_t size)
             printf("%2d", arr[i][j]);
             j++;
         }
+        while (j < size)
+        {
+            printf(" x");
+            j++;
+        }
         printf("\n");
         i++;
     }
@@ -87,9 +92,9 @@ void    prtUpperTriangle(int** arr, size_t size)
     while (i < size)
     {
         j = 0;
-        while (j/2 < i)
+        while (j < i)
         {
-            printf(" ");
+            printf(" x");
             j++;
         }
         j = 0;
