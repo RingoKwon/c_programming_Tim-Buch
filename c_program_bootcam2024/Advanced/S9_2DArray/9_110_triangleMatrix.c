@@ -10,9 +10,10 @@ void    free2dArr(int** arr, size_t size)
     }
     free(arr);
 }
-int** lowerTriangle(int** arr, size_t size)
+int** lowerTriangle(size_t size)
 {
     size_t i;
+    int** arr;
 
     arr = (int**)calloc(size, sizeof(int*));
     if (!arr)
@@ -53,20 +54,21 @@ void    prtLowerTriangle(int** arr, size_t size)
     }
 }
 
-int**   upperTriangle(int** arr, size_t size)
+int**   upperTriangle(size_t size)
 {
     size_t  i;
+    int** arr;
 
     arr = (int**)calloc(size, sizeof(int*));
     if (!arr)
     {
         printf("Memory Allocation Failed");
-        free(arr);
+        return (NULL);
     }
     i = 0;
     while (i < size)
     {
-        &(arr[i][i]) = (int*)calloc(size - 1, sizeof(int));
+        arr[i] = (int*)calloc(size - i, sizeof(int));
         i++;
     }
     return (arr);
@@ -79,7 +81,7 @@ int main(void)
 
     size = 4;
     printf("Lower Triangle\n");
-    arr = lowerTriangle(arr, size);
+    arr = lowerTriangle(size);
     if (!arr)
     {
         printf("Memory Allocation Failed");
@@ -88,7 +90,7 @@ int main(void)
     prtLowerTriangle(arr, size);
     free2dArr(arr, size);
     printf("Upper Triangle\n");
-    arr = upperTriangle(arr, size);
+    arr = upperTriangle(size);
     arr[1][1] = 1;
     return (0);
 }
