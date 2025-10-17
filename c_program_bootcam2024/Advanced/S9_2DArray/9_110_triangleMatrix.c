@@ -69,6 +69,10 @@ int**   upperTriangle(size_t size)
     while (i < size)
     {
         arr[i] = (int*)calloc(size - i, sizeof(int));
+        if (!arr[i])
+        {
+            free2dArr(arr, i);
+        }
         i++;
     }
     return (arr);
@@ -116,5 +120,6 @@ int main(void)
     printf("Upper Triangle\n");
     arr = upperTriangle(size);
     prtUpperTriangle(arr, size);
+    free2dArr(arr, size);
     return (0);
 }
