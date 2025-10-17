@@ -29,6 +29,7 @@ void   allocate2DMatrixByRef(int*** arr, size_t rows, size_t cols)
         (*arr)[i] = (int*)calloc(cols, sizeof(int));
         if (!(*arr)[i])
             free2DArr(*arr, i);
+            return ;
         i++;
     }
 }
