@@ -32,6 +32,8 @@ char* strConcat(char* str)
 void    prtStr(char* str)
 {
     size_t  i;
+    i = 0;
+
     while (str[i])
     {
         printf("%c", str[i]);
