@@ -74,6 +74,30 @@ int**   upperTriangle(size_t size)
     return (arr);
 }
 
+void    prtUpperTriangle(int** arr, size_t size)
+{
+    size_t i;
+    size_t j;
+
+    i = 0;
+    while (i < size)
+    {
+        j = 0;
+        while (j/2 < i)
+        {
+            printf(" ");
+            j++;
+        }
+        j = 0;
+        while (j < size - i)
+        {
+            printf("%2d", arr[i][j]);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+}
 int main(void)
 {
     size_t size;
@@ -91,6 +115,6 @@ int main(void)
     free2dArr(arr, size);
     printf("Upper Triangle\n");
     arr = upperTriangle(size);
-    arr[1][1] = 1;
+    prtUpperTriangle(arr, size);
     return (0);
 }
