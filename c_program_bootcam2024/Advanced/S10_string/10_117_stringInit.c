@@ -8,7 +8,7 @@ int main(void)
 
     char    str[] = "Hello";
 
-    char*   str2 = "Hello";
+    char*   str2 = "Hello"; // --> read only memory
 
     char*   tempPtr;
     tempPtr = charArr;

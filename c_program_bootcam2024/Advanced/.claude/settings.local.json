@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Read(//private/tmp/**)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git log:*)",
+      "Bash(awk:*)"
     ],
     "deny": [],
     "ask": []
