@@ -23,7 +23,7 @@ int main(void)
     printf("-> %s", str);
     printf("\n----------\n#3 str[]\n\n");
     str2 = "yellow";
-    printf("str[] = \"yelloe\": %s", str2);
+    printf("*str2 = \"yelloe\": %s", str2);
     // str2[0] = 'H'; bus error;
     
     return (0);
