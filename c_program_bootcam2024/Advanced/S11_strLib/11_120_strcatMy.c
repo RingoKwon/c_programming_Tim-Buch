@@ -31,9 +31,9 @@ void strcatMy(char** dest, char* src)
         newStr[i] = (*dest)[i];
         i++;
     }
-    while (i < srcLen)
+    while (i < newLen)
     {
-        newStr[i] = src[i];
+        newStr[i] = src[i - destLen];
         i++;
     }
     newStr[i] = '\0';
@@ -42,8 +42,8 @@ void strcatMy(char** dest, char* src)
 
 int main(void)
 {
-    char*   src = "Ringo ";
-    char*   dest = "Hello";
+    char*   src = "Ringo";
+    char*   dest = "Hello ";
     printf("%d\n", strlenMy(src));
     strcatMy(&dest, src);
     printf("%s", dest);
