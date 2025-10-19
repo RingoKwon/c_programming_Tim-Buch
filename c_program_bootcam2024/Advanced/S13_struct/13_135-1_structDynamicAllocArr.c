@@ -69,10 +69,12 @@ int main(void)
     Employee* emp1;
     emp1 = alloc1(size);
     prtEply(emp1, size);
+    free(emp1);
 
     printf("[Reference approach]\n");
     Employee* emp2;
     alloc2(&emp2, size);
     prtEply(emp2, size);
+    free(emp2);
     return (0);
 }
