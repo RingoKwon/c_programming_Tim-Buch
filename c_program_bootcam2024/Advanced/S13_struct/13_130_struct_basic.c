@@ -1,20 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 3
 
 int main(void)
 {
     typedef struct {
         int x;
         int y;
-        char c;
     }   Point;
     size_t i;
+    size_t totalPoints;
 
-    printf("size: %lu\n", sizeof(Point));
-    Point   point[SIZE];    
+    printf("Enter total points: ");
+    scanf("%lu", &totalPoints);
+
+    Point*   point;    
+    point = (Point*)malloc(sizeof(Point) * totalPoints);
+    
     i = 0;
-    while (i < SIZE)
+    while (i < totalPoints)
     {
         printf("Enther %zuth x element: ", i + 1);
         scanf("%d", &point[i].x);
@@ -23,7 +26,7 @@ int main(void)
         i++;
     }
     i = 0;
-    while (i < SIZE)
+    while (i < totalPoints)
     {
         printf("(%d, %d)\n", point[i].x, point[i].y);
         i++;
