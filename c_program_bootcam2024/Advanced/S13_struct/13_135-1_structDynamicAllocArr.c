@@ -7,14 +7,23 @@ typedef struct employee{
     int id;
 } Employee;
 
-Employee*   alloc1(void)
+void    prtEply(Employee* in, size_t size)
+{
+    size_t i;
+
+    i = 0;
+    while (i < size)
+    {
+        printf("%zuth name: %s, age: %f, id: %d\n",i + 1, in[i].name, in[i].age, in[i].id);
+        i++;
+    }
+}
+
+Employee*   alloc1(size_t size)
 {
     Employee*    eply;
-    size_t  size;
     size_t  i;
 
-    printf("Enter size: ");
-    scanf("%zu", &size);
 
     eply = (Employee*)malloc(sizeof(Employee) * size);
     i = 0;
@@ -33,7 +42,12 @@ Employee*   alloc1(void)
 
 int main(void)
 {
+    size_t size;
+
+    printf("Enter size: ");
+    scanf("%zu", &size);
     Employee* emp1;
-    emp1 = alloc1();
+    emp1 = alloc1(size);
+    prtEply(emp1, size);
     return (0);
 }
