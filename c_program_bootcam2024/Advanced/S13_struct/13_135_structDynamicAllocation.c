@@ -13,6 +13,8 @@ Employee alloc1(Employee in)
     scanf("%s", in.name);
     printf("Enter age: ");
     scanf("%f", &(in.age));
+    printf("Enter id: ");
+    scanf("%d", &(in.id));
     return (in);
 }
 
@@ -20,6 +22,5 @@ int main(void)
 {
     Employee emp1;
     emp1 = alloc1(emp1);
-    printf("%lu", sizeof(Employee));
     return (0);
 }
