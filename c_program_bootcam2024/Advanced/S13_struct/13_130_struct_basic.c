@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct {
+    int x;
+    int y;
+}   Point;
+
+// void    increaseX()
+
 int main(void)
 {
-    typedef struct {
-        int x;
-        int y;
-    }   Point;
     size_t i;
     size_t totalPoints;
 
