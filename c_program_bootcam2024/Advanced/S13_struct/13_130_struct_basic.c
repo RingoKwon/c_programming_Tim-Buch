@@ -6,7 +6,10 @@ typedef struct {
     int y;
 }   Point;
 
-// void    increaseX()
+void    increaseX(Point** pt, size_t i)
+{
+    (*pt)[i].x += 1;
+}
 
 int main(void)
 {
@@ -26,6 +29,7 @@ int main(void)
         scanf("%d", &point[i].x);
         printf("Enther %zuth y element: ", i + 1);
         scanf("%d", &point[i].y);
+        increaseX(&point, i);
         i++;
     }
     i = 0;
