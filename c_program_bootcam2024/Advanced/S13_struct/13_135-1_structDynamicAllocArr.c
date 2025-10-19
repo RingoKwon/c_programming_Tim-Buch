@@ -78,11 +78,17 @@ int main(void)
     printf("[Return approach]\n");
     Employee* emp1;
     emp1 = alloc1(size);
+    if (!emp1)
+    {
+        printf("Memory Allocation Failed");
+        free(emp1);
+    }
     prtEply(emp1, size);
     free(emp1);
 
     printf("[Reference approach]\n");
     Employee* emp2;
+    emp2 = NULL;
     alloc2(&emp2, size);
     prtEply(emp2, size);
     free(emp2);
