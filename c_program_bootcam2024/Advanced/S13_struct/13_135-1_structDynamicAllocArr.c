@@ -26,11 +26,16 @@ Employee*   alloc1(size_t size)
 
 
     eply = (Employee*)malloc(sizeof(Employee) * size);
+    if (!eply)
+    {
+        printf("Mamory allocation failed");
+        return (NULL);
+    }
     i = 0;
     while (i < size)
     {
-        printf("Enther %zuth name: ", i + 1);
-        scanf("%s", eply[i].name);
+        printf("Enter %zuth name: ", i + 1);
+        scanf("%9s", eply[i].name);
         printf("Enter %zuth age: ", i + 1);
         scanf("%f", &(eply[i].age));
         printf("Enter %zuth id: ", i + 1);
@@ -46,11 +51,16 @@ void   alloc2(Employee** eply, size_t size)
 
 
     *eply = (Employee*)malloc(sizeof(Employee) * size);
+    if (!*eply)
+    {
+        printf("Memory allocation failed");
+        free(*eply);
+    }
     i = 0;
     while (i < size)
     {
         printf("Enther %zuth name: ", i + 1);
-        scanf("%s", (*eply)[i].name);
+        scanf("%9s", (*eply)[i].name);
         printf("Enter %zuth age: ", i + 1);
         scanf("%f", &((*eply)[i].age));
         printf("Enter %zuth id: ", i + 1);
