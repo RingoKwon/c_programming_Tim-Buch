@@ -7,9 +7,11 @@ int main(void)
     typedef struct {
         int x;
         int y;
+        char c;
     }   Point;
     size_t i;
 
+    printf("size: %lu\n", sizeof(Point));
     Point   point[SIZE];    
     i = 0;
     while (i < SIZE)
