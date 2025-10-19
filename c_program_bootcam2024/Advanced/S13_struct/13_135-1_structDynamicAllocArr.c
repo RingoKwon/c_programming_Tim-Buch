@@ -54,7 +54,7 @@ void   alloc2(Employee** eply, size_t size)
     if (!*eply)
     {
         printf("Memory allocation failed");
-        free(*eply);
+        return;
     }
     i = 0;
     while (i < size)
