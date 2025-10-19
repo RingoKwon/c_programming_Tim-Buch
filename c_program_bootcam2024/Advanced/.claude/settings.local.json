@@ -4,7 +4,8 @@
       "Read(//private/tmp/**)",
       "Bash(cat:*)",
       "Bash(git log:*)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(xargs file:*)"
     ],
     "deny": [],
     "ask": []
