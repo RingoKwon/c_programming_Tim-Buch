@@ -81,7 +81,7 @@ int main(void)
     if (!emp1)
     {
         printf("Memory Allocation Failed");
-        free(emp1);
+        return (1);
     }
     prtEply(emp1, size);
     free(emp1);
