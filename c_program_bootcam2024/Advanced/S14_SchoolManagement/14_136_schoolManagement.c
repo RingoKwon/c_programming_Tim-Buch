@@ -163,6 +163,21 @@ void    printStudentCourses(School* school, int studentID)
     }
 }
 
+void    printStudentWhoFailed(Course* course, double cutOffGrade)
+{
+    size_t i;
+
+    i = 0;
+    while (i < course->totalStudents)
+    {
+        if (course->studentArray[i].grade < cutOffGrade)
+        {
+            printStudentDetails(&(course->studentArray[i]));
+        }
+        i++;
+    }
+}
+
 int main(void)
 {
     Student* students;
