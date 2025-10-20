@@ -5,6 +5,7 @@ typedef struct student
 {
     unsigned int id;
     char name[20];
+    unsigned int    grade;
 }   Student;
 
 typedef struct course 
@@ -36,6 +37,8 @@ Student* createStudent()
         scanf("%s", newStudent->name);
         printf("Enter student id: ");
         scanf("%u", &(newStudent->id));
+        printf("Enter student grade: ");
+        scanf("%u", &(newStudent->grade));
     return (newStudent);
 }
 
@@ -133,6 +136,28 @@ void    printCourseDetails(Course* course)
     while (i < course->totalStudents)
     {
         printStudentDetails(&(course->studentArray[i]));
+        i++;
+    }
+}
+
+void    printStudentCourses(School* school, int studentID)
+{
+    size_t i;
+    size_t j;
+    printf("Course for student with ID %d:\n", studentID);
+    i = 0;
+    while (i < school->totalCourses)
+    {
+        j = 0;
+        while (j < school->courseArray[i].totalStudents)
+        {
+            if (school->courseArray[i].studentArray->id == studentID)
+            {
+                printf(" - %s\n", school->courseArray[i].name);
+                break;
+            }
+            j++;
+        }
         i++;
     }
 }
