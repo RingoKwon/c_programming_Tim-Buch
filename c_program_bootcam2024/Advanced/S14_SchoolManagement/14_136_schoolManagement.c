@@ -123,6 +123,7 @@ void    printStudentDetails(Student* student)
 {
     printf("Student name: %s\n", student->name);
     printf("Student id: %u\n", student->id);
+    printf("Student grade: %u\n", student->grade);
 }
 
 void    printCourseDetails(Course* course)
