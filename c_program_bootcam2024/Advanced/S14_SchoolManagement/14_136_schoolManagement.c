@@ -163,6 +163,21 @@ void    printStudentCourses(School* school, int studentID)
     }
 }
 
+void    printStudentWhoPassed(Course* course, double cutOffGrade)
+{
+    size_t i;
+
+    i = 0;
+    while (i < course->totalStudents)
+    {
+        if (course->studentArray[i].grade >= cutOffGrade)
+        {
+            printStudentDetails(&(course->studentArray[i]));
+        }
+        i++;
+    }
+}
+
 void    printStudentWhoFailed(Course* course, double cutOffGrade)
 {
     size_t i;
@@ -178,18 +193,29 @@ void    printStudentWhoFailed(Course* course, double cutOffGrade)
     }
 }
 
-void    printStudentWhoPassed(Course* course, double cutOffGrade)
+void    printCourseWithPassAvgGrade(School* school, double cutOffGrade)
 {
     size_t i;
 
+    printf("Courses with pass average grade:\n");
     i = 0;
-    while (i < course->totalStudents)
+    while (i < cutOffGrade) 
     {
-        if (course->studentArray[i].grade >= cutOffGrade)
-        {
-            printStudentDetails(&(course->studentArray[i]));
-        }
-        i++;
+        if (school->courseArray[i].averageGrade >= cutOffGrade);
+            printCourseDetails(&(school->courseArray[i]));
+    }
+}
+
+void    printCourseWithFailAvgGrade(School* school, double cutOffGrade)
+{
+    size_t i;
+
+    printf("Courses with fail average grade:\n");
+    i = 0;
+    while (i < cutOffGrade) 
+    {
+        if (school->courseArray[i].averageGrade < cutOffGrade);
+            printCourseDetails(&(school->courseArray[i]));
     }
 }
 
