@@ -201,7 +201,7 @@ void    printCourseWithPassAvgGrade(School* school, double cutOffGrade)
     i = 0;
     while (i < cutOffGrade) 
     {
-        if (school->courseArray[i].averageGrade >= cutOffGrade);
+        if (school->courseArray[i].averageGrade >= cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
     }
 }
@@ -214,8 +214,42 @@ void    printCourseWithFailAvgGrade(School* school, double cutOffGrade)
     i = 0;
     while (i < cutOffGrade) 
     {
-        if (school->courseArray[i].averageGrade < cutOffGrade);
+        if (school->courseArray[i].averageGrade < cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
+    }
+}
+
+void    printAverageGradeallCourses(School* school)
+{
+    double totalGrade = 0;
+    size_t i;
+    double average;
+
+    i = 0;
+    while (i < school->totalCourses)
+    {
+        totalGrade += school->courseArray[i].averageGrade;
+        i++;
+    }
+    average = totalGrade / school->totalCourses;
+    printf("Average grade between all courses in school %s is %.2f\n", school->name, average);
+}
+
+void    printCourseWithHighestAverage(School* school)
+{
+    double highestAvg = 0;
+    Course* highestAvgCourse = NULL;
+    size_t i;
+
+    i = 0;
+    while (i < school->totalCourses)
+    {
+        if (school->courseArray[i].averageGrade > highestAvg)
+        {
+            highestAvg = school->courseArray[i].averageGrade;
+            highestAvgCourse = &(school->courseArray[i]);
+        }
+        i++;
     }
 }
 
