@@ -51,28 +51,28 @@ Course* createCourse()
         printf("Memory Allocation Failed");
         return NULL;
     }
-        printf("Enter course name: ");
-        scanf("%s", newCourse->name);
-        printf("Enter number of students: ");
-        scanf("%u", &(newCourse->totalStudents));
-        newCourse->studentArray = (Student*)malloc(sizeof(Student) * newCourse->totalStudents);
-        if (!newCourse->studentArray)
+    printf("Enter course name: ");
+    scanf("%s", newCourse->name);
+    printf("Enter number of students: ");
+    scanf("%u", &(newCourse->totalStudents));
+    newCourse->studentArray = (Student*)malloc(sizeof(Student) * newCourse->totalStudents);
+    if (!newCourse->studentArray)
+    {
+        printf("Memory Allocation Failed");
+        return (NULL);
+    }
+    i = 0;
+    while (i < newCourse->totalStudents)
+    {
+        printf("Enter details for student #%zu\n", i + 1);
+        newStudent = createStudent();
+        if (!newStudent)
         {
             printf("Memory Allocation Failed");
             return (NULL);
         }
-        i = 0;
-        while (i < newCourse->totalStudents)
-        {
-            printf("Enter details for student #%zu\n", i + 1);
-            newStudent = createStudent();
-            if (!newStudent)
-            {
-                printf("Memory Allocation Failed");
-                return (NULL);
-            }
-            newCourse->studentArray[i] = *newStudent;
-            free(newStudent);
+        newCourse->studentArray[i] = *newStudent;
+        free(newStudent);
         }
 
     return (newCourse);
@@ -114,6 +114,27 @@ School* createdSchool()
         i++;
     }
     return (newSchool); 
+}
+
+void    printStudentDetails(Student* student)
+{
+    printf("Student name: %s\n", student->name);
+    printf("Student id: %u\n", student->id);
+}
+
+void    printCourseDetails(Course* course)
+{
+    size_t i;
+
+    printf("Course name: %s\n", course->name);
+    printf("Course average grade: %lf\n", course->averageGrade);
+    printf("Course total students: %u\n", course->totalStudents);
+    i = 0;
+    while (i < course->totalStudents)
+    {
+        printStudentDetails(&(course->studentArray[i]));
+        i++;
+    }
 }
 
 int main(void)
