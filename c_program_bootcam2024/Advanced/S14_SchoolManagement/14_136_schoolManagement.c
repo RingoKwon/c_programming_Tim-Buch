@@ -219,6 +219,7 @@ void    printCourseWithPassAvgGrade(School* school, double cutOffGrade)
     {
         if (school->courseArray[i].averageGrade >= cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
+        i++;
     }
 }
 
@@ -232,6 +233,7 @@ void    printCourseWithFailAvgGrade(School* school, double cutOffGrade)
     {
         if (school->courseArray[i].averageGrade < cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
+        i++;
     }
 }
 
@@ -288,8 +290,8 @@ int main(void)
 
     printSchoolDetails(mySchool);
     printStudentCourses(mySchool, 1);
-    printCourseWithFailAvgGrade(&(mySchool->courseArray[0]), 50.0);
-    printCourseWithPassAvgGrade(&(mySchool->courseArray[0]), 50.0);
+    printCourseWithFailAvgGrade(mySchool, 50.0);
+    printCourseWithPassAvgGrade(mySchool, 50.0);
 
     return (0);
 }
