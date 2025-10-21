@@ -269,9 +269,27 @@ void    printCourseWithHighestAverage(School* school)
     }
 }
 
+void    printSchoolDetails(School* school)
+{
+    size_t i;
+
+    i = 0;
+    while (i < school->totalCourses)
+    {
+        printCourseDetails(&(school->courseArray[i]));
+        i++;
+    }
+}
+
 
 int main(void)
 {
     School* mySchool = createSchool();
+
+    printSchoolDetails(mySchool);
+    printStudentCourses(mySchool, 1);
+    printCourseWithFailAvgGrade(&(mySchool->courseArray[0]), 50.0);
+    printCourseWithPassAvgGrade(&(mySchool->courseArray[0]), 50.0);
+
     return (0);
 }
