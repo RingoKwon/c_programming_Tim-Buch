@@ -32,7 +32,7 @@ void    updateGrade(Course* course)
     i = 0;
     while (i < course->totalStudents)
     {
-        totalGrade += course->studentArray->grade;
+        totalGrade += course->studentArray[i].grade;
         i++;
     }
     course->averageGrade = totalGrade / course->totalStudents;
@@ -129,7 +129,7 @@ School* createSchool()
             return (NULL);
         }
         newSchool->courseArray[i] = *newCourse;
-        free(newSchool);
+        free(newCourse);
         i++;
     }
     return (newSchool); 
@@ -168,7 +168,7 @@ void    printStudentCourses(School* school, int studentID)
         j = 0;
         while (j < school->courseArray[i].totalStudents)
         {
-            if (school->courseArray[i].studentArray->id == studentID)
+            if (school->courseArray[i].studentArray[j].id == studentID)
             {
                 printf(" - %s\n", school->courseArray[i].name);
                 break;
@@ -215,7 +215,7 @@ void    printCourseWithPassAvgGrade(School* school, double cutOffGrade)
 
     printf("Courses with pass average grade:\n");
     i = 0;
-    while (i < cutOffGrade) 
+    while (i < school->totalCourses) 
     {
         if (school->courseArray[i].averageGrade >= cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
@@ -229,7 +229,7 @@ void    printCourseWithFailAvgGrade(School* school, double cutOffGrade)
 
     printf("Courses with fail average grade:\n");
     i = 0;
-    while (i < cutOffGrade) 
+    while (i < school->totalCourses) 
     {
         if (school->courseArray[i].averageGrade < cutOffGrade)
             printCourseDetails(&(school->courseArray[i]));
