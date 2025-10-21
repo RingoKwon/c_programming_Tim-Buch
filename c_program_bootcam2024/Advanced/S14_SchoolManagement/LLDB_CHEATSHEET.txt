@@ -1,0 +1,209 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                  LLDB LINE-BY-LINE DEBUGGING CHEAT SHEET             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 1. STARTING LLDB                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+
+  $ lldb ./14_136_schoolManagement
+  
+  (lldb) breakpoint set --name main    # Set breakpoint at main
+  (lldb) b main                        # Short form
+  
+  (lldb) run                           # Start program
+  (lldb) r                             # Short form
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 2. STEPPING THROUGH CODE (LINE BY LINE)                            │
+└─────────────────────────────────────────────────────────────────────┘
+
+  Command         Short   Description
+  ─────────────────────────────────────────────────────────────────────
+  next            n       Execute next line (DON'T enter functions)
+  step            s       Step INTO functions
+  finish          fin     Run until current function returns
+  continue        c       Run until next breakpoint
+  
+  Example:
+  --------
+  (lldb) n    ← Press this repeatedly to go line by line!
+  (lldb) n
+  (lldb) n
+  
+┌─────────────────────────────────────────────────────────────────────┐
+│ 3. VIEWING VARIABLES                                                │
+└─────────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ View ALL local variables:                                        │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ (lldb) frame variable                                            │
+  │ (lldb) fr v              ← Short form (FASTEST!)                 │
+  └──────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ View specific variable:                                          │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ (lldb) print mySchool                                            │
+  │ (lldb) p mySchool        ← Short form                            │
+  └──────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ View pointer contents (dereference):                             │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ (lldb) p *mySchool       ← Shows the struct                      │
+  └──────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ View struct members:                                             │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ (lldb) p mySchool->name                                          │
+  │ (lldb) p mySchool->totalCourses                                  │
+  │ (lldb) p mySchool->courseArray[0].name                           │
+  └──────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ View EVERYTHING (recursive):                                     │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ (lldb) fr v -R mySchool   ← Shows entire nested structure!      │
+  └──────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 4. VIEWING SOURCE CODE                                              │
+└─────────────────────────────────────────────────────────────────────┘
+
+  (lldb) list              # Show current code location
+  (lldb) l                 # Short form
+  
+  (lldb) list 100          # Show code around line 100
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 5. BREAKPOINTS                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+
+  (lldb) b main                    # Break at main function
+  (lldb) b createStudent           # Break at function
+  (lldb) b 14_136_schoolManagement.c:100   # Break at line 100
+  
+  (lldb) breakpoint list           # List all breakpoints
+  (lldb) br list                   # Short form
+  
+  (lldb) breakpoint delete 1       # Delete breakpoint #1
+  (lldb) br del 1                  # Short form
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 6. CALL STACK / BACKTRACE                                           │
+└─────────────────────────────────────────────────────────────────────┘
+
+  (lldb) backtrace         # Show function call stack
+  (lldb) bt                # Short form
+  
+  (lldb) frame info        # Show current frame info
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 7. EXITING                                                          │
+└─────────────────────────────────────────────────────────────────────┘
+
+  (lldb) quit              # Exit LLDB
+  (lldb) q                 # Short form
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                     TYPICAL DEBUGGING SESSION                        ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. Start LLDB and set breakpoint:
+   ─────────────────────────────────
+   $ lldb ./14_136_schoolManagement
+   (lldb) b main
+   (lldb) run
+
+2. Step through line by line:
+   ──────────────────────────
+   (lldb) n        ← Step over (next line)
+   (lldb) n        ← Keep pressing 'n'
+   (lldb) n
+   
+3. Check variables after each step:
+   ────────────────────────────────
+   (lldb) fr v     ← See all variables
+   (lldb) p mySchool
+   (lldb) p mySchool->name
+
+4. If you want to step INTO a function:
+   ────────────────────────────────────
+   (lldb) s        ← Step into function
+   
+5. Continue or finish:
+   ───────────────────
+   (lldb) c        ← Continue to end
+   (lldb) q        ← Quit
+
+╔══════════════════════════════════════════════════════════════════════╗
+║              MOST USEFUL COMMANDS (MEMORIZE THESE!)                  ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+  Command                     What it does
+  ═════════════════════════════════════════════════════════════════════
+  b main                      Set breakpoint at main
+  r                           Run program
+  n                           Next line (step over)
+  s                           Step into function
+  fr v                        Show all variables
+  p variableName              Print variable
+  p *pointer                  Dereference pointer
+  p struct->member            Access struct member
+  fr v -R pointer             Show everything recursively
+  l                           List source code
+  bt                          Show call stack
+  c                           Continue
+  q                           Quit
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                   EXAMPLE: INSPECT mySchool                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+After stepping past createSchool():
+
+(lldb) p mySchool
+  → Shows: (School *) 0x0000000100304050
+
+(lldb) p *mySchool
+  → Shows entire School struct
+
+(lldb) p mySchool->name
+  → Shows: (char [20]) "MIT"
+
+(lldb) p mySchool->totalCourses
+  → Shows: (unsigned int) 2
+
+(lldb) p mySchool->courseArray[0].name
+  → Shows: (char [20]) "Math"
+
+(lldb) p mySchool->courseArray[0].studentArray[0].name
+  → Shows: (char [20]) "Alice"
+
+(lldb) fr v -R mySchool
+  → Shows ENTIRE nested structure!
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                          TIPS & TRICKS                               ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+• Press ENTER to repeat the last command (great for 'n')
+• Use TAB for autocompletion
+• Use UP/DOWN arrows for command history
+• Type 'help <command>' for detailed help
+• Use 'fr v' instead of 'print' - it's faster!
+• Use 'fr v -R' to see nested structures completely
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                        QUICK START                                   ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+$ lldb ./14_136_schoolManagement
+(lldb) b main
+(lldb) r
+(lldb) n     ← Press 'n' repeatedly to step through
+(lldb) fr v  ← Check variables anytime
+(lldb) q     ← Quit when done

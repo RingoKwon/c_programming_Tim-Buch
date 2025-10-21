@@ -23,6 +23,20 @@ typedef struct school
     Course* courseArray;
 }School;
 
+void    updateGrade(Course* course)
+{
+    double  totalGrade;
+    size_t i;
+
+    totalGrade = 0;
+    i = 0;
+    while (i < course->totalStudents)
+    {
+        totalGrade += course->studentArray->grade;
+        i++;
+    }
+    course->averageGrade = totalGrade / course->totalStudents;
+}
 Student* createStudent()
 {
     Student*    newStudent;
@@ -76,12 +90,13 @@ Course* createCourse()
         }
         newCourse->studentArray[i] = *newStudent;
         free(newStudent);
-        }
-
+        i++;
+    }
+    updateGrade(newCourse);
     return (newCourse);
 }
 
-School* createdSchool()
+School* createSchool()
 {
     School* newSchool;
     size_t i;
@@ -106,6 +121,7 @@ School* createdSchool()
     i = 0;
     while (i < newSchool->totalCourses)
     {
+        printf("Enter details for course #%zu\n", i + 1);
         newCourse = createCourse();
         if (!newCourse)
         {
@@ -253,8 +269,9 @@ void    printCourseWithHighestAverage(School* school)
     }
 }
 
+
 int main(void)
 {
-    Student* students;
+    School* mySchool = createSchool();
     return (0);
 }
