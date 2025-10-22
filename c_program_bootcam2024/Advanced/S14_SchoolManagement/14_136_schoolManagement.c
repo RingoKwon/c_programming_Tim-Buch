@@ -284,6 +284,7 @@ void    printSchoolDetails(School* school)
 }
 
 
+
 int main(void)
 {
     School* mySchool = createSchool();
