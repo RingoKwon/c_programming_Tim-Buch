@@ -301,6 +301,7 @@ void    freeCourse(Course* course, unsigned int totalCourse)
 
 void    freeSchool(School* school)
 {
+    freeCourse(school->courseArray, school->totalCourses);
     free(school->courseArray);
     free(school);
 }
@@ -313,7 +314,7 @@ int main(void)
     printStudentCourses(mySchool, 1);
     printCourseWithFailAvgGrade(mySchool, 50.0);
     printCourseWithPassAvgGrade(mySchool, 50.0);
-
+    freeSchool(mySchool);
     return (0);
 }
 //function working
