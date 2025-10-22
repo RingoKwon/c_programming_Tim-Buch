@@ -283,7 +283,27 @@ void    printSchoolDetails(School* school)
     }
 }
 
+void    freeStudent(Student* student)
+{
+    free(student);
+}
+void    freeCourse(Course* course, unsigned int totalCourse)
+{
+    size_t i;
 
+    i = 0;
+    while (i < totalCourse)
+    {
+        freeStudent(course[i].studentArray);
+        i++;
+    }
+}
+
+void    freeSchool(School* school)
+{
+    free(school->courseArray);
+    free(school);
+}
 
 int main(void)
 {
