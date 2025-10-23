@@ -295,6 +295,7 @@ void    freeCourse(Course* course, unsigned int totalCourse)
     while (i < totalCourse)
     {
         freeStudent(course[i].studentArray);
+        course[i].studentArray = NULL;
         i++;
     }
 }
